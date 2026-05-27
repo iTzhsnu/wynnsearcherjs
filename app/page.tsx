@@ -10,7 +10,7 @@ export default function Home() {
                 <div className={styles.inline_block}>
                     <div>
                         <select className={styles.item_type} id="item-type-select">
-                            <option value="equipmets">Type: Equipmets</option>
+                            <option value="equipments">Type: Equipments</option>
                             <option value="ingredients">Type: Ingredients</option>
                             <option value="others">Type: Others</option>
                             <option value="aspects">Type: Aspects</option>
