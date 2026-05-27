@@ -1,0 +1,83 @@
+:global(*) {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background: white;
+  color: black;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  padding: 30px;
+}
+
+.main {
+  width: 1100px;
+  background: white;
+  border-radius: 5px;
+  overflow: hidden;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.4);
+}
+
+.search_input {
+  flex: 1;
+  width: 200px;
+  height: 32px;
+  border: 1px solid;
+  border-radius: 5px;
+  border-color: silver;
+  padding: 0 16px;
+  background: lightcyan;
+  font-size: 16px;
+}
+
+.search_button {
+  width: 80px;
+  height: 32px;
+  border: 1px solid;
+  border-radius: 10px;
+  border-color: silver;
+  background: lightcyan;
+  font-size: 15px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+.item_type {
+  width: 170px;
+  height: 20px;
+  border: 1px solid;
+  border-radius: 5px;
+  border-color: silver;
+  background: lightcyan;
+}
+
+.type_checkbox {
+  height: 20px;
+  margin: 0.4rem;
+}
+
+.inline_block {
+  display: inline-block;
+}
+
+.ids_box {
+  width: 200px;
+  height: 20px;
+  border: 1px solid;
+  border-radius: 5px;
+  border-color: silver;
+  background: lightcyan;
+}
+
+.ids_range {
+  width: 30px;
+  height: 20px;
+  border: 1px solid;
+  border-radius: 5px;
+  border-color: silver;
+  background: lightcyan;
+}
