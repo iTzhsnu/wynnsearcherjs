@@ -13,7 +13,6 @@ export default function Home() {
                             <option value="equipments">Type: Equipments</option>
                             <option value="ingredients">Type: Ingredients</option>
                             <option value="others">Type: Others</option>
-                            <option value="aspects">Type: Aspects</option>
                         </select>
                     </div>
 
@@ -33,21 +32,21 @@ export default function Home() {
                 
 
                 <div className={styles.inline_block}>
-                    <label><input className={styles.type_checkbox} type="checkbox" id="bow-checkbox" />Bow</label>
-                    <label><input className={styles.type_checkbox} type="checkbox" id="spear-checkbox" />Spear</label>
-                    <label><input className={styles.type_checkbox} type="checkbox" id="wand-checkbox" />Wand</label>
-                    <label><input className={styles.type_checkbox} type="checkbox" id="dagger-checkbox" />Dagger</label>
-                    <label><input className={styles.type_checkbox} type="checkbox" id="relik-checkbox" />Relik</label>
+                    <label className={styles.type_label}><input className={styles.type_checkbox} type="checkbox" id="bow-checkbox" />Bow</label>
+                    <label className={styles.type_label}><input className={styles.type_checkbox} type="checkbox" id="spear-checkbox" />Spear</label>
+                    <label className={styles.type_label}><input className={styles.type_checkbox} type="checkbox" id="wand-checkbox" />Wand</label>
+                    <label className={styles.type_label}><input className={styles.type_checkbox} type="checkbox" id="dagger-checkbox" />Dagger</label>
+                    <label className={styles.type_label}><input className={styles.type_checkbox} type="checkbox" id="relik-checkbox" />Relik</label>
                     
-                    <label><input className={styles.type_checkbox} type="checkbox" id="ring-checkbox" />Ring</label>
-                    <label><input className={styles.type_checkbox} type="checkbox" id="bracelet-checkbox" />Bracelet</label>
+                    <label className={styles.type_label}><input className={styles.type_checkbox} type="checkbox" id="ring-checkbox" />Ring</label>
+                    <label className={styles.type_label}><input className={styles.type_checkbox} type="checkbox" id="bracelet-checkbox" />Bracelet</label>
 
                     <div>
-                        <label><input className={styles.type_checkbox} type="checkbox" id="helmet-checkbox" />Helmet</label>
-                        <label><input className={styles.type_checkbox} type="checkbox" id="chestplate-checkbox" />Chestplate</label>
-                        <label><input className={styles.type_checkbox} type="checkbox" id="leggings-checkbox" />Leggings</label>
-                        <label><input className={styles.type_checkbox} type="checkbox" id="boots-checkbox" />Boots</label>
-                        <label><input className={styles.type_checkbox} type="checkbox" id="necklace-checkbox" />Necklace</label>
+                        <label className={styles.type_label}><input className={styles.type_checkbox} type="checkbox" id="helmet-checkbox" />Helmet</label>
+                        <label className={styles.type_label}><input className={styles.type_checkbox} type="checkbox" id="chestplate-checkbox" />Chestplate</label>
+                        <label className={styles.type_label}><input className={styles.type_checkbox} type="checkbox" id="leggings-checkbox" />Leggings</label>
+                        <label className={styles.type_label}><input className={styles.type_checkbox} type="checkbox" id="boots-checkbox" />Boots</label>
+                        <label className={styles.type_label}><input className={styles.type_checkbox} type="checkbox" id="necklace-checkbox" />Necklace</label>
                     </div>
                 </div>
 
