@@ -79,3 +79,13 @@
   display: inline-flex;
   height: 20px;
 }
+
+.sort_type {
+  width: 90px;
+  height: 20px;
+  border: 1px solid;
+  border-radius: 5px;
+  border-color: silver;
+  background: lightcyan;
+  font-size: 13px;
+}
