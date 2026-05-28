@@ -89,3 +89,9 @@
   background: lightcyan;
   font-size: 13px;
 }
+
+.result_box {
+  border: 1px solid;
+  border-radius: 5px;
+  border-color: silver;
+}

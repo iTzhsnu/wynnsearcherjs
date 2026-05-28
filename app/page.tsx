@@ -1,3 +1,4 @@
+"use cleint";
 import styles from "./styles.module.css";
 
 export default function Home() {
@@ -319,6 +320,9 @@ export default function Home() {
                     <option value="Sum (Spell Costs %)"></option>
                 </datalist>
 
+                <div className={styles.result_box}>
+
+                </div>
             </div>
         </div>
     );
