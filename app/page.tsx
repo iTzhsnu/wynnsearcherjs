@@ -1,9 +1,13 @@
-"use cleint";
+"use client";
+
 import styles from "./styles.module.css";
+import { useEffect } from 'react';
 import { InitializeData } from "./scripts/DataManager";
 
 export default function Home() {
-    InitializeData();
+    useEffect(() => {
+        InitializeData();
+    });
 
     return (
     <div className={styles.main}>
