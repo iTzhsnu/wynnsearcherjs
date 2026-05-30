@@ -26,8 +26,8 @@ export class Ingredient extends AItem {
 
     // please use => if (Array.isArray(value))
     public getSkills(): JSONValueEx {
-        if (typeof this.json === "object" && !Array.isArray(this.json) 
-            && typeof this.json[reqPos] === "object" && !Array.isArray(this.json[reqPos])
+        if (typeof this.json === "object" && this.json !== null && !Array.isArray(this.json) 
+            && typeof this.json[reqPos] === "object" && this.json[reqPos] !== null && !Array.isArray(this.json[reqPos])
         && typeof this.json[reqPos][ingSkills] === "object") {
             return this.json[reqPos][ingSkills];
         }

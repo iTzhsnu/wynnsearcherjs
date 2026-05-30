@@ -14,11 +14,11 @@ export abstract class AItem {
 
     protected getIdValueBase(idNum: number, idName: string, fieldPos: string, sortType: string): number {
         const id = ids[idNum]; // number to Identifications
-        if (idName.length > 0 && id.idType === typeInt && typeof this.json === "object" && !Array.isArray(this.json)) {
+        if (idName.length > 0 && id.idType === typeInt && typeof this.json === "object" && this.json !== null && !Array.isArray(this.json)) {
             if (fieldPos.length > 0) { // have ID fieldpos
-                if (typeof this.json[fieldPos] === "object" && !Array.isArray(this.json[fieldPos])) {
+                if (typeof this.json[fieldPos] === "object" && this.json[fieldPos] !== null && !Array.isArray(this.json[fieldPos])) {
                     const j = this.json[fieldPos];
-                    if (typeof j[idName] === "object" && !Array.isArray(j[idName])) {
+                    if (typeof j[idName] === "object" && j[idName] !== null && !Array.isArray(j[idName])) {
                         const j2 = j[idName];
                         if (typeof this.json[identified] === "boolean" && this.json[identified]) { // Not have ID range (identified)
                             if (typeof j2[raw] === "number") {
