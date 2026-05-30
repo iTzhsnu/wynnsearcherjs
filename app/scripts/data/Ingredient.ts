@@ -1,4 +1,4 @@
-import { JSONValue } from "next/dist/server/config-shared";
+import { JSONValueEx } from "../utils/JSONValueEx";
 import { AItem } from "./AItem";
 import { ids, reqPos } from "./Identifications";
 
@@ -10,7 +10,7 @@ export class Ingredient extends AItem {
         return this.getIdValueBase(idNum, id.ingName, id.ingFieldPos, sortType);
     }
 
-    public haveIdValue(idNum: number, howToObtain: JSONValue, min: string, max: string): boolean {
+    public haveIdValue(idNum: number, howToObtain: JSONValueEx, min: string, max: string): boolean {
 
         return false;
     }
@@ -25,7 +25,7 @@ export class Ingredient extends AItem {
     }
 
     // please use => if (Array.isArray(value))
-    public getSkills(): JSONValue {
+    public getSkills(): JSONValueEx {
         if (typeof this.json === "object" && !Array.isArray(this.json) 
             && typeof this.json[reqPos] === "object" && !Array.isArray(this.json[reqPos])
         && typeof this.json[reqPos][ingSkills] === "object") {

@@ -1,4 +1,4 @@
-import { JSONValue } from "next/dist/server/config-shared";
+import { JSONValueEx } from "../utils/JSONValueEx";
 import { AItem } from "./AItem";
 import { ids } from "./Identifications";
 
@@ -8,7 +8,7 @@ export class Item extends AItem {
         return this.getIdValueBase(idNum, id.itemName, id.ingFieldPos, sortType);
     }
 
-    public haveIdValue(idNum: number, howToObtain: JSONValue, min: string, max: string): boolean {
+    public haveIdValue(idNum: number, howToObtain: JSONValueEx, min: string, max: string): boolean {
         
         return false;
     }

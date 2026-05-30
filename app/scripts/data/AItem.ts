@@ -1,11 +1,11 @@
-import { JSONValue } from "next/dist/server/config-shared";
+import { JSONValueEx } from "../utils/JSONValueEx";
 import { ids, raw, min, max, identified, typeInt, typeSum } from "./Identifications";
-import { sumIds } from "./SumIds"; 
+import { sumIds } from "./SumIds";
 
 export abstract class AItem {
-    protected json: JSONValue;
+    protected json: JSONValueEx;
 
-    public constructor(json: JSONValue) {
+    public constructor(json: JSONValueEx) {
         this.json = json;
     }
 
@@ -46,7 +46,7 @@ export abstract class AItem {
         return 0;
     }
 
-    public haveId(idNum: number, howToObtain: JSONValue, min: string, max: string): boolean {
+    public haveId(idNum: number, howToObtain: JSONValueEx, min: string, max: string): boolean {
         const id = ids[idNum];
         if (id.idType !== typeSum) {
             return this.haveIdValue(idNum, howToObtain, min, max);
@@ -76,7 +76,7 @@ export abstract class AItem {
         }
     }
 
-    public abstract haveIdValue(idNum: number, howToObtain: JSONValue, min: string, max: string): boolean;
+    public abstract haveIdValue(idNum: number, howToObtain: JSONValueEx, min: string, max: string): boolean;
 
     public getTotalSumFloat(sumNum: number, sortType: string, min: string, max: string): number {
         // TODO set value => a, b
