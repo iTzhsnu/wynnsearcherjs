@@ -96,6 +96,9 @@ export function InitializeData(): boolean {
         setItemData();
         setIngData();
         setOthersData();
+
+        console.log("動いてるよ 個数:");
+        console.log(wynnItems.length);
         
         return true;
     }
