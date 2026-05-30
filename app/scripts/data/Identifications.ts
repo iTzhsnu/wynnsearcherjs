@@ -13,13 +13,6 @@ const itemOnlyIdsPos = "itemOnlyIDs";
 const consumeOnlyIdsPos = "consumableOnlyIDs";
 const ingModifierPos = "ingredientPositionModifiers";
 
-// ID Type
-export const identified = "identified";
-export const raw = "raw";
-export const min = "min";
-export const max = "max";
-
-
 export type Identifications = {
     displayName: string,
     itemName: string,

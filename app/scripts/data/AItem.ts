@@ -1,6 +1,11 @@
+import { getItemFromName, setPowderOnNonCraft } from "../utils/DataUtils";
 import { JSONValueEx } from "../utils/JSONValueEx";
-import { ids, raw, min, max, identified, typeInt, typeSum } from "./Identifications";
+import { ids, typeInt, typeSum } from "./Identifications";
 import { sumIds } from "./SumIds";
+import { raw, min, max, identified, sFast, vFast, fast, aNormal, slow, vSlow, sSlow, namePos, typePos, subTypePos } from "../utils/DataKeys";
+
+const baseDamages = [29, 30, 31, 32, 33, 34];
+const atkSpdId = ids[44];
 
 export abstract class AItem {
     protected json: JSONValueEx;
@@ -59,13 +64,24 @@ export abstract class AItem {
             let needAll = true;
             const sum = sumIds[id.sumIds];
 
-            for (let n = 0; sum.sumBaseIds.length > n; ++n) {
-                const has = this.haveIdValue(sum.sumBaseIds[n], howToObtain, min, max);
+            if (sum.sumIds.length > 0) { // if sum in sum
+                for (const sumId of sum.sumIds) {
+                    const has = this.haveId(sumId, howToObtain, min, max);
+                    if (has) {
+                        need = true;
+                    } else {
+                        needAll = false;
+                    }
+                }
+            } else { // if normal sum
+                for (const baseId of sum.baseIds) {
+                const has = this.haveIdValue(baseId, howToObtain, min, max);
                 if (has) {
                     need = true;
                 } else {
                     needAll = false;
                 }
+            }
             }
 
             if (sum.needAll) {
@@ -90,9 +106,9 @@ export abstract class AItem {
         let sumTotalSub = 0;
 
         // Base IDs
-        if (sum.sumBaseIds.length > 0) {
-            for (let n = 0; sum.sumBaseIds.length > n; ++n) {
-                const baseId = sum.sumBaseIds[n];
+        if (sum.baseIds.length > 0) {
+            for (let n = 0; sum.baseIds.length > n; ++n) {
+                const baseId = sum.baseIds[n];
                 if (sum.useAverage) {
                     sumTotal += (this.getIdValue(baseId, max) + this.getIdValue(baseId, min)) * 0.5;
                 } else {
@@ -102,9 +118,9 @@ export abstract class AItem {
         }
 
         // Sub IDs
-        if (sum.sumMultiIds.length > 0) {
-            for (let n = 0; sum.sumMultiIds.length > n; ++n) {
-                sumTotalSub += this.getIdValue(sum.sumMultiIds[n], sortType);
+        if (sum.multiIds.length > 0) {
+            for (let n = 0; sum.multiIds.length > n; ++n) {
+                sumTotalSub += this.getIdValue(sum.multiIds[n], sortType);
             }
 
             if (sumTotal < 0 && sumTotalSub < 0) {
@@ -117,9 +133,9 @@ export abstract class AItem {
             }
             sumTotal = sumTotal * (1 + sumTotalSub * 0.01);
         }
-        if (sum.sumAddIds.length > 0) {
-            for (let n = 0; sum.sumAddIds.length > n; n++) {
-                const t = this.getIdValue(sum.sumAddIds[n], sortType);
+        if (sum.addIds.length > 0) {
+            for (let n = 0; sum.addIds.length > n; n++) {
+                const t = this.getIdValue(sum.addIds[n], sortType);
 
                 if (sum.isMeleeDPS) {
                     sumTotal += t;
@@ -141,43 +157,227 @@ export abstract class AItem {
     }
 
     public haveDamageAppropriateSumId(sumNum: number, weaponName: string, powder: string): boolean {
-        if (weaponName.length > 0) {
-            
+        if (weaponName.length > 0 && getItemFromName(weaponName)) {
+            const weapon = getItemFromName(weaponName);
+
+            if (weapon !== null) {
+                const have = [false, false, false, false, false, false];
+
+                // Set Powder Damage
+                if (powder.length > 0) {
+                    const size = (powder.length >> 1) << 1;
+                    POWDER_FIND: for (let i = 0; size > i; i += 2) {
+                        const tier = parseInt(powder.charAt(i + 1));
+                        if (Number.isNaN(tier)) {
+                            break;
+                        } else {
+                            if (tier > 0 && 7 >= tier) {
+                                switch (powder.charAt(i)) {
+                                    case 'e':
+                                        have[1] = true;
+                                        break;
+                                    case 't':
+                                        have[2] = true;
+                                        break;
+                                    case 'w':
+                                        have[3] = true;
+                                        break;
+                                    case 'f':
+                                        have[4] = true;
+                                        break;
+                                    case 'a':
+                                        have[5] = true;
+                                        break;
+                                    default:
+                                        break POWDER_FIND;
+                                }
+                            } else {
+                                break;
+                            }
+                        }
+                    }
+
+                    // Weapon Damage
+                    for (let i = 0; baseDamages.length > i; ++i) {
+                        if (weapon.haveId(baseDamages[i], null, "", "")) have[i] = true;
+                    }
+
+                    // Check
+                    if (have[0] || have[1] || have[2] || have[3] || have[4] || have[5]) {
+                        const sum = sumIds[sumNum];
+                        // Raw Damage
+                        for (const id of sumIds[sum.sumIds[6]].addIds) {
+                            if (this.haveId(id, null, "", "")) return true;
+                        }
+
+                        // Raw Elem. Damage
+                        for (const id of sumIds[sum.sumIds[7]].addIds) {
+                            if (this.haveId(id, null, "", "")) return true;
+                        }
+
+                        // Neutral, Earth, Thunder, Water, Fire and Air Damage (Raw and %)
+                        for (let i = 0; 6 > i; ++i) {
+                            if (have[i]) {
+                                // Raw ~ Damage and Raw ~ Melee or Spell Damage
+                                for (const id of sumIds[sum.sumIds[i]].addIds) {
+                                    if (this.haveId(id, null, "", "")) return true;
+                                }
+
+                                // ~ Damage %, Elem. Damage %, ~ Melee or Spell Damage % or Elem. Melee or Spell Damage %
+                                for (const id of sumIds[sum.sumIds[i]].multiIds) {
+                                    if (this.haveId(id, null, "", "")) return true;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
         }
 
         return false;
     }
 
-    public getDamAppropriateSumFloat(id: number, sortType: string, weaponName: string, powder: string): number {
+    public getDamAppropriateSumFloat(sumNum: number, sortType: string, weaponName: string, powder: string): number {
+        if (weaponName.length > 0 && getItemFromName(weaponName)) {
+            const weapon = getItemFromName(weaponName);
+            const mainSum = sumIds[sumNum];
+
+            if (weapon !== null) {
+                let total = 0;
+                let totalSub = 0;
+
+                // Set Weapon Min and Max Damage
+                const damagesMin = [weapon.getIdValue(baseDamages[0], min), weapon.getIdValue(baseDamages[1], min), weapon.getIdValue(baseDamages[2], min), weapon.getIdValue(baseDamages[3], min), weapon.getIdValue(baseDamages[4], min), weapon.getIdValue(baseDamages[5], min)];
+                const damagesMax = [weapon.getIdValue(baseDamages[0], max), weapon.getIdValue(baseDamages[1], max), weapon.getIdValue(baseDamages[2], max), weapon.getIdValue(baseDamages[3], max), weapon.getIdValue(baseDamages[4], max), weapon.getIdValue(baseDamages[5], max)];
+
+                // Set Powder Damage
+                if (powder.length > 0) {
+                    setPowderOnNonCraft(damagesMin, powder, min);
+                    setPowderOnNonCraft(damagesMax, powder, max);
+                }
+
+                // Avg. Damages
+                const damages = [
+                    (damagesMin[0] + damagesMax[0]) * 0.5,
+                    (damagesMin[1] + damagesMax[1]) * 0.5,
+                    (damagesMin[2] + damagesMax[2]) * 0.5,
+                    (damagesMin[3] + damagesMax[3]) * 0.5,
+                    (damagesMin[4] + damagesMax[4]) * 0.5,
+                    (damagesMin[5] + damagesMax[5]) * 0.5
+                ];
+
+                // Apply Damage %, Raw ~ Damage and Raw ~ Melee or Spell Damage
+                for (let i = 0; 6 > i; ++i) {
+                    if (damages[i] != 0) {
+                        const sum = sumIds[mainSum.sumIds[i]];
+                        for (const id of sum.multiIds) { // %
+                            let dmg = damages[i] * this.getIdValue(id, sortType) * 0.01;
+                            if (dmg < 0) dmg = 0;
+                            total += dmg;
+                        }
+
+                        for (const id of sum.addIds) { // Raw
+                            totalSub += this.getIdValue(id, sortType);
+                        }
+                    }
+                }
+
+                if (damages[0] || damages[1] || damages[2] || damages[3] || damages[3] || damages[4] || damages[5]) {
+                    // Apply Raw Damages
+                    for (const id of sumIds[mainSum.sumIds[6]].addIds) {
+                        totalSub += this.getIdValue(id, sortType);
+                    }
+
+                    // Apply Raw Elem. Damages
+                    if (damages[1] || damages[2] || damages[3] || damages[4] || damages[5]) {
+                        for (const id of sumIds[mainSum.sumIds[7]].addIds) {
+                            totalSub += this.getIdValue(id, sortType);
+                        }
+                    }
+
+                    // Return Damage
+                    if (mainSum.isDPS) { // if spell dps
+                        total *= weapon.getAttackSpeed();
+                    }
+
+                    return total + totalSub;
+                }
+            }
+        }
+
         return 0;
     }
 
     public getAttackSpeed(): number {
+        if (typeof this.json === "object" && this.json !== null && !Array.isArray(this.json) 
+            && typeof this.json[atkSpdId.itemName] === "string" && this.json[atkSpdId.itemName] !== null) {
+            switch (this.json[atkSpdId.itemName]) {
+                case sFast:
+                    return 4.3;
+                case vFast:
+                    return 3.1;
+                case fast:
+                    return 2.5;
+                case aNormal:
+                    return 2.05;
+                case slow:
+                    return 1.5;
+                case vSlow:
+                    return 0.83;
+                case sSlow:
+                    return 0.51;
+            }
+        }
+
         return 0;
     }
 
     public getName(): string {
+        if (typeof this.json === "object" && this.json !== null && !Array.isArray(this.json) 
+            && typeof this.json[namePos] === "string" && this.json[namePos] !== null) {
+            return this.json[namePos];
+        }
+
         return "";
     }
 
     public getSubType(): string {
+        if (typeof this.json === "object" && this.json !== null && !Array.isArray(this.json) 
+            && typeof this.json[subTypePos] === "string" && this.json[subTypePos] !== null) {
+            return this.json[subTypePos];
+        }
+        
         return "";
     }
 
     public getType(): string {
+        if (typeof this.json === "object" && this.json !== null && !Array.isArray(this.json) 
+            && typeof this.json[typePos] === "string" && this.json[typePos] !== null) {
+            return this.json[typePos];
+        }
+
         return "";
     }
 
     public abstract getIdString(id: number): string;
 
     protected getIdStringBase(id: number, idName: string, fieldPos: string): string {
+        if (idName.length > 0 && typeof this.json === "object" && this.json !== null && !Array.isArray(this.json)) {
+            if (fieldPos.length === 0) {
+                if (typeof this.json[idName] === "string" && this.json[idName] !== null) return this.json[idName];
+            } else {
+                if (typeof this.json[fieldPos] === "object" && this.json[fieldPos] !== null && !Array.isArray(this.json[fieldPos])
+                    && typeof this.json[fieldPos][idName] === "string" && this.json[fieldPos][idName] !== null) return this.json[fieldPos][idName];
+            }
+        }
+
         return "";
     }
 
     public abstract haveFieldPos(id: number): boolean;
 
     public haveFieldPosBase(fieldPos: string): boolean {
-        return false;
+        return fieldPos.length > 0;
     }
 
     public static getBaseId(i: number) {
