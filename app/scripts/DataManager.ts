@@ -96,9 +96,6 @@ export function InitializeData(): boolean {
         setItemData();
         setIngData();
         setOthersData();
-
-        console.log("動いてるよ 個数:");
-        console.log(wynnItems.length);
         
         return true;
     }
@@ -187,6 +184,27 @@ function setIngData(): void {
                         case typeArmouring:
                             armouringData.push(ing);
                             break;
+                        case typeTailoring:
+                            tailoringData.push(ing);
+                            break;
+                        case typeWeaponsmithing:
+                            weaponsmithingData.push(ing);
+                            break;
+                        case typeWoodworking:
+                            woodworkingData.push(ing);
+                            break;
+                        case typeJeweling:
+                            jewelingData.push(ing);
+                            break;
+                        case typeScribing:
+                            scribingData.push(ing);
+                            break;
+                        case typeCooking:
+                            cookingData.push(ing);
+                            break;
+                        case typeAlchemism:
+                            alchemismData.push(ing);
+                            break;
                     }
                 }
             }
@@ -195,5 +213,43 @@ function setIngData(): void {
 }
 
 function setOthersData(): void {
-
+    for (const item of wynnOthersItems) {
+        switch (item.getType()) {
+            case typeTome:
+                tomeData.push(item);
+                switch (item.getSubType()) {
+                    case typeGuildTome:
+                        guildTomeData.push(item);
+                        break;
+                    case typeMarathonTome:
+                        marathonTomeData.push(item);
+                        break;
+                    case typeExpertiseTome:
+                        expertiseTomeData.push(item);
+                        break;
+                    case typeLootrunTome:
+                        lootrunTomeData.push(item);
+                        break;
+                    case typeMysticismTome:
+                        mysticismTomeData.push(item);
+                        break;
+                    case typeWeaponTome:
+                        weaponTomeData.push(item);
+                        break;
+                    case typeArmourTome:
+                        armourTomeData.push(item);
+                        break;
+                }
+                break;
+            case typeCharm:
+                charmData.push(item);
+                break;
+            case typeTool:
+                toolData.push(item);
+                break;
+            case typeMaterial:
+                materialData.push(item);
+                break;
+        }
+    }
 }
