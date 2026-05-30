@@ -1,17 +1,23 @@
 // ID Type
-export const typeObject = "object";
+const typeObject = "object";
 export const typeInt = "int";
 export const typeString = "string";
-export const typeArray = "array";
+const typeArray = "array";
 export const typeSum = "sum";
 
 // Field Pos
 export const reqPos = "requirements";
-export const basePos = "base";
-export const idPos = "identifications";
-export const itemOnlyIdsPos = "itemOnlyIDs";
-export const consumeOnlyIdsPos = "consumableOnlyIDs";
-export const ingModifierPos = "ingredientPositionModifiers";
+const basePos = "base";
+const idPos = "identifications";
+const itemOnlyIdsPos = "itemOnlyIDs";
+const consumeOnlyIdsPos = "consumableOnlyIDs";
+const ingModifierPos = "ingredientPositionModifiers";
+
+// ID Type
+export const identified = "identified";
+export const raw = "raw";
+export const min = "min";
+export const max = "max";
 
 
 export type Identifications = {
@@ -222,10 +228,10 @@ export const ids: Identifications[] = [
     { displayName: "", itemName: "raw_spell_costs", ingName: "", displaySp: "", idType: typeSum, itemFieldPos: "", ingFieldPos: "", sumIds: 44 },
     { displayName: "", itemName: "spell_costs", ingName: "", displaySp: "", idType: typeSum, itemFieldPos: "", ingFieldPos: "", sumIds: 45 },
     { displayName: "", itemName: "damage_appropriate", ingName: "", displaySp: "", idType: typeSum, itemFieldPos: "", ingFieldPos: "", sumIds: 46 },
-    { displayName: "", itemName: "damage_appropriate", ingName: "", displaySp: "", idType: typeSum, itemFieldPos: "", ingFieldPos: "", sumIds: 47 }
+    { displayName: "", itemName: "damage_appropriate", ingName: "", displaySp: "", idType: typeSum, itemFieldPos: "", ingFieldPos: "", sumIds: 47 },
+    { displayName: "", itemName: "damage_appropriate", ingName: "", displaySp: "", idType: typeSum, itemFieldPos: "", ingFieldPos: "", sumIds: 48 }
     ]
 
-    // 後でnumber割り当て直す
 export const idList = new Map<string, number>([
     ["Level", 0],
     ["Strength Req", 1],
@@ -422,8 +428,9 @@ export const idList = new Map<string, number>([
     ["Sum (Total Air Spell DPS)", 192],
     ["Sum (Raw Spell Costs)", 193],
     ["Sum (Spell Costs %)", 194],
-    ["Sum (Melee Damages appropriate)", 195],
-    ["Sum (Spell Damages appropriate)", 196],
+    ["Sum (Melee Damage appropriate)", 195],
+    ["Sum (Melee DPS appropriate)", 196],
+    ["Sum (Spell DPS appropriate)", 197],
 
     ["str", 13],
     ["dex", 14],

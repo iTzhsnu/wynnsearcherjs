@@ -1,7 +1,10 @@
 "use cleint";
 import styles from "./styles.module.css";
+import { InitializeData } from "./scripts/DataManager";
 
 export default function Home() {
+    InitializeData();
+
     return (
     <div className={styles.main}>
             <div className="filter-area">
@@ -122,8 +125,9 @@ export default function Home() {
 
                 <datalist id="ids">
                     <option value="Level"></option>
-                    <option value="Sum (Spell Damages appropriate)"></option>
-                    <option value="Sum (Melee Damages appropriate)"></option>
+                    <option value="Sum (Spell DPS appropriate)"></option>
+                    <option value="Sum (Melee DPS appropriate)"></option>
+                    <option value="Sum (Melee Damage appropriate)"></option>
                     <option value="Strength Req"></option>
                     <option value="Dexterity Req"></option>
                     <option value="Intelligence Req"></option>
