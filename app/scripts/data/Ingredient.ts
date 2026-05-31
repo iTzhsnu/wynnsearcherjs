@@ -2,7 +2,7 @@ import { dDummy, dLootrun, dMerchant, dNever, dNormal, dQuest, dRaid, dSpecific,
 import { haveManualDrop } from "../utils/DataUtils";
 import { JSONValueEx } from "../utils/JSONValueEx";
 import { AItem } from "./AItem";
-import { idDropBy, ids, reqPos, typeInt, typeString } from "./Identifications";
+import { idDropBy, Identifications, ids, reqPos, typeInt, typeString } from "./Identifications";
 
 export const ingSkills = "skills";
 
@@ -90,9 +90,8 @@ export class Ingredient extends AItem {
         return false;
     }
 
-    public getIdString(idNum: number): string {
-        const id = ids[idNum];
-        return this.getIdStringBase(idNum, id.ingName, id.ingFieldPos);
+    public getIdString(id: Identifications): string {
+        return this.getIdStringBase(id.ingName, id.ingFieldPos);
     }
     
     public haveFieldPos(idNum: number): boolean {

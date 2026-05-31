@@ -1,6 +1,6 @@
 import { getItemFromName, setPowderOnNonCraft } from "../utils/DataUtils";
 import { JSONValueEx } from "../utils/JSONValueEx";
-import { ids, typeInt, typeSum } from "./Identifications";
+import { Identifications, ids, typeInt, typeSum } from "./Identifications";
 import { sumIds } from "./SumIds";
 import { raw, min, max, identified, sFast, vFast, fast, aNormal, slow, vSlow, sSlow, namePos, typePos, subTypePos } from "../utils/DataKeys";
 
@@ -8,7 +8,9 @@ const baseDamages = [29, 30, 31, 32, 33, 34];
 const atkSpdId = ids[44];
 
 export abstract class AItem {
-    protected json: JSONValueEx;
+    protected readonly json: JSONValueEx;
+    public readonly filterMinValues: number[] = [0, 0, 0, 0];
+    public readonly filterMaxValues: number[] = [0, 0, 0, 0];
 
     public constructor(json: JSONValueEx) {
         this.json = json;
@@ -358,9 +360,9 @@ export abstract class AItem {
         return "";
     }
 
-    public abstract getIdString(idNum: number): string;
+    public abstract getIdString(id: Identifications): string;
 
-    protected getIdStringBase(idNum: number, idName: string, fieldPos: string): string {
+    protected getIdStringBase(idName: string, fieldPos: string): string {
         if (idName.length > 0 && typeof this.json === "object" && this.json !== null && !Array.isArray(this.json)) {
             if (fieldPos.length === 0) {
                 if (typeof this.json[idName] === "string" && this.json[idName] !== null) return this.json[idName];

@@ -43,3 +43,17 @@ export const dSecretDiscovery = "secret_discovery";
 export const dOther = "other";
 export const dWorldEvent = "world_event";
 export const dSpecific = "specific"; // Drop from specific mobs
+
+// Rarity
+export const rAny = "any";
+export const rNoNormal = "no-normal";
+export const rMythic = "mythic";
+export const rFabled = "fabled";
+export const rLegendary = "legendary";
+export const rRare = "rare";
+export const rUnique = "unique";
+export const rNormal = "normal";
+export const r0Star = "TIER_0";
+export const r1Star = "TIER_1";
+export const r2Star = "TIER_2";
+export const r3Star = "TIER_3";

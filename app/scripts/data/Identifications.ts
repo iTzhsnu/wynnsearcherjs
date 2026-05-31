@@ -30,6 +30,9 @@ export type Identifications = {
     sumIds: number
 }
 
+export const emptyId: Identifications = { displayName: "", itemName: "", ingName: "", displaySp: "", idType: "", itemFieldPos: "", ingFieldPos: "", sumIds: -1 };
+export const rarityId: Identifications = { displayName: "", itemName: "tier", ingName: "tier", displaySp: "", idType: typeString, itemFieldPos: "", ingFieldPos: "", sumIds: -1 };
+
 export const ids: Identifications[] = [
     { displayName: "Lv. Min", itemName: "level", ingName: "level", displaySp: "", idType: typeInt, itemFieldPos: reqPos, ingFieldPos: reqPos, sumIds: -1 },
     { displayName: "Strength Req", itemName: "strength", ingName: "strengthRequirement", displaySp: "", idType: typeInt, itemFieldPos: reqPos, ingFieldPos: itemOnlyIdsPos, sumIds: -1 },

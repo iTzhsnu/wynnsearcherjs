@@ -2,7 +2,7 @@ import { dNever, max, typePos } from "../utils/DataKeys";
 import { haveManualDrop } from "../utils/DataUtils";
 import { JSONValueEx } from "../utils/JSONValueEx";
 import { AItem } from "./AItem";
-import { idDropMeta, idDropRestriction, ids, typeInt, typeString } from "./Identifications";
+import { idDropMeta, idDropRestriction, Identifications, ids, typeInt, typeString } from "./Identifications";
 
 const questReqIdPos = 6;
 const majorIdPos = 65;
@@ -122,9 +122,8 @@ export class Item extends AItem {
         return false;
     }
 
-    public getIdString(idNum: number): string {
-        const id = ids[idNum];
-        return this.getIdStringBase(idNum, id.itemName, id.itemFieldPos);
+    public getIdString(id: Identifications): string {
+        return this.getIdStringBase(id.itemName, id.itemFieldPos);
     }
 
     public haveFieldPos(idNum: number): boolean {

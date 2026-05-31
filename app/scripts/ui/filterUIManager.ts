@@ -1,3 +1,4 @@
+import { rAny, rNoNormal, rMythic, rFabled, rLegendary, rRare, rUnique, rNormal, r0Star, r1Star, r2Star, r3Star } from "../utils/DataKeys";
 
 
 export const typeEquip = "equipments";
@@ -29,21 +30,21 @@ function changeRarityType(type: string) {
     switch (type) {
         case typeEquip:
         case typeOthers:
-            comboBox.options.add(new Option("Rarity: Any", "any"));
-            comboBox.options.add(new Option("Rarity: No Normal", "no-normal"));
-            comboBox.options.add(new Option("Rarity: Mythic", "mythic"));
-            comboBox.options.add(new Option("Rarity: Fabled", "fabled"));
-            comboBox.options.add(new Option("Rarity: Legendary", "legendary"));
-            comboBox.options.add(new Option("Rarity: Rare", "rare"));
-            comboBox.options.add(new Option("Rarity: Unique", "unique"));
-            comboBox.options.add(new Option("Rarity: Normal", "normal"));
+            comboBox.options.add(new Option("Rarity: Any", rAny));
+            comboBox.options.add(new Option("Rarity: No Normal", rNoNormal));
+            comboBox.options.add(new Option("Rarity: Mythic", rMythic));
+            comboBox.options.add(new Option("Rarity: Fabled", rFabled));
+            comboBox.options.add(new Option("Rarity: Legendary", rLegendary));
+            comboBox.options.add(new Option("Rarity: Rare", rRare));
+            comboBox.options.add(new Option("Rarity: Unique", rUnique));
+            comboBox.options.add(new Option("Rarity: Normal", rNormal));
             break;
         case typeIng:
-            comboBox.options.add(new Option("Rarity: Any", "any"));
-            comboBox.options.add(new Option("Rarity: 0 Star", "star0"));
-            comboBox.options.add(new Option("Rarity: 1 Star", "star1"));
-            comboBox.options.add(new Option("Rarity: 2 Star", "star2"));
-            comboBox.options.add(new Option("Rarity: 3 Star", "star3"));
+            comboBox.options.add(new Option("Rarity: Any", rAny));
+            comboBox.options.add(new Option("Rarity: 0 Star", r0Star));
+            comboBox.options.add(new Option("Rarity: 1 Star", r1Star));
+            comboBox.options.add(new Option("Rarity: 2 Star", r2Star));
+            comboBox.options.add(new Option("Rarity: 3 Star", r3Star));
             break;
     }
 }

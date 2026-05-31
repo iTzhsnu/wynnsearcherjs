@@ -108,8 +108,8 @@ export default function Home() {
                     <input id="id-range-max-1" className={styles.ids_range} />
 
                     <select className={styles.sort_type} id="sort_type">
-                        <option value="min">Sort: Min</option>
                         <option value="max">Sort: Max</option>
+                        <option value="min">Sort: Min</option>
                     </select>
                 </div>
 
