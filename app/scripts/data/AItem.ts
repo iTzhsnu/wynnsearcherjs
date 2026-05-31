@@ -51,13 +51,13 @@ export abstract class AItem {
         return 0;
     }
 
-    public haveId(idNum: number, howToObtain: JSONValueEx, min: string, max: string): boolean {
+    public haveId(idNum: number, howToObtain: JSONValueEx, filterMin: string, filterMax: string): boolean {
         const id = ids[idNum];
         if (id.idType !== typeSum) {
-            return this.haveIdValue(idNum, howToObtain, min, max);
+            return this.haveIdValue(idNum, howToObtain, filterMin, filterMax);
         } else {
             if (idNum >= 195 || idNum <= 197) { // SUM (Spell Appro~) or SUM (Melee Appro~)
-                return this.haveDamageAppropriateSumId(id.sumIds, min, max);
+                return this.haveDamageAppropriateSumId(id.sumIds, filterMin, filterMax);
             }
 
             let need = false;
@@ -66,7 +66,7 @@ export abstract class AItem {
 
             if (sum.sumIds.length > 0) { // if sum in sum
                 for (const sumId of sum.sumIds) {
-                    const has = this.haveId(sumId, howToObtain, min, max);
+                    const has = this.haveId(sumId, howToObtain, filterMin, filterMax);
                     if (has) {
                         need = true;
                     } else {
@@ -75,7 +75,7 @@ export abstract class AItem {
                 }
             } else { // if normal sum
                 for (const baseId of sum.baseIds) {
-                const has = this.haveIdValue(baseId, howToObtain, min, max);
+                const has = this.haveIdValue(baseId, howToObtain, filterMin, filterMax);
                 if (has) {
                     need = true;
                 } else {
@@ -92,12 +92,12 @@ export abstract class AItem {
         }
     }
 
-    public abstract haveIdValue(idNum: number, howToObtain: JSONValueEx, min: string, max: string): boolean;
+    public abstract haveIdValue(idNum: number, howToObtain: JSONValueEx, filterMin: string, filterMax: string): boolean;
 
-    public getTotalSumFloat(sumNum: number, sortType: string, min: string, max: string): number {
+    public getTotalSumFloat(sumNum: number, sortType: string, filterMin: string, filterMax: string): number {
         // TODO set value => a, b
         if (sumNum >= 195 && sumNum <= 197) {
-            return this.getDamAppropriateSumFloat(sumNum, sortType, min, max);
+            return this.getDamAppropriateSumFloat(sumNum, sortType, filterMin, filterMax);
         }
 
         const sum = sumIds[sumNum];
@@ -359,9 +359,9 @@ export abstract class AItem {
         return "";
     }
 
-    public abstract getIdString(id: number): string;
+    public abstract getIdString(idNum: number): string;
 
-    protected getIdStringBase(id: number, idName: string, fieldPos: string): string {
+    protected getIdStringBase(idNum: number, idName: string, fieldPos: string): string {
         if (idName.length > 0 && typeof this.json === "object" && this.json !== null && !Array.isArray(this.json)) {
             if (fieldPos.length === 0) {
                 if (typeof this.json[idName] === "string" && this.json[idName] !== null) return this.json[idName];
@@ -374,17 +374,17 @@ export abstract class AItem {
         return "";
     }
 
-    public abstract haveFieldPos(id: number): boolean;
+    public abstract haveFieldPos(idNum: number): boolean;
 
     public haveFieldPosBase(fieldPos: string): boolean {
         return fieldPos.length > 0;
     }
 
-    public static getBaseId(i: number) {
-        return Math.round(i / 1.3);
+    public static getBaseId(idNum: number) {
+        return Math.round(idNum / 1.3);
     }
 
-    public static isReversedId(id: number): boolean {
-        return id >= 66 && id <= 73;
+    public static isReversedId(idNum: number): boolean {
+        return idNum >= 66 && idNum <= 73;
     }
 }

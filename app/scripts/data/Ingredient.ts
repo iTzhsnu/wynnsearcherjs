@@ -10,7 +10,7 @@ export class Ingredient extends AItem {
         return this.getIdValueBase(idNum, id.ingName, id.ingFieldPos, sortType);
     }
 
-    public haveIdValue(idNum: number, howToObtain: JSONValueEx, min: string, max: string): boolean {
+    public haveIdValue(idNum: number, howToObtain: JSONValueEx, filterMin: string, filterMax: string): boolean {
 
         return false;
     }
