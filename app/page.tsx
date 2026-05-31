@@ -3,6 +3,8 @@
 import styles from "./styles.module.css";
 import { useEffect } from 'react';
 import { InitializeData } from "./scripts/DataManager";
+import { changeItemType, changeTomeType, typeEquip, typeIng, typeOthers } from "./scripts/ui/filterUIManager";
+import { search } from "./scripts/Search";
 
 export default function Home() {
     useEffect(() => {
@@ -13,14 +15,14 @@ export default function Home() {
     <div className={styles.main}>
             <div className="filter-area">
                 <input className={styles.search_input} type="text" id="name-filter-field" placeholder="Name Filter"/>
-                <button className={styles.search_button} id="search-button">Search</button>
+                <button className={styles.search_button} id="search-button" onClick={() => {search()}}>Search</button>
                 
                 <div className={styles.inline_block}>
                     <div>
-                        <select className={styles.item_type} id="item-type-select">
-                            <option value="equipments">Type: Equipments</option>
-                            <option value="ingredients">Type: Ingredients</option>
-                            <option value="others">Type: Others</option>
+                        <select className={styles.item_type} id="item-type-select" onChange={(e) => {changeItemType(e.target.value)}}>
+                            <option value={typeEquip}>Type: Equipments</option>
+                            <option value={typeIng}>Type: Ingredients</option>
+                            <option value={typeOthers}>Type: Others</option>
                         </select>
                     </div>
 
@@ -39,7 +41,7 @@ export default function Home() {
                 </div>
                 
 
-                <div className={styles.inline_block}>
+                <div id="equip-cb-parent" style={{display: "inline-block"}}>
                     <label className={styles.type_label}><input className={styles.type_checkbox} type="checkbox" id="bow-checkbox" />Bow</label>
                     <label className={styles.type_label}><input className={styles.type_checkbox} type="checkbox" id="spear-checkbox" />Spear</label>
                     <label className={styles.type_label}><input className={styles.type_checkbox} type="checkbox" id="wand-checkbox" />Wand</label>
@@ -57,9 +59,41 @@ export default function Home() {
                         <label className={styles.type_label}><input className={styles.type_checkbox} type="checkbox" id="necklace-checkbox" />Necklace</label>
                     </div>
                 </div>
+                <div id="ing-cb-parent" style={{display: "none"}}>
+                    <label className={styles.type_label}><input className={styles.type_checkbox} type="checkbox" id="armouring-checkbox" />Armouring</label>
+                    <label className={styles.type_label}><input className={styles.type_checkbox} type="checkbox" id="tailoring-checkbox" />Tailoring</label>
+                    <label className={styles.type_label}><input className={styles.type_checkbox} type="checkbox" id="weaponsmithing-checkbox" />Weaponsmithing</label>
+                    <label className={styles.type_label}><input className={styles.type_checkbox} type="checkbox" id="woodworking-checkbox" />Woodworking</label>
+
+                    <div>
+                        <label className={styles.type_label}><input className={styles.type_checkbox} type="checkbox" id="jeweling-checkbox" />Jeweling</label>
+                        <label className={styles.type_label}><input className={styles.type_checkbox} type="checkbox" id="scribing-checkbox" />Scribing</label>
+                        <label className={styles.type_label}><input className={styles.type_checkbox} type="checkbox" id="cooking-checkbox" />Cooking</label>
+                        <label className={styles.type_label}><input className={styles.type_checkbox} type="checkbox" id="alchemism-checkbox" />Alchemism</label>
+                    </div>
+                </div>
+                <div id="other-cb-parent" style={{display: "none"}}>
+                    <label className={styles.type_label}><input className={styles.type_checkbox} type="checkbox" id="tome-checkbox" onChange={(e) => {changeTomeType(e.target.checked)}} />Tome</label>
+                    <label className={styles.type_label}><input className={styles.type_checkbox} type="checkbox" id="charm-checkbox" />Charm</label>
+                    <label className={styles.type_label}><input className={styles.type_checkbox} type="checkbox" id="tool-checkbox" />Tool</label>
+                    <label className={styles.type_label}><input className={styles.type_checkbox} type="checkbox" id="material-checkbox" />Material</label>
+
+                    <div id="tome-cb-parent1" style={{display: "none"}}>
+                        <label className={styles.type_label}><input className={styles.type_checkbox} type="checkbox" id="expertise-checkbox" defaultChecked={true} />Expertise</label>
+                        <label className={styles.type_label}><input className={styles.type_checkbox} type="checkbox" id="mysticism-checkbox" defaultChecked={true} />Mysticism</label>
+                    </div>
+
+                    <div id="tome-cb-parent2" style={{display: "none"}}>
+                        <label className={styles.type_label}><input className={styles.type_checkbox} type="checkbox" id="armour-checkbox" defaultChecked={true} />Armour</label>
+                        <label className={styles.type_label}><input className={styles.type_checkbox} type="checkbox" id="guild-checkbox" defaultChecked={true} />Guild</label>
+                        <label className={styles.type_label}><input className={styles.type_checkbox} type="checkbox" id="weapon-checkbox" defaultChecked={true} />Weapon</label>
+                        <label className={styles.type_label}><input className={styles.type_checkbox} type="checkbox" id="marathon-checkbox" defaultChecked={true} />Marathon</label>
+                        <label className={styles.type_label}><input className={styles.type_checkbox} type="checkbox" id="lootrun-checkbox" defaultChecked={true} />Lootrun</label>
+                    </div>
+                </div>
 
                 <div>
-                    Sort:  
+                    Sort:
                     <input id="id-box-11" list="ids" className={styles.ids_box} defaultValue="Level" />
                     +
                     <input id="id-box-12" list="ids" className={styles.ids_box} />
