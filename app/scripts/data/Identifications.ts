@@ -1,3 +1,5 @@
+import { dAltar, dChallenge, dDiscontinued, dDungeonMerchant, dDungeon, dLegendaryIsland, dLootChest, dLootrun, dMerchant, dMiniboss, dNever, dNormal, dOther, dQuest, dRaid, dSecretDiscovery, dSpecific, dTheQiraHive, dUnobtainable, dWorldEvent } from "../utils/DataKeys";
+
 // ID Type
 const typeObject = "object";
 export const typeInt = "int";
@@ -12,6 +14,10 @@ const idPos = "identifications";
 const itemOnlyIdsPos = "itemOnlyIDs";
 const consumeOnlyIdsPos = "consumableOnlyIDs";
 const ingModifierPos = "ingredientPositionModifiers";
+
+export const idDropRestriction = "dropRestriction";
+export const idDropBy = "droppedBy";
+export const idDropMeta = "dropMeta";
 
 export type Identifications = {
     displayName: string,
@@ -154,26 +160,26 @@ export const ids: Identifications[] = [
     { displayName: "Ingredient Effectiveness (Left)", itemName: "", ingName: "left", displaySp: "%", idType: typeInt, itemFieldPos: "", ingFieldPos: ingModifierPos, sumIds: -1 },
     { displayName: "Ingredient Effectiveness (Touch)", itemName: "", ingName: "touching", displaySp: "%", idType: typeInt, itemFieldPos: "", ingFieldPos: ingModifierPos, sumIds: -1 },
     { displayName: "Ingredient Effectiveness (Not Touch)", itemName: "", ingName: "notTouching", displaySp: "%", idType: typeInt, itemFieldPos: "", ingFieldPos: ingModifierPos, sumIds: -1 },
-    { displayName: "normal", itemName: "dropRestriction", ingName: "droppedBy", displaySp: "", idType: typeString, itemFieldPos: "", ingFieldPos: "", sumIds: -1 },
-    { displayName: "lootchest", itemName: "dropRestriction", ingName: "droppedBy", displaySp: "", idType: typeString, itemFieldPos: "", ingFieldPos: "", sumIds: -1 },
-    { displayName: "raid", itemName: "dropRestriction", ingName: "droppedBy", displaySp: "", idType: typeString, itemFieldPos: "", ingFieldPos: "", sumIds: -1 },
-    { displayName: "dungeon", itemName: "dropRestriction", ingName: "droppedBy", displaySp: "", idType: typeString, itemFieldPos: "", ingFieldPos: "", sumIds: -1 },
-    { displayName: "dungeonMerchant", itemName: "dropRestriction", ingName: "droppedBy", displaySp: "", idType: typeString, itemFieldPos: "", ingFieldPos: "", sumIds: -1 },
-    { displayName: "altar", itemName: "dropRestriction", ingName: "droppedBy", displaySp: "", idType: typeString, itemFieldPos: "", ingFieldPos: "", sumIds: -1 },
-    { displayName: "discontinued", itemName: "dropRestriction", ingName: "droppedBy", displaySp: "", idType: typeString, itemFieldPos: "", ingFieldPos: "", sumIds: -1 },
-    { displayName: "never", itemName: "dropRestriction", ingName: "droppedBy", displaySp: "", idType: typeString, itemFieldPos: "", ingFieldPos: "", sumIds: -1 },
-    { displayName: "merchant", itemName: "dropRestriction", ingName: "droppedBy", displaySp: "", idType: typeString, itemFieldPos: "", ingFieldPos: "", sumIds: -1 },
-    { displayName: "quest", itemName: "dropRestriction", ingName: "droppedBy", displaySp: "", idType: typeString, itemFieldPos: "", ingFieldPos: "", sumIds: -1 },
-    { displayName: "unobtainable", itemName: "dropRestriction", ingName: "droppedBy", displaySp: "", idType: typeString, itemFieldPos: "", ingFieldPos: "", sumIds: -1 },
-    { displayName: "specific", itemName: "dropRestriction", ingName: "droppedBy", displaySp: "", idType: typeString, itemFieldPos: "", ingFieldPos: "", sumIds: -1 },
-    { displayName: "secret_discovery", itemName: "dropRestriction", ingName: "droppedBy", displaySp: "", idType: typeString, itemFieldPos: "", ingFieldPos: "", sumIds: -1 },
-    { displayName: "the_qira_hive", itemName: "dropRestriction", ingName: "droppedBy", displaySp: "", idType: typeString, itemFieldPos: "", ingFieldPos: "", sumIds: -1 },
-    { displayName: "legendary_island", itemName: "dropRestriction", ingName: "droppedBy", displaySp: "", idType: typeString, itemFieldPos: "", ingFieldPos: "", sumIds: -1 },
-    { displayName: "world_event", itemName: "dropRestriction", ingName: "droppedBy", displaySp: "", idType: typeString, itemFieldPos: "", ingFieldPos: "", sumIds: -1 },
-    { displayName: "lootrun", itemName: "dropRestriction", ingName: "droppedBy", displaySp: "", idType: typeString, itemFieldPos: "", ingFieldPos: "", sumIds: -1 },
-    { displayName: "miniboss", itemName: "dropRestriction", ingName: "droppedBy", displaySp: "", idType: typeString, itemFieldPos: "", ingFieldPos: "", sumIds: -1 },
-    { displayName: "challenge", itemName: "dropRestriction", ingName: "droppedBy", displaySp: "", idType: typeString, itemFieldPos: "", ingFieldPos: "", sumIds: -1 },
-    { displayName: "other", itemName: "dropRestriction", ingName: "droppedBy", displaySp: "", idType: typeString, itemFieldPos: "", ingFieldPos: "", sumIds: -1 },
+    { displayName: dNormal, itemName: idDropRestriction, ingName: idDropBy, displaySp: "", idType: typeString, itemFieldPos: "", ingFieldPos: "", sumIds: -1 },
+    { displayName: dLootChest, itemName: idDropRestriction, ingName: idDropBy, displaySp: "", idType: typeString, itemFieldPos: "", ingFieldPos: "", sumIds: -1 },
+    { displayName: dRaid, itemName: idDropRestriction, ingName: idDropBy, displaySp: "", idType: typeString, itemFieldPos: "", ingFieldPos: "", sumIds: -1 },
+    { displayName: dDungeon, itemName: idDropRestriction, ingName: idDropBy, displaySp: "", idType: typeString, itemFieldPos: "", ingFieldPos: "", sumIds: -1 },
+    { displayName: dDungeonMerchant, itemName: idDropRestriction, ingName: idDropBy, displaySp: "", idType: typeString, itemFieldPos: "", ingFieldPos: "", sumIds: -1 },
+    { displayName: dAltar, itemName: idDropRestriction, ingName: idDropBy, displaySp: "", idType: typeString, itemFieldPos: "", ingFieldPos: "", sumIds: -1 },
+    { displayName: dDiscontinued, itemName: idDropRestriction, ingName: idDropBy, displaySp: "", idType: typeString, itemFieldPos: "", ingFieldPos: "", sumIds: -1 },
+    { displayName: dNever, itemName: idDropRestriction, ingName: idDropBy, displaySp: "", idType: typeString, itemFieldPos: "", ingFieldPos: "", sumIds: -1 },
+    { displayName: dMerchant, itemName: idDropRestriction, ingName: idDropBy, displaySp: "", idType: typeString, itemFieldPos: "", ingFieldPos: "", sumIds: -1 },
+    { displayName: dQuest, itemName: idDropRestriction, ingName: idDropBy, displaySp: "", idType: typeString, itemFieldPos: "", ingFieldPos: "", sumIds: -1 },
+    { displayName: dUnobtainable, itemName: idDropRestriction, ingName: idDropBy, displaySp: "", idType: typeString, itemFieldPos: "", ingFieldPos: "", sumIds: -1 },
+    { displayName: dSpecific, itemName: idDropRestriction, ingName: idDropBy, displaySp: "", idType: typeString, itemFieldPos: "", ingFieldPos: "", sumIds: -1 },
+    { displayName: dSecretDiscovery, itemName: idDropRestriction, ingName: idDropBy, displaySp: "", idType: typeString, itemFieldPos: "", ingFieldPos: "", sumIds: -1 },
+    { displayName: dTheQiraHive, itemName: idDropRestriction, ingName: idDropBy, displaySp: "", idType: typeString, itemFieldPos: "", ingFieldPos: "", sumIds: -1 },
+    { displayName: dLegendaryIsland, itemName: idDropRestriction, ingName: idDropBy, displaySp: "", idType: typeString, itemFieldPos: "", ingFieldPos: "", sumIds: -1 },
+    { displayName: dWorldEvent, itemName: idDropRestriction, ingName: idDropBy, displaySp: "", idType: typeString, itemFieldPos: "", ingFieldPos: "", sumIds: -1 },
+    { displayName: dLootrun, itemName: idDropRestriction, ingName: idDropBy, displaySp: "", idType: typeString, itemFieldPos: "", ingFieldPos: "", sumIds: -1 },
+    { displayName: dMiniboss, itemName: idDropRestriction, ingName: idDropBy, displaySp: "", idType: typeString, itemFieldPos: "", ingFieldPos: "", sumIds: -1 },
+    { displayName: dChallenge, itemName: idDropRestriction, ingName: idDropBy, displaySp: "", idType: typeString, itemFieldPos: "", ingFieldPos: "", sumIds: -1 },
+    { displayName: dOther, itemName: idDropRestriction, ingName: idDropBy, displaySp: "", idType: typeString, itemFieldPos: "", ingFieldPos: "", sumIds: -1 },
     { displayName: "Set", itemName: "sets", ingName: "", displaySp: "", idType: typeString, itemFieldPos: "", ingFieldPos: "", sumIds: -1 },
     { displayName: "", itemName: "total_health", ingName: "total_health", displaySp: "", idType: typeSum, itemFieldPos: "", ingFieldPos: "", sumIds: 1 },
     { displayName: "", itemName: "total_hp_regen", ingName: "total_hp_regen", displaySp: "", idType: typeSum, itemFieldPos: "", ingFieldPos: "", sumIds: 2 },
@@ -221,8 +227,7 @@ export const ids: Identifications[] = [
     { displayName: "", itemName: "raw_spell_costs", ingName: "", displaySp: "", idType: typeSum, itemFieldPos: "", ingFieldPos: "", sumIds: 44 },
     { displayName: "", itemName: "spell_costs", ingName: "", displaySp: "", idType: typeSum, itemFieldPos: "", ingFieldPos: "", sumIds: 45 },
     { displayName: "", itemName: "damage_appropriate", ingName: "", displaySp: "", idType: typeSum, itemFieldPos: "", ingFieldPos: "", sumIds: 46 },
-    { displayName: "", itemName: "damage_appropriate", ingName: "", displaySp: "", idType: typeSum, itemFieldPos: "", ingFieldPos: "", sumIds: 47 },
-    { displayName: "", itemName: "damage_appropriate", ingName: "", displaySp: "", idType: typeSum, itemFieldPos: "", ingFieldPos: "", sumIds: 48 }
+    { displayName: "", itemName: "damage_appropriate", ingName: "", displaySp: "", idType: typeSum, itemFieldPos: "", ingFieldPos: "", sumIds: 47 }
     ]
 
 export const idList = new Map<string, number>([
@@ -421,9 +426,9 @@ export const idList = new Map<string, number>([
     ["Sum (Total Air Spell DPS)", 192],
     ["Sum (Raw Spell Costs)", 193],
     ["Sum (Spell Costs %)", 194],
-    ["Sum (Melee Damage appropriate)", 195],
-    ["Sum (Melee DPS appropriate)", 196],
-    ["Sum (Spell DPS appropriate)", 197],
+    ["Sum (Melee appropriate)", 195],
+    ["Sum (Spell appropriate)", 196],
+
 
     ["str", 13],
     ["dex", 14],

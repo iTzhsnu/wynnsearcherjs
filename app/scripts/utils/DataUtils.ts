@@ -2,6 +2,8 @@ import { Item } from "../data/Item";
 import { wynnItems } from "../DataManager";
 
 import powderData from "../../json/powders.json"
+import { JSONValueEx } from "./JSONValueEx";
+import { dNormal, dLootChest, dNever, dDungeon, dDungeonMerchant, dRaid, dAltar, dMerchant, dLootrun, dEvent, dDummy, dChallenge, dQuest, dMiniboss, dDiscontinued, dUnobtainable, dLegendaryIsland, dTheQiraHive, dSecretDiscovery, dOther, dWorldEvent, dSpecific } from "./DataKeys";
 
 export let itemDataCache: Item | null = null;
 export function getItemFromName(name: string): Item | null {
@@ -36,4 +38,79 @@ export function setPowderOnNonCraft(damages: number[], powderText: string, sortT
     }
 
     damages[0] = neutral;
+}
+
+export function haveManualDrop(json: JSONValueEx, itemName: string): number {
+    if (typeof json === "object" && json !== null && !Array.isArray(json)) {
+        // Normal
+        if (Array.isArray(json[dNormal])) {
+            for (const j of json[dNormal]) {
+                if (typeof j === "string" && j === itemName) return 11;
+            }
+        }
+
+        // Unobtainable
+        if (Array.isArray(json[dUnobtainable])) {
+            for (const j of json[dUnobtainable]) {
+                if (typeof j === "string" && j === itemName) return 1;
+            }
+        }
+
+        // Dungeon and Forgery Chest
+        if (typeof json[dDungeon] === "object" && json[dDungeon] !== null && !Array.isArray(json[dDungeon]) 
+            && typeof json[dDungeon][itemName] !== "undefined" && json[dDungeon][itemName] !== null) return 2;
+
+        // Legendary Island
+        if (Array.isArray(json[dLegendaryIsland])) {
+            for (const j of json[dLegendaryIsland]) {
+                if (typeof j === "string" && j === itemName) return 3;
+            }
+        }
+
+        // Merchant
+        if (typeof json[dMerchant] === "object" && json[dMerchant] !== null && !Array.isArray(json[dMerchant]) 
+            && typeof json[dMerchant][itemName] !== "undefined" && json[dMerchant][itemName] !== null) return 4;
+
+        // The Qira Hive
+        if (typeof json[dTheQiraHive] === "object" && json[dTheQiraHive] !== null && !Array.isArray(json[dTheQiraHive]) 
+            && typeof json[dTheQiraHive][itemName] !== "undefined" && json[dTheQiraHive][itemName] !== null) return 5;
+
+        // Secret Discovery
+        if (typeof json[dSecretDiscovery] === "object" && json[dSecretDiscovery] !== null && !Array.isArray(json[dSecretDiscovery]) 
+            && typeof json[dSecretDiscovery][itemName] !== "undefined" && json[dSecretDiscovery][itemName] !== null) return 6;
+
+        // Quest Rewards
+        if (typeof json[dQuest] === "object" && json[dQuest] !== null && !Array.isArray(json[dQuest]) 
+            && typeof json[dQuest][itemName] !== "undefined" && json[dQuest][itemName] !== null) return 7;
+
+        // Specific
+        if (typeof json[dSpecific] === "object" && json[dSpecific] !== null && !Array.isArray(json[dSpecific]) 
+            && typeof json[dSpecific][itemName] !== "undefined" && json[dSpecific][itemName] !== null) return 8;
+
+        // Raid Rewards
+        if (typeof json[dRaid] === "object" && json[dRaid] !== null && !Array.isArray(json[dRaid]) 
+            && typeof json[dRaid][itemName] !== "undefined" && json[dRaid][itemName] !== null) return 9;
+
+        // Other
+        if (typeof json[dOther] === "object" && json[dOther] !== null && !Array.isArray(json[dOther]) 
+            && typeof json[dOther][itemName] !== "undefined" && json[dOther][itemName] !== null) return 10;
+
+        // Dungeon Merchant
+        if (typeof json[dDungeonMerchant] === "object" && json[dDungeonMerchant] !== null && !Array.isArray(json[dDungeonMerchant]) 
+            && typeof json[dDungeonMerchant][itemName] !== "undefined" && json[dDungeonMerchant][itemName] !== null) return 12;
+
+        // Discontinued
+        if (typeof json[dDiscontinued] === "object" && json[dDiscontinued] !== null && !Array.isArray(json[dDiscontinued]) 
+            && typeof json[dDiscontinued][itemName] !== "undefined" && json[dDiscontinued][itemName] !== null) return 13;
+
+        // World Event
+        if (typeof json[dWorldEvent] === "object" && json[dWorldEvent] !== null && !Array.isArray(json[dWorldEvent]) 
+            && typeof json[dWorldEvent][itemName] !== "undefined" && json[dWorldEvent][itemName] !== null) return 15;
+
+        // Lootrun
+        if (typeof json[dLootrun] === "object" && json[dLootrun] !== null && !Array.isArray(json[dLootrun]) 
+            && typeof json[dLootrun][itemName] !== "undefined" && json[dLootrun][itemName] !== null) return 16;
+    }
+    
+    return 0;
 }

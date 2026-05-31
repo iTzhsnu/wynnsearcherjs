@@ -129,9 +129,8 @@ export default function Home() {
 
                 <datalist id="ids">
                     <option value="Level"></option>
-                    <option value="Sum (Spell DPS appropriate)"></option>
-                    <option value="Sum (Melee DPS appropriate)"></option>
-                    <option value="Sum (Melee Damage appropriate)"></option>
+                    <option value="Sum (Spell appropriate)"></option>
+                    <option value="Sum (Melee appropriate)"></option>
                     <option value="Strength Req"></option>
                     <option value="Dexterity Req"></option>
                     <option value="Intelligence Req"></option>

@@ -56,7 +56,7 @@ export abstract class AItem {
         if (id.idType !== typeSum) {
             return this.haveIdValue(idNum, howToObtain, filterMin, filterMax);
         } else {
-            if (idNum >= 195 || idNum <= 197) { // SUM (Spell Appro~) or SUM (Melee Appro~)
+            if (idNum === 195 || idNum === 196) { // SUM (Spell Appro~) or SUM (Melee Appro~)
                 return this.haveDamageAppropriateSumId(id.sumIds, filterMin, filterMax);
             }
 
@@ -95,8 +95,7 @@ export abstract class AItem {
     public abstract haveIdValue(idNum: number, howToObtain: JSONValueEx, filterMin: string, filterMax: string): boolean;
 
     public getTotalSumFloat(sumNum: number, sortType: string, filterMin: string, filterMax: string): number {
-        // TODO set value => a, b
-        if (sumNum >= 195 && sumNum <= 197) {
+        if (sumNum === 46 || sumNum === 47) {
             return this.getDamAppropriateSumFloat(sumNum, sortType, filterMin, filterMax);
         }
 
