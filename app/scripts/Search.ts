@@ -29,7 +29,7 @@ export function search(): void {
             break;
     }
 
-    sort(itemType);
+    setSortedDisplay(itemType);
 }
 
 function resetUI() {
@@ -330,7 +330,7 @@ function filterFromId(idNums: (number | undefined)[], filterMin: string, filterM
     }
 }
 
-function filterFromRarity(itemType: string): void {
+function filterFromRarity(): void {
     const rarity = (<HTMLSelectElement>document.getElementById("rarity-type-select")).value;
 
     if (rarity !== rAny) {
@@ -403,7 +403,7 @@ function filter(itemType: string, howToObtain: JSONValueEx): void {
     filterFromId(idBoxes3, filterMin3, filterMax3, howToObtain, itemType);
     filterFromId(idBoxes4, filterMin4, filterMax4, howToObtain, itemType);
 
-    filterFromRarity(itemType);
+    filterFromRarity();
     filterFromName((<HTMLInputElement>document.getElementById("name-filter-field")).value);
 
     resetFilterValue();
@@ -418,8 +418,12 @@ function filter(itemType: string, howToObtain: JSONValueEx): void {
     filterFromIdRange(3, filterMin4, filterMax4);
 }
 
-function sort(itemType: string): void {
+function setSortedDisplay(itemType: string): void {
+    foundItems.sort(compareIdValue);
 
+    for (const item of foundItems) {
+        console.log(item.getName());
+    }
 }
 
 
@@ -502,8 +506,12 @@ function getIdNameFromType(id: Identifications, itemType: string): string {
     return id.itemName;
 }
 
-function getIdFieldPosFromType(id: Identifications, itemType: string): string {
-    if (itemType === typeIng) return id.ingFieldPos;
+function compareIdValue(a: AItem, b: AItem): number {
+    if (b.filterMaxValues[0] > a.filterMaxValues[0]) {
+        return -1;
+    } else if (a.filterMaxValues[0] > b.filterMaxValues[0]) {
+        return 1;
+    }
 
-    return id.itemFieldPos;
+    return 0;
 }
