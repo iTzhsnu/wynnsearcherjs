@@ -2,6 +2,8 @@ import { AItem } from "../data/AItem";
 import { rarityId } from "../data/Identifications";
 import { r1Star, r2Star, r3Star, rFabled, rLegendary, rMythic, rRare, rUnique } from "../utils/DataKeys";
 
+import styles from "../../styles.module.css";
+
 export abstract class AItemUI {
     protected readonly base: HTMLElement;
 
@@ -9,12 +11,7 @@ export abstract class AItemUI {
         const parent = document.getElementById("result-box") as HTMLElement;
 
         this.base = document.createElement("div");
-        this.base.style.display = "inline-block";
-        this.base.style.border = "1px solid";
-        this.base.style.borderRadius = "5px"
-        this.base.style.borderColor = "silver";
-        this.base.style.display = "inline-block";
-        this.base.style.fontSize = "12px";
+        this.base.style = styles.item_display_area;
         
         // Set Background Color by Rarity
         switch (item.getIdString(rarityId)) {
