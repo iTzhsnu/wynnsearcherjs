@@ -1,5 +1,5 @@
 import { AItem } from "./data/AItem";
-import { idList, Identifications, ids, emptyId, rarityId } from "./data/Identifications";
+import { idList, Identifications, ids, emptyId, rarityId, typeInt, typeSum, typeString } from "./data/Identifications";
 import { typeEquip, typeIng, typeOthers } from "./ui/filterUIManager";
 import { JSONValueEx } from "./utils/JSONValueEx";
 
@@ -8,6 +8,7 @@ import ingManualDrop from "../json/manual_ingredient_drop.json"
 import othersManualDrop from "../json/manual_other_drop.json"
 import { wynnItems, wynnIngs, wynnOthersItems, bowData, spearData, wandData, daggerData, relikData, helmetData, chestplateData, leggingsData, bootsData, ringData, braceletData, necklaceData, armouringData, tailoringData, weaponsmithingData, woodworkingData, jewelingData, scribingData, cookingData, alchemismData, tomeData, charmData, toolData, materialData, armourTomeData, guildTomeData, weaponTomeData, marathonTomeData, lootrunTomeData, expertiseTomeData, mysticismTomeData, typeArmouring, typeTailoring, typeWeaponsmithing, typeWoodworking, typeJeweling, typeScribing, typeCooking } from "./DataManager";
 import { rAny, rNoNormal, rNormal, min, max } from "./utils/DataKeys";
+import { sumIds } from "./data/SumIds";
 
 const foundItems: AItem[] = [];
 const displayedIds: string[] = [];
@@ -392,29 +393,29 @@ function filter(itemType: string, howToObtain: JSONValueEx): void {
     const filterMin3 = (<HTMLInputElement>document.getElementById("id-range-min-3")).value;
     const filterMin4 = (<HTMLInputElement>document.getElementById("id-range-min-4")).value;
 
-    const filtermax1 = (<HTMLInputElement>document.getElementById("id-range-max-1")).value;
-    const filtermax2 = (<HTMLInputElement>document.getElementById("id-range-max-2")).value;
-    const filtermax3 = (<HTMLInputElement>document.getElementById("id-range-max-3")).value;
-    const filtermax4 = (<HTMLInputElement>document.getElementById("id-range-max-4")).value;
+    const filterMax1 = (<HTMLInputElement>document.getElementById("id-range-max-1")).value;
+    const filterMax2 = (<HTMLInputElement>document.getElementById("id-range-max-2")).value;
+    const filterMax3 = (<HTMLInputElement>document.getElementById("id-range-max-3")).value;
+    const filterMax4 = (<HTMLInputElement>document.getElementById("id-range-max-4")).value;
 
-    filterFromId(idBoxes1, filterMin1, filtermax1, howToObtain, itemType);
-    filterFromId(idBoxes2, filterMin2, filtermax2, howToObtain, itemType);
-    filterFromId(idBoxes3, filterMin3, filtermax3, howToObtain, itemType);
-    filterFromId(idBoxes4, filterMin4, filtermax4, howToObtain, itemType);
+    filterFromId(idBoxes1, filterMin1, filterMax1, howToObtain, itemType);
+    filterFromId(idBoxes2, filterMin2, filterMax2, howToObtain, itemType);
+    filterFromId(idBoxes3, filterMin3, filterMax3, howToObtain, itemType);
+    filterFromId(idBoxes4, filterMin4, filterMax4, howToObtain, itemType);
 
     filterFromRarity(itemType);
     filterFromName((<HTMLInputElement>document.getElementById("name-filter-field")).value);
 
     resetFilterValue();
-    setFilterValue(idBoxes1, 0, itemType);
-    setFilterValue(idBoxes2, 1, itemType);
-    setFilterValue(idBoxes3, 2, itemType);
-    setFilterValue(idBoxes4, 3, itemType);
+    setFilterValue(idBoxes1, 0, howToObtain, filterMin1, filterMax1, itemType);
+    setFilterValue(idBoxes2, 1, howToObtain, filterMin2, filterMax2, itemType);
+    setFilterValue(idBoxes3, 2, howToObtain, filterMin3, filterMax3, itemType);
+    setFilterValue(idBoxes4, 3, howToObtain, filterMin4, filterMax4, itemType);
 
-    filterFromIdRange(0, filterMin1, filtermax1);
-    filterFromIdRange(1, filterMin2, filtermax2);
-    filterFromIdRange(2, filterMin3, filtermax3);
-    filterFromIdRange(3, filterMin4, filtermax4);
+    filterFromIdRange(0, filterMin1, filterMax1);
+    filterFromIdRange(1, filterMin2, filterMax2);
+    filterFromIdRange(2, filterMin3, filterMax3);
+    filterFromIdRange(3, filterMin4, filterMax4);
 }
 
 function sort(itemType: string): void {
@@ -422,8 +423,52 @@ function sort(itemType: string): void {
 }
 
 
-function setFilterValue(idNums: (number | undefined)[], savePos: number, itemType: string) {
+function setFilterValue(idNums: (number | undefined)[], savePos: number, howToObtain: JSONValueEx, filterMin: string, filterMax: string, itemType: string) {
+    if (getIdNameFromType(getId(idNums[0]), itemType).length > 0 || getIdNameFromType(getId(idNums[1]), itemType).length > 0 || getIdNameFromType(getId(idNums[2]), itemType).length > 0 || getIdNameFromType(getId(idNums[3]), itemType).length > 0) {
+        for (const item of foundItems) {
+            let totalMin = 0;
+            let totalMax = 0;
 
+            for (let i = 0; 4 > i; ++i) {
+                const idNum = idNums[i];
+
+                if (typeof idNum !== "undefined") {
+                    const id = ids[idNum];
+
+                    switch (id.idType) {
+                        case typeInt:
+                            totalMin += item.getIdValue(idNum, min);
+                            totalMax += item.getIdValue(idNum, max);
+                            break;
+                        case typeString:
+                            if (idNum == 43) { // Attack Speed
+                                totalMin += item.getAttackSpeed();
+                                totalMax += item.getAttackSpeed();
+                            } else if (item.haveIdValue(idNum, howToObtain, filterMin, filterMax)) {
+                                totalMin += 1;
+                                totalMax += 1;
+                            }
+                            break;
+                        case typeSum:
+                            const sumInSum = sumIds[id.sumIds].sumIds;
+                            if (sumInSum.length > 0 && idNum !== 195 && idNum !== 196) {
+                                for (let n = 0; sumInSum.length > n; n++) {
+                                    totalMin += item.getTotalSumFloat(sumInSum[n], min, filterMin, filterMax);
+                                    totalMax += item.getTotalSumFloat(sumInSum[n], max, filterMin, filterMax);
+                                }
+                            } else {
+                                totalMin += item.getTotalSumFloat(id.sumIds, min, filterMin, filterMax);
+                                totalMax += item.getTotalSumFloat(id.sumIds, max, filterMin, filterMax);
+                            }
+                            break;
+                    }
+                }
+            }
+
+            item.filterMinValues[savePos] = totalMin;
+            item.filterMaxValues[savePos] = totalMax; 
+        }
+    }
 }
 
 function resetFilterValue() {
@@ -436,8 +481,11 @@ function resetFilterValue() {
 }
 
 function autoSetLevelId() {
-    const elem = <HTMLInputElement>document.getElementById("id-box-11");
-    if (elem.value.length === 0) elem.value = "Level";
+    const idBox0 = <HTMLInputElement>document.getElementById("id-box-11");
+    const idBox1 = <HTMLInputElement>document.getElementById("id-box-12");
+    const idBox2 = <HTMLInputElement>document.getElementById("id-box-13");
+    const idBox3 = <HTMLInputElement>document.getElementById("id-box-14");
+    if (idBox0.value.length === 0 && idBox1.value.length === 0 && idBox2.value.length === 0 && idBox3.value.length === 0) idBox0.value = "Level";
 }
 
 function getId(idNum: number | undefined): Identifications {
