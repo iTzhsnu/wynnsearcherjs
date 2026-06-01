@@ -3,6 +3,7 @@ import { haveManualDrop } from "../utils/DataUtils";
 import { JSONValueEx } from "../utils/JSONValueEx";
 import { AItem } from "./AItem";
 import { idDropBy, Identifications, ids, reqPos, typeInt, typeString } from "./Identifications";
+import styles from "../../styles.module.css";
 
 export const ingSkills = "skills";
 
@@ -107,5 +108,25 @@ export class Ingredient extends AItem {
         }
 
         return false;
+    }
+
+    public setHowToObtainTooltip(parent: HTMLElement, howToObtain: JSONValueEx): void {
+        if (typeof this.json === "object" && this.json !== null && !Array.isArray(this.json)) {
+            const tooltip = document.createElement("span");
+            const tooltipText = document.createElement("span");
+            tooltip.className = styles.tooltip;
+            tooltipText.className = styles.tooptip_text;
+
+            const itemName = this.getName();
+            const p = haveManualDrop(howToObtain, itemName);
+
+            if (p > 0) {
+
+            }
+
+            parent.appendChild(tooltip);
+            tooltip.appendChild(tooltipText);
+            tooltip.appendChild(document.createTextNode("How to obtain (not perfect)"));
+        }
     }
 }

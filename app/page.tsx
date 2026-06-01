@@ -94,7 +94,7 @@ export default function Home() {
 
                 <div>
                     Sort:
-                    <input id="id-box-11" list="ids" className={styles.ids_box} defaultValue="Level" />
+                    <input id="id-box-11" list="ids" className={styles.ids_box} />
                     +
                     <input id="id-box-12" list="ids" className={styles.ids_box} />
                     +
@@ -361,8 +361,7 @@ export default function Home() {
                     <option value="Sum (Spell Costs %)"></option>
                 </datalist>
 
-                <div className={styles.result_box}>
-
+                <div className={styles.result_box} id="result-box">
                 </div>
             </div>
         </div>

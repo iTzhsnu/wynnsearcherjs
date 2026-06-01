@@ -3,6 +3,7 @@ import { haveManualDrop } from "../utils/DataUtils";
 import { JSONValueEx } from "../utils/JSONValueEx";
 import { AItem } from "./AItem";
 import { idDropMeta, idDropRestriction, Identifications, ids, typeInt, typeString } from "./Identifications";
+import styles from "../../styles.module.css";
 
 const questReqIdPos = 6;
 const majorIdPos = 65;
@@ -12,7 +13,7 @@ const setsIdPos = 149;
 export class Item extends AItem {
     public getIdValue(idNum: number, sortType: string): number {
         const id = ids[idNum];
-        return this.getIdValueBase(idNum, id.itemName, id.ingFieldPos, sortType);
+        return this.getIdValueBase(idNum, id.itemName, id.itemFieldPos, sortType);
     }
 
     public haveIdValue(idNum: number, howToObtain: JSONValueEx, filterMin: string, filterMax: string): boolean {
@@ -128,5 +129,33 @@ export class Item extends AItem {
 
     public haveFieldPos(idNum: number): boolean {
         return this.haveFieldPosBase(ids[idNum].itemFieldPos);
+    }
+
+    public setHowToObtainTooltip(parent: HTMLElement, howToObtain: JSONValueEx): void {
+        if (typeof this.json === "object" && this.json !== null && !Array.isArray(this.json)) {
+            const tooltip = document.createElement("span");
+            const tooltipText = document.createElement("span");
+            tooltip.className = styles.tooltip;
+            tooltipText.className = styles.tooptip_text;
+
+            const itemName = this.getName();
+            const p = haveManualDrop(howToObtain, itemName);
+
+            if (p > 0 && typeof this.json[idDropMeta] === "undefined") {
+                if (p === 1) {
+                    // Unobtainable
+                    tooltipText.appendChild(document.createTextNode("This item can't be obtained."));
+                } else if (p === 13) {
+                    // Discontinued
+                    tooltipText.appendChild(document.createTextNode("This item is Discontinued."));
+                } else {
+                    
+                }
+            }
+
+            parent.appendChild(tooltip);
+            tooltip.appendChild(tooltipText);
+            tooltip.appendChild(document.createTextNode("How to obtain (not perfect)"));
+        }
     }
 }

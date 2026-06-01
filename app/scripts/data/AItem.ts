@@ -381,6 +381,8 @@ export abstract class AItem {
         return fieldPos.length > 0;
     }
 
+    public abstract setHowToObtainTooltip(parent: HTMLElement, howToObtain: JSONValueEx): void;
+
     public static getBaseId(idNum: number) {
         return Math.round(idNum / 1.3);
     }

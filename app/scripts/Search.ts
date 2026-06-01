@@ -9,9 +9,13 @@ import othersManualDrop from "../json/manual_other_drop.json"
 import { wynnItems, wynnIngs, wynnOthersItems, bowData, spearData, wandData, daggerData, relikData, helmetData, chestplateData, leggingsData, bootsData, ringData, braceletData, necklaceData, armouringData, tailoringData, weaponsmithingData, woodworkingData, jewelingData, scribingData, cookingData, alchemismData, tomeData, charmData, toolData, materialData, armourTomeData, guildTomeData, weaponTomeData, marathonTomeData, lootrunTomeData, expertiseTomeData, mysticismTomeData, typeArmouring, typeTailoring, typeWeaponsmithing, typeWoodworking, typeJeweling, typeScribing, typeCooking } from "./DataManager";
 import { rAny, rNoNormal, rNormal, min, max } from "./utils/DataKeys";
 import { sumIds } from "./data/SumIds";
+import { AItemUI } from "./ui/AItemUI";
+import { ItemUI } from "./ui/ItemUI";
+import { IngUI } from "./ui/IngUI";
+import { OthersUI } from "./ui/OthersUI";
 
 const foundItems: AItem[] = [];
-const displayedIds: string[] = [];
+const displayedElems: AItemUI[] = []; // Displayed item Elements
 
 export function search(): void {
     resetUI();
@@ -33,12 +37,11 @@ export function search(): void {
 }
 
 function resetUI() {
-    for (const id of displayedIds) {
-        const elem = document.getElementById(id);
-        if (typeof elem !== "undefined" && elem !== null) elem.remove();
+    for (const item of displayedElems) {
+        item.dispose();
     }
 
-    displayedIds.length = 0;
+    displayedElems.length = 0;
     foundItems.length = 0;
 }
 
@@ -72,6 +75,8 @@ function filterItems(): void {
         if (braceletCB) foundItems.push(...braceletData);
         if (necklaceCB) foundItems.push(...necklaceData);
     }
+
+    console.log("item size (time 1): " + foundItems.length);
 
     filter(typeEquip, equipManualDrop);
 }
@@ -306,14 +311,15 @@ function filterOthers(): void {
 
 function filterFromId(idNums: (number | undefined)[], filterMin: string, filterMax: string, howToObtain: JSONValueEx, itemType: string): void {
     if (getIdNameFromType(getId(idNums[0]), itemType).length > 0 || getIdNameFromType(getId(idNums[1]), itemType).length > 0 || getIdNameFromType(getId(idNums[2]), itemType).length > 0 || getIdNameFromType(getId(idNums[3]), itemType).length > 0) {
+        const minInt = parseInt(filterMin);
+        const maxInt = parseInt(filterMax);
+
+        if (minInt === 0 || maxInt === 0) {
+            return;
+        }
+        
         for (let i = foundItems.length - 1; i >= 0; --i) {
             const item = foundItems[i];
-            const minInt = parseInt(filterMin);
-            const maxInt = parseInt(filterMax);
-
-            if (minInt === 0 || maxInt === 0) {
-                break;
-            }
 
             let remove = true;
             for (let num = 0; 4 > num; ++num) {
@@ -422,7 +428,17 @@ function setSortedDisplay(itemType: string): void {
     foundItems.sort(compareIdValue);
 
     for (const item of foundItems) {
-        console.log(item.getName());
+        switch (itemType) {
+            case typeEquip:
+                displayedElems.push(new ItemUI(item));
+                break;
+            case typeIng:
+                displayedElems.push(new IngUI(item));
+                break;
+            case typeOthers:
+                displayedElems.push(new OthersUI(item));
+                break;
+        }
     }
 }
 
@@ -507,9 +523,9 @@ function getIdNameFromType(id: Identifications, itemType: string): string {
 }
 
 function compareIdValue(a: AItem, b: AItem): number {
-    if (b.filterMaxValues[0] > a.filterMaxValues[0]) {
+    if (a.filterMaxValues[0] > b.filterMaxValues[0]) {
         return -1;
-    } else if (a.filterMaxValues[0] > b.filterMaxValues[0]) {
+    } else if (a.filterMaxValues[0] < b.filterMaxValues[0]) {
         return 1;
     }
 
