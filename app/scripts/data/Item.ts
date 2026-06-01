@@ -133,7 +133,7 @@ export class Item extends AItem {
 
     public setHowToObtainTooltip(parent: HTMLElement, howToObtain: JSONValueEx): void {
         if (typeof this.json === "object" && this.json !== null && !Array.isArray(this.json)) {
-            const tooltip = document.createElement("span");
+            const tooltip = document.createElement("button");
             const tooltipText = document.createElement("span");
             tooltip.className = styles.tooltip;
             tooltipText.className = styles.tooptip_text;
@@ -145,9 +145,11 @@ export class Item extends AItem {
                 if (p === 1) {
                     // Unobtainable
                     tooltipText.appendChild(document.createTextNode("This item can't be obtained."));
+                    tooltip.onclick = (() => {navigator.clipboard.writeText("This item can't be obtained.");});
                 } else if (p === 13) {
                     // Discontinued
                     tooltipText.appendChild(document.createTextNode("This item is Discontinued."));
+                    tooltip.onclick = (() => {navigator.clipboard.writeText("This item is Discontinued.");});
                 } else {
                     
                 }

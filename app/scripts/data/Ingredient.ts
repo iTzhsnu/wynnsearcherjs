@@ -112,7 +112,7 @@ export class Ingredient extends AItem {
 
     public setHowToObtainTooltip(parent: HTMLElement, howToObtain: JSONValueEx): void {
         if (typeof this.json === "object" && this.json !== null && !Array.isArray(this.json)) {
-            const tooltip = document.createElement("span");
+            const tooltip = document.createElement("button");
             const tooltipText = document.createElement("span");
             tooltip.className = styles.tooltip;
             tooltipText.className = styles.tooptip_text;
