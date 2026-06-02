@@ -5,10 +5,9 @@ import { sumIds } from "./SumIds";
 import { raw, min, max, identified, sFast, vFast, fast, aNormal, slow, vSlow, sSlow, namePos, typePos, subTypePos, sBonuses, sSets, sMinor } from "../utils/DataKeys";
 import setsData from "../../json/sets.json"
 import styles from "../../styles.module.css";
-import { AItemUI } from "../ui/AItemUI";
 
 const baseDamages = [29, 30, 31, 32, 33, 34];
-const atkSpdId = ids[44];
+const atkSpdId = ids[43];
 
 export abstract class AItem {
     protected readonly json: JSONValueEx;
@@ -200,37 +199,37 @@ export abstract class AItem {
                             }
                         }
                     }
+                }
 
-                    // Weapon Damage
-                    for (let i = 0; baseDamages.length > i; ++i) {
-                        if (weapon.haveId(baseDamages[i], null, "", "")) have[i] = true;
+                // Weapon Damage
+                for (let i = 0; baseDamages.length > i; ++i) {
+                    if (weapon.haveId(baseDamages[i], null, "", "")) have[i] = true;
+                }
+
+                // Check
+                if (have[0] || have[1] || have[2] || have[3] || have[4] || have[5]) {
+                    const sum = sumIds[sumNum];
+                    // Raw Damage
+                    for (const id of sumIds[sum.sumIds[6]].addIds) {
+                        if (this.haveId(id, null, "", "")) return true;
                     }
 
-                    // Check
-                    if (have[0] || have[1] || have[2] || have[3] || have[4] || have[5]) {
-                        const sum = sumIds[sumNum];
-                        // Raw Damage
-                        for (const id of sumIds[sum.sumIds[6]].addIds) {
-                            if (this.haveId(id, null, "", "")) return true;
-                        }
+                    // Raw Elem. Damage
+                    for (const id of sumIds[sum.sumIds[7]].addIds) {
+                        if (this.haveId(id, null, "", "")) return true;
+                    }
 
-                        // Raw Elem. Damage
-                        for (const id of sumIds[sum.sumIds[7]].addIds) {
-                            if (this.haveId(id, null, "", "")) return true;
-                        }
+                    // Neutral, Earth, Thunder, Water, Fire and Air Damage (Raw and %)
+                    for (let i = 0; 6 > i; ++i) {
+                        if (have[i]) {
+                            // Raw ~ Damage and Raw ~ Melee or Spell Damage
+                            for (const id of sumIds[sum.sumIds[i]].addIds) {
+                                if (this.haveId(id, null, "", "")) return true;
+                            }
 
-                        // Neutral, Earth, Thunder, Water, Fire and Air Damage (Raw and %)
-                        for (let i = 0; 6 > i; ++i) {
-                            if (have[i]) {
-                                // Raw ~ Damage and Raw ~ Melee or Spell Damage
-                                for (const id of sumIds[sum.sumIds[i]].addIds) {
-                                    if (this.haveId(id, null, "", "")) return true;
-                                }
-
-                                // ~ Damage %, Elem. Damage %, ~ Melee or Spell Damage % or Elem. Melee or Spell Damage %
-                                for (const id of sumIds[sum.sumIds[i]].multiIds) {
-                                    if (this.haveId(id, null, "", "")) return true;
-                                }
+                            // ~ Damage %, Elem. Damage %, ~ Melee or Spell Damage % or Elem. Melee or Spell Damage %
+                            for (const id of sumIds[sum.sumIds[i]].multiIds) {
+                                if (this.haveId(id, null, "", "")) return true;
                             }
                         }
                     }

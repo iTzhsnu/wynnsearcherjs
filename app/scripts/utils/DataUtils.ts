@@ -5,7 +5,7 @@ import powderData from "../../json/powders.json"
 import { JSONValueEx } from "./JSONValueEx";
 import { dNormal, dDungeon, dDungeonMerchant, dRaid, dMerchant, dLootrun, dQuest, dDiscontinued, dUnobtainable, dLegendaryIsland, dTheQiraHive, dSecretDiscovery, dOther, dWorldEvent, dSpecific, namePos } from "./DataKeys";
 
-export let itemDataCache: Item | null = null;
+let itemDataCache: Item | null = null;
 export function getItemFromName(name: string): Item | null {
     if (itemDataCache !== null && itemDataCache.getName().toLowerCase() === name.toLowerCase()) {
         return itemDataCache;
