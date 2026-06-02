@@ -35,28 +35,43 @@ export class IngUI extends AItemUI {
         
         // Item only ids
         if (item.haveFieldPosBase(itemOnlyIdsPos)) {
-            if (item.haveId(119, null, "", "")) this.applyDisplayData("Durability: " + AItemUI.setPlus(item.getIdValue(119, max) / 1000));
+            let addSpace = false;
+            if (item.haveId(119, null, "", "")) {
+                this.applyDisplayData("Durability: " + AItemUI.setPlus(item.getIdValue(119, max) / 1000));
+                addSpace = true;
+            }
 
             for (let i = 1; 5 >= i; ++i) {
-                if (item.haveId(i, null, "", "")) this.applyDisplayData(ids[i].displayName + ": " + item.getIdValue(i, max));
+                if (item.haveId(i, null, "", "")) {
+                    this.applyDisplayData(ids[i].displayName + ": " + item.getIdValue(i, max));
+                    addSpace = true;
+                }
             }
-            this.applyDisplayData("");
+            if (addSpace) this.applyDisplayData("");
         }
 
         // Consumable only ids
         if (item.haveFieldPosBase(consumeOnlyIdsPos)) {
+            let addSpace = false;
             for (let i = 120; 121 >= i; ++i) {
-                if (item.haveId(i, null, "", "")) this.applyDisplayData(ids[i].displayName + ": " + item.getIdValue(i, max));
+                if (item.haveId(i, null, "", "")) {
+                    this.applyDisplayData(ids[i].displayName + ": " + item.getIdValue(i, max));
+                    addSpace = true;
+                }
             }
-            this.applyDisplayData("");
+            if (addSpace) this.applyDisplayData("");
         }
 
         // Ingredient effectiveness
         if (item.haveFieldPosBase(ingModifierPos)) {
+            let addSpace = false;
             for (let i = 123; 128 >= i; ++i) {
-                if (item.haveId(i, null, "", "")) this.applyDisplayData(ids[i].displayName + ": " + item.getIdValue(i, max));
+                if (item.haveId(i, null, "", "")) {
+                    this.applyDisplayData(ids[i].displayName + ": " + item.getIdValue(i, max));
+                    addSpace = true;
+                }
             }
-            this.applyDisplayData("");
+            if (addSpace) this.applyDisplayData("");
         }
 
         // IDs

@@ -1,5 +1,5 @@
 import { coordsPos, dDummy, dLootrun, dMerchant, dNever, dNormal, dQuest, dRaid, dSpecific, dUnobtainable, dWorldEvent, ingCoordsPos, max, namePos } from "../utils/DataKeys";
-import { haveManualDrop, setMerchant, setPosOnlyDropType, setSpecificDrop } from "../utils/DataUtils";
+import { haveManualDrop, setMerchant, setPosOnlyDropType, setSpecificDrop, setTooltip } from "../utils/DataUtils";
 import { JSONValueEx } from "../utils/JSONValueEx";
 import { AItem } from "./AItem";
 import { idDropBy, Identifications, ids, reqPos, typeInt, typeString } from "./Identifications";
@@ -166,6 +166,8 @@ export class Ingredient extends AItem {
             setSpecificDrop(texts, howToObtain, itemName);
 
             if (texts[texts.length - 1].length === 0) texts.pop();
+            setTooltip(tooltip, tooltipText, texts);
+
             parent.appendChild(tooltip);
             tooltip.appendChild(tooltipText);
             tooltip.appendChild(document.createTextNode("How to obtain (not perfect)"));
