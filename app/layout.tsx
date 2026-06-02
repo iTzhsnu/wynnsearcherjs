@@ -2,8 +2,8 @@ import type { Metadata } from "next";
 import "./globals.css";
 
 export const metadata: Metadata = {
-  title: "WynnSearcher for Web (W.I.P)",
-  description: "WynnSearcher port to web (w.i.p)",
+  title: "WynnSearcher for Web (1.0)",
+  description: "WynnSearcher port to web (1.0)",
 };
 
 export default function RootLayout({

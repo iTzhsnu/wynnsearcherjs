@@ -100,14 +100,14 @@ export class Ingredient extends AItem {
     }
 
     // please use => if (Array.isArray(value))
-    public getSkills(): JSONValueEx {
+    public getSkills(): string[] {
         if (typeof this.json === "object" && this.json !== null && !Array.isArray(this.json) 
             && typeof this.json[reqPos] === "object" && this.json[reqPos] !== null && !Array.isArray(this.json[reqPos])
-        && typeof this.json[reqPos][ingSkills] === "object") {
-            return this.json[reqPos][ingSkills];
+            && Array.isArray(this.json[reqPos][ingSkills])) {
+            return this.json[reqPos][ingSkills] as string[];
         }
 
-        return false;
+        return [""];
     }
 
     public setHowToObtainTooltip(parent: HTMLElement, howToObtain: JSONValueEx): void {

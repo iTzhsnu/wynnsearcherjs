@@ -230,7 +230,13 @@ export const ids: Identifications[] = [
     { displayName: "", itemName: "raw_spell_costs", ingName: "", displaySp: "", idType: typeSum, itemFieldPos: "", ingFieldPos: "", sumIds: 44 },
     { displayName: "", itemName: "spell_costs", ingName: "", displaySp: "", idType: typeSum, itemFieldPos: "", ingFieldPos: "", sumIds: 45 },
     { displayName: "", itemName: "damage_appropriate", ingName: "", displaySp: "", idType: typeSum, itemFieldPos: "", ingFieldPos: "", sumIds: 46 },
-    { displayName: "", itemName: "damage_appropriate", ingName: "", displaySp: "", idType: typeSum, itemFieldPos: "", ingFieldPos: "", sumIds: 47 }
+    { displayName: "", itemName: "damage_appropriate", ingName: "", displaySp: "", idType: typeSum, itemFieldPos: "", ingFieldPos: "", sumIds: 47 },
+
+    // 197 to 200
+    { displayName: "", itemName: "gatherSpeed", ingName: "", displaySp: "", idType: typeInt, itemFieldPos: "", ingFieldPos: "", sumIds: -1},
+    { displayName: "Damage taken from mobs", itemName: "damageFromMobs", ingName: "", displaySp: "%", idType: typeInt, itemFieldPos: basePos, ingFieldPos: "", sumIds: -1},
+    { displayName: "Loot from Lv.", itemName: "leveledLootBonus", ingName: "", displaySp: "%", idType: typeInt, itemFieldPos: basePos, ingFieldPos: "", sumIds: -1},
+    { displayName: "XP from Lv.", itemName: "leveledXpBonus", ingName: "", displaySp: "%", idType: typeInt, itemFieldPos: basePos, ingFieldPos: "", sumIds: -1},
     ]
 
 export const idList = new Map<string, number>([

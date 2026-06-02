@@ -64,3 +64,10 @@ export const r3Star = "TIER_3";
 export const sSets = "sets";
 export const sBonuses = "bonuses";
 export const sMinor = "minor";
+
+// Tool type
+export const typePickaxe = "pickaxe";
+export const typeAxe = "axe";
+export const typeScythe = "scythe";
+export const typeRod = "rod";
+

@@ -3,7 +3,7 @@ import { basePos, idPos, ids, rarityId, reqPos } from "../data/Identifications";
 import { max, min, sFast, sSlow, vFast, vSlow } from "../utils/DataKeys";
 import { AItemUI } from "./AItemUI";
 
-import equipManualDrop from "../../json/manual_item_drop.json"
+import equipManualDrop from "../../json/manual_item_drop.json";
 
 
 export class ItemUI extends AItemUI {
@@ -93,7 +93,7 @@ export class ItemUI extends AItemUI {
         }
 
         // Rarity
-        const rarity = item.getIdString(rarityId);
+        const rarity = item.getRarity();
         this.applyDisplayData("Rarity: " + rarity.charAt(0).toUpperCase() + rarity.substring(1));
 
         // Restriction (ex. Untradable)

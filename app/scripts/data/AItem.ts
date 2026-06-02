@@ -1,6 +1,6 @@
 import { getItemFromName, setPowderOnNonCraft, setTooltip } from "../utils/DataUtils";
 import { JSONValueEx } from "../utils/JSONValueEx";
-import { Identifications, ids, typeInt, typeSum } from "./Identifications";
+import { Identifications, ids, rarityId, typeInt, typeSum } from "./Identifications";
 import { sumIds } from "./SumIds";
 import { raw, min, max, identified, sFast, vFast, fast, aNormal, slow, vSlow, sSlow, namePos, typePos, subTypePos, sBonuses, sSets, sMinor } from "../utils/DataKeys";
 import setsData from "../../json/sets.json"
@@ -342,6 +342,15 @@ export abstract class AItem {
         return "";
     }
 
+    public getDisplayName(): string {
+        if (typeof this.json === "object" && this.json !== null && !Array.isArray(this.json) 
+            && typeof this.json["displayName"] === "string" && this.json["displayName"] !== null) {
+            return this.json["displayName"];
+        }
+
+        return "";
+    }
+
     public getSubType(): string {
         if (typeof this.json === "object" && this.json !== null && !Array.isArray(this.json) 
             && typeof this.json[subTypePos] === "string" && this.json[subTypePos] !== null) {
@@ -358,6 +367,10 @@ export abstract class AItem {
         }
 
         return "";
+    }
+
+    public getRarity(): string {
+        return this.getIdString(rarityId);
     }
 
     public getIdStringFromIdNum(idNum: number): string {
