@@ -68,11 +68,13 @@ export class ItemUI extends AItemUI {
                 const minValue = item.getIdValue(i, min);
                 const maxValue = item.getIdValue(i, max);
                 const id = ids[i];
-
-                if (minValue === maxValue) {
-                    this.applyDisplayData(id.displayName + " " + maxValue + id.displaySp);
-                } else {
-                    this.applyDisplayData(AItemUI.setPlus(minValue) + id.displaySp + " " + id.displayName + " " + AItemUI.setPlus(maxValue) + id.displaySp);
+                
+                if (minValue !== 0 || maxValue !== 0) {
+                    if (minValue === maxValue) {
+                        this.applyDisplayData(id.displayName + " " + maxValue + id.displaySp);
+                    } else {
+                        this.applyDisplayData(AItemUI.setPlus(minValue) + id.displaySp + " " + id.displayName + " " + AItemUI.setPlus(maxValue) + id.displaySp);
+                    }
                 }
             }
 
