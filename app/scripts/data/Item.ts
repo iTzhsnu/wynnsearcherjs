@@ -249,6 +249,7 @@ export class Item extends AItem {
             parent.appendChild(tooltip);
             tooltip.appendChild(tooltipText);
             tooltip.appendChild(document.createTextNode("How to obtain (not perfect)"));
+            parent.appendChild(document.createElement("br"));
         }
     }
 }

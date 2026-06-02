@@ -111,6 +111,6 @@ export class ItemUI extends AItemUI {
         item.setHowToObtainTooltip(this.base, equipManualDrop);
 
         // Sort Value
-        this.applyDisplayData(String(item.filterMaxValues[0]));
+        this.applyDisplayData("Sort Value: " + item.filterMaxValues[0]);
     }
 }
