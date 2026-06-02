@@ -9,11 +9,11 @@ export const typeSum = "sum";
 
 // Field Pos
 export const reqPos = "requirements";
-const basePos = "base";
-const idPos = "identifications";
-const itemOnlyIdsPos = "itemOnlyIDs";
-const consumeOnlyIdsPos = "consumableOnlyIDs";
-const ingModifierPos = "ingredientPositionModifiers";
+export const basePos = "base";
+export const idPos = "identifications";
+export const itemOnlyIdsPos = "itemOnlyIDs";
+export const consumeOnlyIdsPos = "consumableOnlyIDs";
+export const ingModifierPos = "ingredientPositionModifiers";
 
 export const idDropRestriction = "dropRestriction";
 export const idDropBy = "droppedBy";
@@ -41,7 +41,7 @@ export const ids: Identifications[] = [
     { displayName: "Defense Req", itemName: "defence", ingName: "defenceRequirement", displaySp: "", idType: typeInt, itemFieldPos: reqPos, ingFieldPos: itemOnlyIdsPos, sumIds: -1 },
     { displayName: "Agility Req", itemName: "agility", ingName: "agilityRequirement", displaySp: "", idType: typeInt, itemFieldPos: reqPos, ingFieldPos: itemOnlyIdsPos, sumIds: -1 },
     { displayName: "Quest Req", itemName: "quest", ingName: "", displaySp: "", idType: typeString, itemFieldPos: reqPos, ingFieldPos: "", sumIds: -1 },
-    { displayName: "Untradable", itemName: "restrictions", ingName: "", displaySp: "", idType: typeString, itemFieldPos: "", ingFieldPos: "", sumIds: -1 },
+    { displayName: "Restriction", itemName: "restriction", ingName: "", displaySp: "", idType: typeString, itemFieldPos: "", ingFieldPos: "", sumIds: -1 },
     { displayName: "Health", itemName: "baseHealth", ingName: "", displaySp: "", idType: typeInt, itemFieldPos: basePos, ingFieldPos: "", sumIds: -1 },
     { displayName: "Health Bonus", itemName: "rawHealth", ingName: "rawHealth", displaySp: "", idType: typeInt, itemFieldPos: idPos, ingFieldPos: idPos, sumIds: -1 },
     { displayName: "Raw Health Regen", itemName: "healthRegenRaw", ingName: "healthRegenRaw", displaySp: "", idType: typeInt, itemFieldPos: idPos, ingFieldPos: idPos, sumIds: -1 },
@@ -241,7 +241,7 @@ export const idList = new Map<string, number>([
     ["Defense Req", 4],
     ["Agility Req", 5],
     ["Quest Req", 6],
-    ["Untradable", 7],
+    ["Restriction", 7],
     ["Health", 8],
     ["Health Bonus", 9],
     ["Raw Health Regen", 10],

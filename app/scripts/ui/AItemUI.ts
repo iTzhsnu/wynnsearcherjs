@@ -45,7 +45,22 @@ export abstract class AItemUI {
 
     protected abstract displayData(item: AItem): void;
 
+    protected applyDisplayData(...texts: string[]): void {
+        for (const t of texts) {
+            if (t.length > 0) this.base.appendChild(document.createTextNode(t));
+            this.base.appendChild(document.createElement("br"));
+        }
+    }
+
     public dispose(): void {
         this.base.remove();
+    }
+
+    public static setPlus(i: number): string {
+        if (i < 0) {
+            return "" + i;
+        } else {
+            return "+" + i;
+        }
     }
 }

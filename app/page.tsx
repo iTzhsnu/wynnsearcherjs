@@ -171,7 +171,7 @@ export default function Home() {
                     <option value="Defense Req"></option>
                     <option value="Agility Req"></option>
                     <option value="Quest Req"></option>
-                    <option value="Untradable"></option>
+                    <option value="Restriction"></option>
                     <option value="Health"></option>
                     <option value="Health Bonus"></option>
                     <option value="Raw Health Regen"></option>

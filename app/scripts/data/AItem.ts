@@ -360,6 +360,10 @@ export abstract class AItem {
         return "";
     }
 
+    public getIdStringFromIdNum(idNum: number): string {
+        return this.getIdString(ids[idNum]);
+    }
+
     public abstract getIdString(id: Identifications): string;
 
     protected getIdStringBase(idName: string, fieldPos: string): string {
@@ -382,6 +386,14 @@ export abstract class AItem {
     }
 
     public abstract setHowToObtainTooltip(parent: HTMLElement, howToObtain: JSONValueEx): void;
+
+    public setMajorIdTooltip(parent: HTMLElement): void {
+
+    }
+
+    public setSetEffectTooltip(parent: HTMLElement): void {
+
+    }
 
     public static getBaseId(idNum: number) {
         return Math.round(idNum / 1.3);
