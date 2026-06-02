@@ -274,9 +274,7 @@ export abstract class AItem {
                     if (damages[i] != 0) {
                         const sum = sumIds[mainSum.sumIds[i]];
                         for (const id of sum.multiIds) { // %
-                            let dmg = damages[i] * this.getIdValue(id, sortType) * 0.01;
-                            if (dmg < 0) dmg = 0;
-                            total += dmg;
+                            total += damages[i] * this.getIdValue(id, sortType) * 0.01;
                         }
 
                         for (const id of sum.addIds) { // Raw
