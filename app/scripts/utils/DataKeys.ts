@@ -59,3 +59,8 @@ export const r0Star = "TIER_0";
 export const r1Star = "TIER_1";
 export const r2Star = "TIER_2";
 export const r3Star = "TIER_3";
+
+// Others
+export const sSets = "sets";
+export const sBonuses = "bonuses";
+export const sMinor = "minor";

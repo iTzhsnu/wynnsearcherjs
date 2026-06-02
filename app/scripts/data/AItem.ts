@@ -1,8 +1,11 @@
-import { getItemFromName, setPowderOnNonCraft } from "../utils/DataUtils";
+import { getItemFromName, setPowderOnNonCraft, setTooltip } from "../utils/DataUtils";
 import { JSONValueEx } from "../utils/JSONValueEx";
 import { Identifications, ids, typeInt, typeSum } from "./Identifications";
 import { sumIds } from "./SumIds";
-import { raw, min, max, identified, sFast, vFast, fast, aNormal, slow, vSlow, sSlow, namePos, typePos, subTypePos } from "../utils/DataKeys";
+import { raw, min, max, identified, sFast, vFast, fast, aNormal, slow, vSlow, sSlow, namePos, typePos, subTypePos, sBonuses, sSets, sMinor } from "../utils/DataKeys";
+import setsData from "../../json/sets.json"
+import styles from "../../styles.module.css";
+import { AItemUI } from "../ui/AItemUI";
 
 const baseDamages = [29, 30, 31, 32, 33, 34];
 const atkSpdId = ids[44];
@@ -388,11 +391,77 @@ export abstract class AItem {
     public abstract setHowToObtainTooltip(parent: HTMLElement, howToObtain: JSONValueEx): void;
 
     public setMajorIdTooltip(parent: HTMLElement): void {
+        if (typeof this.json === "object" && this.json !== null && !Array.isArray(this.json) && this.haveId(65, null, "", "")) {
+            const idName = ids[65].itemName;
+            
+            if (typeof this.json[idName] === "object" && this.json[idName] !== null && !Array.isArray(this.json[idName])) {
+                const tooltip = document.createElement("span");
+                const tooltipText = document.createElement("span");
+                tooltip.className = styles.tooltip;
+                tooltipText.className = styles.tooltip_text;
 
+                const key = Object.keys(this.json[idName])[0];
+                const value = this.json[idName][key];
+
+                if (typeof value === "string" && value !== null) tooltipText.appendChild(document.createTextNode(value));
+            
+                parent.appendChild(tooltip);
+                tooltip.appendChild(tooltipText);
+                tooltip.appendChild(document.createTextNode("Major ID: " + key));
+                parent.appendChild(document.createElement("br"));
+            }
+        }
     }
 
     public setSetEffectTooltip(parent: HTMLElement): void {
+        if (this.haveId(149, null, "", "")) {
+            const tooltip = document.createElement("button");
+            const tooltipText = document.createElement("span");
+            tooltip.className = styles.tooltip;
+            tooltipText.className = styles.tooltip_text;
 
+            const texts: string[] = [];
+            const sets = setsData as JSONValueEx;
+
+            if (typeof sets === "object" && sets !== null && !Array.isArray(sets) 
+                && typeof this.json === "object" && this.json !== null && !Array.isArray(this.json) 
+                && Array.isArray(this.json[sSets]) && typeof this.json[sSets][0] == "string" && this.json[sSets][0] !== null) {
+                const setName = this.json[sSets][0];
+                const setData = sets[setName];
+                texts.push(setName);
+
+                if (typeof setData === "object" && setData !== null && !Array.isArray(setData) 
+                    && typeof setData[sBonuses] == "object" && setData[sBonuses] !== null && !Array.isArray(setData[sBonuses])) {
+                    const bonuses = setData[sBonuses];
+                    for (let i = 0; 10 > i; ++i) {
+                        const n = String(i);
+                        if (typeof bonuses[n] === "object" && bonuses[n] !== null && !Array.isArray(bonuses[n]) && typeof bonuses[n][sMinor] === "object" && bonuses[n][sMinor] !== null && !Array.isArray(bonuses[n][sMinor])) {
+                            texts.push(n + ":");
+                            const bonus = bonuses[n][sMinor];
+                            for (let j = 9; 118 >= j; ++j) {
+                                if (j === 65 || j === 64 || j === 43 
+                                    || (35 >= j && j >= 29) 
+                                    || (22 >= j && j >= 18)) continue;
+
+                                const id = ids[j];
+                                const idName = id.itemName;
+                                if (typeof bonus[idName] === "number" && bonus[idName] !== null) {
+                                    texts.push(id.displayName + " " + bonus[idName] + id.displaySp);
+                                }
+                            }
+                            texts.push("");
+                        }
+                    }
+                }
+            }
+
+            setTooltip(tooltip, tooltipText, texts);
+            
+            parent.appendChild(tooltip);
+            tooltip.appendChild(tooltipText);
+            tooltip.appendChild(document.createTextNode("Set Bonuses"));
+            parent.appendChild(document.createElement("br"));
+        }
     }
 
     public static getBaseId(idNum: number) {

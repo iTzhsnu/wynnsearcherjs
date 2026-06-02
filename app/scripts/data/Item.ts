@@ -7,8 +7,6 @@ import styles from "../../styles.module.css";
 
 const questReqIdPos = 6;
 const majorIdPos = 65;
-const atkSpdIdPos = 43;
-const setsIdPos = 149;
 
 export class Item extends AItem {
     public getIdValue(idNum: number, sortType: string): number {
@@ -101,18 +99,18 @@ export class Item extends AItem {
                         } else {
                             return true;
                         }
-                    } else if (idNum === atkSpdIdPos || idNum === setsIdPos) { // If Attack Speed or Sets
+                    } else if (typeof j === "string") { // If Attack Speed or Sets
                         if (filterMin.length > 0 || filterMax.length > 0) {
                             let filterName = filterMax;
                             if (filterMin.length > 0) filterName = filterMin;
 
-                            return typeof j === "string" && j.toLowerCase().includes(filterName.toLowerCase());
+                            return j.toLowerCase().includes(filterName.toLowerCase());
                         } else {
-                        return true;
+                            return true;
                         }
+                    } else {
+                        return true;
                     }
-
-                    return true;
                 }
             } else {
                 console.log("Error: Can't check this ID");
@@ -147,9 +145,11 @@ export class Item extends AItem {
                 if (p === 1) {
                     // Unobtainable
                     setTooltip(tooltip, tooltipText, ["This item can't be obtained."]);
+                    return;
                 } else if (p === 13) {
                     // Discontinued
                     setTooltip(tooltip, tooltipText, ["This item is Discontinued."]);
+                    return;
                 } else {
                     // Normal (Hostile Mob and Any Loot)
                     if (Array.isArray(howToObtain[dNormal])) {

@@ -76,8 +76,6 @@ function filterItems(): void {
         if (necklaceCB) foundItems.push(...necklaceData);
     }
 
-    console.log("item size (time 1): " + foundItems.length);
-
     filter(typeEquip, equipManualDrop);
 }
 
