@@ -136,7 +136,7 @@ export class Item extends AItem {
             const tooltip = document.createElement("button");
             const tooltipText = document.createElement("span");
             tooltip.className = styles.tooltip;
-            tooltipText.className = styles.tooptip_text;
+            tooltipText.className = styles.tooltip_text;
 
             const itemName = this.getName();
             const lv = this.getIdValue(0, max);
