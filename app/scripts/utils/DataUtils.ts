@@ -114,3 +114,79 @@ export function haveManualDrop(json: JSONValueEx, itemName: string): number {
     
     return 0;
 }
+
+export function setTooltip(tooltip: HTMLElement, tooltipText: HTMLElement, texts: string[]) {
+    let text = "";
+    for (let i = 0; texts.length > i; ++i) {
+        const t = texts[i];
+        tooltipText.appendChild(document.createTextNode(t));
+        text += t;
+
+        if (texts.length - 1 > i) {
+            tooltipText.appendChild(document.createElement("br"));
+            text += "\n";
+        }
+    }
+    
+    tooltip.onclick = (() => {navigator.clipboard.writeText(text);});
+}
+
+export function setPosOnlyDropType(data: string[], manual: JSONValueEx, itemName: string, path: string, desc: string) {
+    if (typeof manual === "object" && manual !== null && !Array.isArray(manual) 
+        && typeof manual[path] === "object" && manual[path] != null && !Array.isArray(manual[path]) 
+        && typeof manual[path][itemName] === "object" && manual[path][itemName] !== null && !Array.isArray(manual[path][itemName])) {
+        if (typeof manual[path][itemName]["pos"] === "string" && manual[path][itemName]["pos"] !== null) {
+            data.push(desc + manual[path][itemName]["pos"]);
+        }
+    }
+}
+
+export function setMerchant(data: string[], manual: JSONValueEx, itemName: string, path: string) {
+    if (typeof manual === "object" && manual !== null && !Array.isArray(manual) 
+        && typeof manual[path] === "object" && manual[path] != null && !Array.isArray(manual[path]) 
+        && typeof manual[path][itemName] === "object" && manual[path][itemName] !== null && !Array.isArray(manual[path][itemName])) {
+        const j = manual[path][itemName];
+        let isEmpty = true;
+        
+        if (typeof j["name"] === "string" && j["name"] !== null && j["name"].length > 0) {
+            data.push("Merchant: " + j[name]);
+            isEmpty = false;
+        }
+        
+        if (typeof j["pos"] === "string" && j["pos"] !== null && j["pos"].length > 0) {
+            data.push("Locate: " + j["pos"]);
+            isEmpty = false;
+        }
+
+        if (typeof j["price"] === "string" && j["price"] !== null && j["price"].length > 0) {
+            data.push("Price: " + j["price"]);
+            isEmpty = false;
+        }
+    
+    if (isEmpty) data.push("Merchant");
+    }
+}
+
+export function setSpecificDrop(data: string[], manual: JSONValueEx, itemName: string) {
+    const path = dSpecific;
+    if (typeof manual === "object" && manual !== null && !Array.isArray(manual) 
+        && typeof manual[path] === "object" && manual[path] != null && !Array.isArray(manual[path]) 
+        && Array.isArray(manual[path][itemName])) {
+        for (const jsp of manual[path][itemName]) {
+            if (typeof jsp === "object" && jsp !== null && !Array.isArray(jsp)) {
+                let name = "";
+                if (typeof jsp["ismobname"] === "boolean" && jsp["ismobname"] !== null && jsp["ismobname"]) name = "Mob Name: ";
+                if (typeof jsp["name"] === "string" && jsp["name"] !== null) data.push(jsp["name"]);
+
+                if (Array.isArray(jsp["pos"])) {
+                    for (const je of jsp["pos"]) {
+                        if (typeof je === "string" && je !== null) {
+                            data.push("Locate: " + je);
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+

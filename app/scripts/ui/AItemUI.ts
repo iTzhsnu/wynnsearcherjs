@@ -11,7 +11,7 @@ export abstract class AItemUI {
         const parent = document.getElementById("result-box") as HTMLElement;
 
         this.base = document.createElement("div");
-        this.base.style = styles.item_display_area;
+        this.base.className = styles.item_display_area;
         
         // Set Background Color by Rarity
         switch (item.getIdString(rarityId)) {

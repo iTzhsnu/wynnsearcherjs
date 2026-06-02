@@ -12,6 +12,7 @@ export const namePos = "name";
 export const typePos = "type";
 export const subTypePos = "subType";
 export const identified = "identified";
+export const coordsPos = "coordinates";
 
 // value type
 export const raw = "raw";

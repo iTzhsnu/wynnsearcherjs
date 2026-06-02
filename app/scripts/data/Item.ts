@@ -1,5 +1,5 @@
-import { dNever, max, typePos } from "../utils/DataKeys";
-import { haveManualDrop } from "../utils/DataUtils";
+import { coordsPos, dAltar, dChallenge, dDungeon, dDungeonMerchant, dEvent, dLegendaryIsland, dLootChest, dLootrun, dMerchant, dMiniboss, dNever, dNormal, dOther, dQuest, dRaid, dSecretDiscovery, dTheQiraHive, dWorldEvent, max, namePos, typePos } from "../utils/DataKeys";
+import { haveManualDrop, setMerchant, setPosOnlyDropType, setSpecificDrop, setTooltip } from "../utils/DataUtils";
 import { JSONValueEx } from "../utils/JSONValueEx";
 import { AItem } from "./AItem";
 import { idDropMeta, idDropRestriction, Identifications, ids, typeInt, typeString } from "./Identifications";
@@ -139,21 +139,119 @@ export class Item extends AItem {
             tooltipText.className = styles.tooptip_text;
 
             const itemName = this.getName();
+            const lv = this.getIdValue(0, max);
             const p = haveManualDrop(howToObtain, itemName);
+            const texts = ["This item can be obtained by"];
 
-            if (p > 0 && typeof this.json[idDropMeta] === "undefined") {
+            if (p > 0 && typeof this.json[idDropMeta] === "undefined" && typeof howToObtain === "object" && howToObtain !== null && !Array.isArray(howToObtain)) {
                 if (p === 1) {
                     // Unobtainable
-                    tooltipText.appendChild(document.createTextNode("This item can't be obtained."));
-                    tooltip.onclick = (() => {navigator.clipboard.writeText("This item can't be obtained.");});
+                    setTooltip(tooltip, tooltipText, ["This item can't be obtained."]);
                 } else if (p === 13) {
                     // Discontinued
-                    tooltipText.appendChild(document.createTextNode("This item is Discontinued."));
-                    tooltip.onclick = (() => {navigator.clipboard.writeText("This item is Discontinued.");});
+                    setTooltip(tooltip, tooltipText, ["This item is Discontinued."]);
                 } else {
+                    // Normal (Hostile Mob and Any Loot)
+                    if (Array.isArray(howToObtain[dNormal])) {
+                        for (const je of howToObtain[dNormal]) {
+                            if (typeof je === "string" && je !== null && je === itemName) {
+                                texts.push("Hostile Mob and Any Loot Chests", "Level" + Math.max((lv - 4), 1) + " to " + (lv + 4));
+                                break;
+                            }
+                        }
+                    }
                     
+                    // Legendary Island
+                    if (Array.isArray(howToObtain[dLegendaryIsland])) {
+                        for (const je of howToObtain[dLegendaryIsland]) {
+                            if (typeof je === "string" && je !== null && je === itemName) {
+                                texts.push("Legendary Island");
+                                break;
+                            }
+                        }
+                    }
+
+                    setPosOnlyDropType(texts, howToObtain, itemName, dDungeon, "");
+                    setMerchant(texts, howToObtain, itemName, dMerchant);
+                    setMerchant(texts, howToObtain, itemName, dDungeonMerchant);
+                    setPosOnlyDropType(texts, howToObtain, itemName, dTheQiraHive, "The Qira Hive: ");
+                    setPosOnlyDropType(texts, howToObtain, itemName, dSecretDiscovery, "");
+                    setPosOnlyDropType(texts, howToObtain, itemName, dQuest, "Quest: ");
+                    setPosOnlyDropType(texts, howToObtain, itemName, dRaid, "Raid Rewards: ");
+                    setPosOnlyDropType(texts, howToObtain, itemName, dOther, "");
+                    setPosOnlyDropType(texts, howToObtain, itemName, dWorldEvent, "World Event: ");
+                    setPosOnlyDropType(texts, howToObtain, itemName, dLootrun, "");
+
+                    setSpecificDrop(texts, howToObtain, itemName);
+                }
+            } else {
+                if (typeof this.json[idDropMeta] === "object" && this.json[idDropMeta] !== null && Array.isArray(this.json[idDropMeta])) {
+                    const j = this.json[idDropMeta];
+                    let t = "";
+
+                    if (typeof j[namePos] === "string" && j[namePos] !== null) t = j[namePos];
+                    
+                    if (typeof j[typePos] !== "undefined") {
+                        if (Array.isArray(j[typePos]) && typeof j[dEvent] === "string" && j[dEvent] !== null) {
+                            texts.push(" Merchant and " + j[dEvent] + " Event");
+                        } else if (typeof j[typePos] === "string" && j[typePos] !== null) {
+                            let skipUnknown = false;
+                            switch (j[typePos]) {
+                                case dDungeonMerchant:
+                                    texts.push(t + " Dungeon Merchant");
+                                    break;
+                                case dRaid:
+                                    texts.push(t + " Raid Rewards");
+                                    break;
+                                case dAltar:
+                                case dMerchant:
+                                case dLootrun:
+                                case dQuest:
+                                case dChallenge:
+                                case dMiniboss:
+                                    skipUnknown = true;
+                                default:
+                                    texts.push(t + " " + j[typePos].charAt(0).toUpperCase() + j[typePos].substring(1));
+                                    
+                                    if (!skipUnknown) console.log(itemName + " has unknown drop type: " + j[typePos]);
+                                    break;
+                            }
+                        }
+                    }
+
+                    if (Array.isArray(j[coordsPos])) {
+                        // may j[coordsPos][0] as number ?
+                        const p: number[] = [];
+                        for (const je of j[coordsPos]) {
+                            if (typeof je === "number" && je !== null) {
+                                p.push(je);
+                            }
+                        }
+                        texts.push("Locate: " + p[0] + ", " + p[1] + ", " + p[2]);
+                    }
+                } else if (typeof this.json[idDropRestriction] === "string" && this.json[idDropRestriction] !== null) {
+                    switch (this.json[idDropRestriction]) {
+                        case dNormal:
+                            texts.push();
+                            break;
+                        case dLootChest:
+                            texts.push();
+                            break;
+                        case dNever:
+                            texts.push("Unknown");
+                            break;
+                        case dDungeon:
+                            texts.push("");
+                            break;
+                        default:
+                            texts.push();
+                            console.log();
+                            break;
+                    }
                 }
             }
+
+            setTooltip(tooltip, tooltipText, texts);
 
             parent.appendChild(tooltip);
             tooltip.appendChild(tooltipText);
