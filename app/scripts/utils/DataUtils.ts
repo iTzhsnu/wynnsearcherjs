@@ -136,7 +136,15 @@ export function setPosOnlyDropType(data: string[], manual: JSONValueEx, itemName
         && typeof manual[path] === "object" && manual[path] != null && !Array.isArray(manual[path]) 
         && typeof manual[path][itemName] === "object" && manual[path][itemName] !== null && !Array.isArray(manual[path][itemName])) {
         if (typeof manual[path][itemName]["pos"] === "string" && manual[path][itemName]["pos"] !== null) {
-            data.push(desc + manual[path][itemName]["pos"]);
+            const split = manual[path][itemName]["pos"].split("<br>");
+            if (split.length === 1) {
+                data.push(desc + split[0]);
+            } else {
+                data.push(desc);
+                for (let i = 0; split.length > i; ++i) {
+                    data.push(split[i]);
+                }
+            }
         }
         return true;
     }

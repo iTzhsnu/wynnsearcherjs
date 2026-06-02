@@ -139,10 +139,10 @@
 
 .tooltip_text::before {
   content: '';
-    position: absolute;
-    top: -13px;
-    left: 50%;
-    margin-left: -7px;
-    border: 7px solid transparent;
-    border-bottom: 7px solid #333;
+  position: absolute;
+  top: -13px;
+  left: 50%;
+  margin-left: -7px;
+  border: 7px solid transparent;
+  border-bottom: 7px solid #333;
 }

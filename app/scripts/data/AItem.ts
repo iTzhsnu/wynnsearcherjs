@@ -403,7 +403,7 @@ export abstract class AItem {
                 const key = Object.keys(this.json[idName])[0];
                 const value = this.json[idName][key];
 
-                if (typeof value === "string" && value !== null) tooltipText.appendChild(document.createTextNode(value));
+                if (typeof value === "string" && value !== null) tooltipText.innerHTML += value;
             
                 parent.appendChild(tooltip);
                 tooltip.appendChild(tooltipText);
