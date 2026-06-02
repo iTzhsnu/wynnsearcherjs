@@ -13,6 +13,7 @@ export const typePos = "type";
 export const subTypePos = "subType";
 export const identified = "identified";
 export const coordsPos = "coordinates";
+export const ingCoordsPos = "coords";
 
 // value type
 export const raw = "raw";

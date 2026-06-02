@@ -3,7 +3,7 @@ import { wynnItems } from "../DataManager";
 
 import powderData from "../../json/powders.json"
 import { JSONValueEx } from "./JSONValueEx";
-import { dNormal, dDungeon, dDungeonMerchant, dRaid, dMerchant, dLootrun, dQuest, dDiscontinued, dUnobtainable, dLegendaryIsland, dTheQiraHive, dSecretDiscovery, dOther, dWorldEvent, dSpecific } from "./DataKeys";
+import { dNormal, dDungeon, dDungeonMerchant, dRaid, dMerchant, dLootrun, dQuest, dDiscontinued, dUnobtainable, dLegendaryIsland, dTheQiraHive, dSecretDiscovery, dOther, dWorldEvent, dSpecific, namePos } from "./DataKeys";
 
 export let itemDataCache: Item | null = null;
 export function getItemFromName(name: string): Item | null {
@@ -131,25 +131,27 @@ export function setTooltip(tooltip: HTMLElement, tooltipText: HTMLElement, texts
     tooltip.onclick = (() => {navigator.clipboard.writeText(text);});
 }
 
-export function setPosOnlyDropType(data: string[], manual: JSONValueEx, itemName: string, path: string, desc: string) {
+export function setPosOnlyDropType(data: string[], manual: JSONValueEx, itemName: string, path: string, desc: string): boolean {
     if (typeof manual === "object" && manual !== null && !Array.isArray(manual) 
         && typeof manual[path] === "object" && manual[path] != null && !Array.isArray(manual[path]) 
         && typeof manual[path][itemName] === "object" && manual[path][itemName] !== null && !Array.isArray(manual[path][itemName])) {
         if (typeof manual[path][itemName]["pos"] === "string" && manual[path][itemName]["pos"] !== null) {
             data.push(desc + manual[path][itemName]["pos"]);
         }
+        return true;
     }
+    return false;
 }
 
-export function setMerchant(data: string[], manual: JSONValueEx, itemName: string, path: string) {
+export function setMerchant(data: string[], manual: JSONValueEx, itemName: string, path: string): boolean {
     if (typeof manual === "object" && manual !== null && !Array.isArray(manual) 
         && typeof manual[path] === "object" && manual[path] != null && !Array.isArray(manual[path]) 
         && typeof manual[path][itemName] === "object" && manual[path][itemName] !== null && !Array.isArray(manual[path][itemName])) {
         const j = manual[path][itemName];
         let isEmpty = true;
         
-        if (typeof j["name"] === "string" && j["name"] !== null && j["name"].length > 0) {
-            data.push("Merchant: " + j[name]);
+        if (typeof j[namePos] === "string" && j[namePos] !== null && j[namePos].length > 0) {
+            data.push("Merchant: " + j[namePos]);
             isEmpty = false;
         }
         
@@ -162,21 +164,22 @@ export function setMerchant(data: string[], manual: JSONValueEx, itemName: strin
             data.push("Price: " + j["price"]);
             isEmpty = false;
         }
-    
-    if (isEmpty) data.push("Merchant");
+
+        if (isEmpty) data.push("Merchant");
+        return true;
     }
+    return false;
 }
 
-export function setSpecificDrop(data: string[], manual: JSONValueEx, itemName: string) {
-    const path = dSpecific;
+export function setSpecificDrop(data: string[], manual: JSONValueEx, itemName: string): boolean {
     if (typeof manual === "object" && manual !== null && !Array.isArray(manual) 
-        && typeof manual[path] === "object" && manual[path] != null && !Array.isArray(manual[path]) 
-        && Array.isArray(manual[path][itemName])) {
-        for (const jsp of manual[path][itemName]) {
+        && typeof manual[dSpecific] === "object" && manual[dSpecific] != null && !Array.isArray(manual[dSpecific]) 
+        && Array.isArray(manual[dSpecific][itemName])) {
+        for (const jsp of manual[dSpecific][itemName]) {
             if (typeof jsp === "object" && jsp !== null && !Array.isArray(jsp)) {
                 let name = "";
                 if (typeof jsp["ismobname"] === "boolean" && jsp["ismobname"] !== null && jsp["ismobname"]) name = "Mob Name: ";
-                if (typeof jsp["name"] === "string" && jsp["name"] !== null) data.push(jsp["name"]);
+                if (typeof jsp[namePos] === "string" && jsp[namePos] !== null) data.push(name + jsp[namePos]);
 
                 if (Array.isArray(jsp["pos"])) {
                     for (const je of jsp["pos"]) {
@@ -187,6 +190,8 @@ export function setSpecificDrop(data: string[], manual: JSONValueEx, itemName: s
                 }
             }
         }
+        return true;
     }
+    return false;
 }
 

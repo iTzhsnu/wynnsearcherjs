@@ -155,7 +155,7 @@ export class Item extends AItem {
                     if (Array.isArray(howToObtain[dNormal])) {
                         for (const je of howToObtain[dNormal]) {
                             if (typeof je === "string" && je !== null && je === itemName) {
-                                texts.push("Hostile Mob and Any Loot Chests", "Level" + Math.max((lv - 4), 1) + " to " + (lv + 4));
+                                texts.push("Hostile Mob and Any Loot Chests", "Level " + Math.max((lv - 4), 1) + " to " + (lv + 4));
                                 break;
                             }
                         }
@@ -185,7 +185,7 @@ export class Item extends AItem {
                     setSpecificDrop(texts, howToObtain, itemName);
                 }
             } else {
-                if (typeof this.json[idDropMeta] === "object" && this.json[idDropMeta] !== null && Array.isArray(this.json[idDropMeta])) {
+                if (typeof this.json[idDropMeta] === "object" && this.json[idDropMeta] !== null && !Array.isArray(this.json[idDropMeta])) {
                     const j = this.json[idDropMeta];
                     let t = "";
 
@@ -220,32 +220,25 @@ export class Item extends AItem {
                     }
 
                     if (Array.isArray(j[coordsPos])) {
-                        // may j[coordsPos][0] as number ?
-                        const p: number[] = [];
-                        for (const je of j[coordsPos]) {
-                            if (typeof je === "number" && je !== null) {
-                                p.push(je);
-                            }
-                        }
-                        texts.push("Locate: " + p[0] + ", " + p[1] + ", " + p[2]);
+                        texts.push("Locate: " + (j[coordsPos][0] as number) + ", " + (j[coordsPos][1] as number) + ", " + (j[coordsPos][2] as number));
                     }
                 } else if (typeof this.json[idDropRestriction] === "string" && this.json[idDropRestriction] !== null) {
                     switch (this.json[idDropRestriction]) {
                         case dNormal:
-                            texts.push();
+                            texts.push("Hostile Mob and Any Loot Chests", "Level " + Math.max((lv - 4), 1) + " to " + (lv + 4));
                             break;
                         case dLootChest:
-                            texts.push();
+                            texts.push("Tier 3 and 4 Loot Chests", "Level " + Math.max((lv - 4), 1) + " to " + (lv + 4));
                             break;
                         case dNever:
                             texts.push("Unknown");
                             break;
                         case dDungeon:
-                            texts.push("");
+                            texts.push("Dungeon Drop");
                             break;
                         default:
-                            texts.push();
-                            console.log();
+                            texts.push(this.json[idDropRestriction]);
+                            console.log(itemName + " has unknown drop type: " + this.json[idDropRestriction]);
                             break;
                     }
                 }

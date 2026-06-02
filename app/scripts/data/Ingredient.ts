@@ -1,5 +1,5 @@
-import { dDummy, dLootrun, dMerchant, dNever, dNormal, dQuest, dRaid, dSpecific, dUnobtainable, dWorldEvent, max, namePos } from "../utils/DataKeys";
-import { haveManualDrop } from "../utils/DataUtils";
+import { coordsPos, dDummy, dLootrun, dMerchant, dNever, dNormal, dQuest, dRaid, dSpecific, dUnobtainable, dWorldEvent, ingCoordsPos, max, namePos } from "../utils/DataKeys";
+import { haveManualDrop, setMerchant, setPosOnlyDropType, setSpecificDrop } from "../utils/DataUtils";
 import { JSONValueEx } from "../utils/JSONValueEx";
 import { AItem } from "./AItem";
 import { idDropBy, Identifications, ids, reqPos, typeInt, typeString } from "./Identifications";
@@ -118,12 +118,54 @@ export class Ingredient extends AItem {
             tooltipText.className = styles.tooptip_text;
 
             const itemName = this.getName();
+            const lv = this.getIdValue(0, max);
             const p = haveManualDrop(howToObtain, itemName);
+            const texts = ["This item can be obtained by"];
 
-            if (p > 0) {
-
+            // Manual (specific not included)
+            if (p > 0 && typeof howToObtain === "object" && howToObtain !== null && !Array.isArray(howToObtain)) {
+                if (p === 11) {
+                    texts.push("Hostile Mob and Any Loot Chests", "Level " + Math.max((lv - 4), 1) + " to " + (lv + 4), "");
+                }
+                
+                if (setMerchant(texts, howToObtain, itemName, dMerchant)) texts.push("");
+                if (setPosOnlyDropType(texts, howToObtain, itemName, dQuest, "Quest: ")) texts.push("");
+                if (setPosOnlyDropType(texts, howToObtain, itemName, dRaid, "Raid Rewards: ")) texts.push("");
+                if (setPosOnlyDropType(texts, howToObtain, itemName, dWorldEvent, "World Event: ")) texts.push("");
+                if (setPosOnlyDropType(texts, howToObtain, itemName, dLootrun, "")) texts.push("");
             }
 
+            // Dropped by
+            if (Array.isArray(this.json[idDropBy])) {
+                for (const je of this.json[idDropBy]) {
+                    if (typeof je === "object" && je !== null && !Array.isArray(je)) {
+                        if (typeof je[namePos] === "string" && je[namePos] !== null) {
+                            if (je[namePos] === dDummy) continue;
+
+                            texts.push("Mob Name: " + je[namePos]);
+
+                            if (Array.isArray(je[ingCoordsPos])) {
+                                const coords = je[ingCoordsPos];
+                                if (Array.isArray(coords[0])) {
+                                    for (const coordsN of coords) {
+                                        if (Array.isArray(coordsN)) {
+                                            texts.push("Locate: " + coordsN[0] + ", " + coordsN[1] + ", " + coordsN[2] + " | Radius: " + (coordsN[3] as number * 0.5));
+                                        }
+                                    }
+                                } else {
+                                    texts.push("Locate: " + coords[0] + ", " + coords[1] + ", " + coords[2] + " | Radius: " + (coords[3] as number * 0.5));
+                                }
+                            }
+                            texts.push("");
+                        }
+                    }
+                }
+            }
+
+            // Specific (Manual)
+            setSpecificDrop(texts, howToObtain, itemName);
+
+            if (texts[texts.length - 1].length === 0) texts.pop();
             parent.appendChild(tooltip);
             tooltip.appendChild(tooltipText);
             tooltip.appendChild(document.createTextNode("How to obtain (not perfect)"));
