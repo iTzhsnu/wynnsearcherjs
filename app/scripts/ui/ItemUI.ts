@@ -20,11 +20,11 @@ export class ItemUI extends AItemUI {
             const s = item.getIdStringFromIdNum(43);
 
             if (s === sFast || s === sSlow) {
-                this.applyDisplayData("Attack Speed:" + s.charAt(0).toUpperCase() + s.substring(1, 5) + " " + s.substring(5));
+                this.applyDisplayData("Attack Speed: " + s.charAt(0).toUpperCase() + s.substring(1, 5) + " " + s.substring(5));
             } else if (s === vFast || vSlow) {
-                this.applyDisplayData("Attack Speed:" + s.charAt(0).toUpperCase() + s.substring(1, 4) + " " + s.substring(4));
+                this.applyDisplayData("Attack Speed: " + s.charAt(0).toUpperCase() + s.substring(1, 4) + " " + s.substring(4));
             } else {
-                this.applyDisplayData("Attack Speed:" + s.charAt(0).toUpperCase() + s.substring(1));
+                this.applyDisplayData("Attack Speed: " + s.charAt(0).toUpperCase() + s.substring(1));
             }
         }
 
@@ -62,8 +62,8 @@ export class ItemUI extends AItemUI {
         if (item.haveFieldPosBase(idPos)) {
             for (let i = 9; 118 >= i; ++i) {
                 if (i === 65 || i === 64 || i === 43 
-                    || 35 >= i || i >= 29 
-                    || 22 >= i || i >= 18) continue;
+                    || (35 >= i && i >= 29) 
+                    || (22 >= i && i >= 18)) continue;
 
                 const minValue = item.getIdValue(i, min);
                 const maxValue = item.getIdValue(i, max);
