@@ -43,7 +43,7 @@ export class IngUI extends AItemUI {
 
             for (let i = 1; 5 >= i; ++i) {
                 if (item.haveId(i, null, "", "")) {
-                    this.applyDisplayData(ids[i].displayName + ": " + item.getIdValue(i, max));
+                    this.applyDisplayData(ids[i].displayName + ": " + AItemUI.setPlus(item.getIdValue(i, max)));
                     addSpace = true;
                 }
             }
@@ -55,7 +55,7 @@ export class IngUI extends AItemUI {
             let addSpace = false;
             for (let i = 120; 121 >= i; ++i) {
                 if (item.haveId(i, null, "", "")) {
-                    this.applyDisplayData(ids[i].displayName + ": " + item.getIdValue(i, max));
+                    this.applyDisplayData(ids[i].displayName + ": " + AItemUI.setPlus(item.getIdValue(i, max)));
                     addSpace = true;
                 }
             }

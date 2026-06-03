@@ -100,7 +100,7 @@ export class OthersUI extends AItemUI {
             const lvMax = lvMin + 20;
             for (let i = 198; 200 >= i; ++i) {
                 const id = ids[i];
-                if (item.haveId(i, null, "", "")) this.applyDisplayData(item.getIdValue(i, min) + id.displaySp + " " + id.displayName + lvMin + "-" + lvMax + " contents " + item.getIdValue(i, max) + id.displaySp);
+                if (item.haveId(i, null, "", "")) this.applyDisplayData(AItemUI.setPlus(item.getIdValue(i, min)) + id.displaySp + " " + id.displayName + lvMin + "-" + lvMax + " contents " + AItemUI.setPlus(item.getIdValue(i, max)) + id.displaySp);
             }
         }
 
