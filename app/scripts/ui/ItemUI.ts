@@ -71,7 +71,7 @@ export class ItemUI extends AItemUI {
                 
                 if (minValue !== 0 || maxValue !== 0) {
                     if (minValue === maxValue) {
-                        this.applyDisplayData(id.displayName + " " + maxValue + id.displaySp);
+                        this.applyDisplayData(id.displayName + " " + AItemUI.setPlus(maxValue) + id.displaySp);
                     } else {
                         this.applyDisplayData(AItemUI.setPlus(minValue) + id.displaySp + " " + id.displayName + " " + AItemUI.setPlus(maxValue) + id.displaySp);
                     }

@@ -423,7 +423,11 @@ function filter(itemType: string, howToObtain: JSONValueEx): void {
 }
 
 function setSortedDisplay(itemType: string): void {
-    foundItems.sort(compareIdValue);
+    if ((<HTMLSelectElement>document.getElementById("sort-type")).value === max) {
+        foundItems.sort(compareIdMax);
+    } else {
+        foundItems.sort(compareIdMin);
+    }
 
     for (const item of foundItems) {
         switch (itemType) {
@@ -520,12 +524,10 @@ function getIdNameFromType(id: Identifications, itemType: string): string {
     return id.itemName;
 }
 
-function compareIdValue(a: AItem, b: AItem): number {
-    if (a.filterMaxValues[0] > b.filterMaxValues[0]) {
-        return -1;
-    } else if (a.filterMaxValues[0] < b.filterMaxValues[0]) {
-        return 1;
-    }
+function compareIdMax(a: AItem, b: AItem): number {
+    return b.filterMaxValues[0] - a.filterMaxValues[0];
+}
 
-    return 0;
+function compareIdMin(a: AItem, b: AItem): number {
+    return a.filterMinValues[0] - b.filterMinValues[0];
 }

@@ -67,7 +67,8 @@ export class IngUI extends AItemUI {
             let addSpace = false;
             for (let i = 123; 128 >= i; ++i) {
                 if (item.haveId(i, null, "", "")) {
-                    this.applyDisplayData(ids[i].displayName + ": " + item.getIdValue(i, max));
+                    const id = ids[i];
+                    this.applyDisplayData(id.displayName + ": " + AItemUI.setPlus(item.getIdValue(i, max)) + id.displaySp);
                     addSpace = true;
                 }
             }
