@@ -12,6 +12,7 @@ export class OthersUI extends AItemUI {
         this.applyDisplayData(item.getName());
 
         // Type and SubType
+        const type = item.getType();
         let subType = "";
         switch (item.getSubType()) {
             case typeGuildTome: //x1 Slots
@@ -39,7 +40,7 @@ export class OthersUI extends AItemUI {
                 subType = item.getSubType();
                 break;
         }
-        switch (item.getType()) {
+        switch (type) {
             case typeTome:
                 this.applyDisplayData("Tome Type: " + subType);
                 break;
