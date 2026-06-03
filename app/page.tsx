@@ -94,7 +94,7 @@ export default function Home() {
 
                 <div>
                     Sort:
-                    <input id="id-box-11" list="ids" className={styles.ids_box} />
+                    <input id="id-box-11" list="ids" className={styles.ids_box} style={{ marginLeft: "clamp(0px, 19px, 19px)"}} />
                     +
                     <input id="id-box-12" list="ids" className={styles.ids_box} />
                     +
@@ -103,14 +103,14 @@ export default function Home() {
                     <input id="id-box-14" list="ids" className={styles.ids_box} />
                 </div>
                 <div>
-                    <input id="id-range-min-1" className={styles.ids_range} />
-                    to
-                    <input id="id-range-max-1" className={styles.ids_range} />
-
                     <select className={styles.sort_type} id="sort-type">
                         <option value="max">Sort: Max</option>
                         <option value="min">Sort: Min</option>
                     </select>
+
+                    <input id="id-range-min-1" className={styles.ids_range} style={{ marginLeft: "clamp(0px, 5px, 5px)"}} />
+                    to
+                    <input id="id-range-max-1" className={styles.ids_range} style={{ marginLeft: "0px" }} />
                 </div>
 
                 <div>
@@ -126,7 +126,7 @@ export default function Home() {
                 <div>
                     <input id="id-range-min-2" className={styles.ids_range} />
                     to
-                    <input id="id-range-max-2" className={styles.ids_range} />
+                    <input id="id-range-max-2" className={styles.ids_range} style={{ marginLeft: "0px" }} />
                 </div>
 
                 <div>
@@ -142,7 +142,7 @@ export default function Home() {
                 <div>
                     <input id="id-range-min-3" className={styles.ids_range} />
                     to
-                    <input id="id-range-max-3" className={styles.ids_range} />
+                    <input id="id-range-max-3" className={styles.ids_range} style={{ marginLeft: "0px" }} />
                 </div>
 
                 <div>
@@ -158,7 +158,11 @@ export default function Home() {
                 <div>
                     <input id="id-range-min-4" className={styles.ids_range} />
                     to
-                    <input id="id-range-max-4" className={styles.ids_range} />
+                    <input id="id-range-max-4" className={styles.ids_range} style={{ marginLeft: "0px" }} />
+                </div>
+
+                <div>
+
                 </div>
 
                 <datalist id="ids">
