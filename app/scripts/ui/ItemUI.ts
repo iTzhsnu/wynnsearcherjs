@@ -60,6 +60,7 @@ export class ItemUI extends AItemUI {
 
         // IDs
         if (item.haveFieldPosBase(idPos)) {
+            let addSpace = false;
             for (let i = 9; 118 >= i; ++i) {
                 if (i === 65 || i === 64 || i === 43 
                     || (35 >= i && i >= 29) 
@@ -75,10 +76,11 @@ export class ItemUI extends AItemUI {
                     } else {
                         this.applyDisplayData(AItemUI.setPlus(minValue) + id.displaySp + " " + id.displayName + " " + AItemUI.setPlus(maxValue) + id.displaySp);
                     }
+                    addSpace = true;
                 }
             }
 
-            this.applyDisplayData("");
+            if (addSpace) this.applyDisplayData("");
         }
 
         // Powder Slots

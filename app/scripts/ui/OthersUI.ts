@@ -106,26 +106,28 @@ export class OthersUI extends AItemUI {
 
         // IDs (Tome and Charm)
         if (item.haveFieldPosBase(idPos)) {
-                    for (let i = 9; 118 >= i; ++i) {
-                        if (i === 65 || i === 64 || i === 43 
-                            || (35 >= i && i >= 29) 
-                            || (22 >= i && i >= 18)) continue;
+            let addSpace = false;
+            for (let i = 9; 118 >= i; ++i) {
+                if (i === 65 || i === 64 || i === 43 
+                    || (35 >= i && i >= 29) 
+                    || (22 >= i && i >= 18)) continue;
         
-                        const minValue = item.getIdValue(i, min);
-                        const maxValue = item.getIdValue(i, max);
-                        const id = ids[i];
-                        
-                        if (minValue !== 0 || maxValue !== 0) {
-                            if (minValue === maxValue) {
-                                this.applyDisplayData(id.displayName + " " + AItemUI.setPlus(maxValue) + id.displaySp);
-                            } else {
-                                this.applyDisplayData(AItemUI.setPlus(minValue) + id.displaySp + " " + id.displayName + " " + AItemUI.setPlus(maxValue) + id.displaySp);
-                            }
-                        }
+                const minValue = item.getIdValue(i, min);
+                const maxValue = item.getIdValue(i, max);
+                const id = ids[i];
+                    
+                if (minValue !== 0 || maxValue !== 0) {
+                    if (minValue === maxValue) {
+                        this.applyDisplayData(id.displayName + " " + AItemUI.setPlus(maxValue) + id.displaySp);
+                    } else {
+                        this.applyDisplayData(AItemUI.setPlus(minValue) + id.displaySp + " " + id.displayName + " " + AItemUI.setPlus(maxValue) + id.displaySp);
                     }
-        
-                    this.applyDisplayData("");
+                    addSpace = true;
                 }
+            }
+        
+            if (addSpace) this.applyDisplayData("");
+        }
 
         // Rarity (Tome and Charm)
         const rarity = item.getRarity();
