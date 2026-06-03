@@ -376,7 +376,7 @@ function filterFromIdRange(pos: number, filterMin: string, filterMax: string) {
 
         for (let i = foundItems.length - 1; i >= 0; --i) {
             const item = foundItems[i];
-            if (!(item.filterMaxValues[pos] > minInt && maxInt > item.filterMinValues[pos])) {
+            if (!(item.filterMaxValues[pos] >= minInt && maxInt >= item.filterMinValues[pos])) {
                 foundItems.splice(i, 1);
             }
         }
