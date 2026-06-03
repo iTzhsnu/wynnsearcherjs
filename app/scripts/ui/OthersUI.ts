@@ -11,11 +11,7 @@ export class OthersUI extends AItemUI {
         // Apply Item Name
         this.applyDisplayData(item.getName());
 
-        // Type
-        const type = item.getType();
-        this.applyDisplayData(type);
-
-        // Sub Type
+        // Type and SubType
         let subType = "";
         switch (item.getSubType()) {
             case typeGuildTome: //x1 Slots
@@ -43,7 +39,7 @@ export class OthersUI extends AItemUI {
                 subType = item.getSubType();
                 break;
         }
-        switch (type) {
+        switch (item.getType()) {
             case typeTome:
                 this.applyDisplayData("Tome Type: " + subType);
                 break;
@@ -120,7 +116,7 @@ export class OthersUI extends AItemUI {
                         
                         if (minValue !== 0 || maxValue !== 0) {
                             if (minValue === maxValue) {
-                                this.applyDisplayData(id.displayName + " " + maxValue + id.displaySp);
+                                this.applyDisplayData(id.displayName + " " + AItemUI.setPlus(maxValue) + id.displaySp);
                             } else {
                                 this.applyDisplayData(AItemUI.setPlus(minValue) + id.displaySp + " " + id.displayName + " " + AItemUI.setPlus(maxValue) + id.displaySp);
                             }
