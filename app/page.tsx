@@ -155,12 +155,12 @@ export default function Home() {
                     +
                     <input id="id-box-44" list="ids" className={styles.ids_box} />
                 </div>
-                <div style={{display: "flex"}}>
+                <div className={styles.id_range_and_util}>
                     <input id="id-range-min-4" className={styles.ids_range} />
                     to
                     <input id="id-range-max-4" className={styles.ids_range} style={{ marginLeft: "0px" }} />
 
-                    <div style={{display: "inline-flex", marginLeft: "auto", textAlign: "right"}}>
+                    <div className={styles.util_buttons}>
                         <button className={styles.reset_filter_button} onClick={() => {resetFilter();}}>Reset Filter</button>
                         <button className={styles.all_type_onoff_button} onClick={() => {allTypeToggle();}}>All Type On/Off</button>
                     </div>
