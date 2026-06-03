@@ -147,3 +147,38 @@
   border: 7px solid transparent;
   border-bottom: 7px solid #333;
 }
+
+.reset_filter_button {
+  width: 100px;
+  height: 30px;
+  border: 1px solid;
+  border-radius: 10px;
+  border-color: silver;
+  background: lightcyan;
+  font-size: 15px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+.reset_filter_button:active {
+  transform: scale(0.95);
+}
+
+.all_type_onoff_button {
+  width: 120px;
+  height: 30px;
+  border: 1px solid;
+  border-radius: 10px;
+  border-color: silver;
+  background: lightcyan;
+  font-size: 15px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+.all_type_onoff_button:active {
+  transform: scale(0.95);
+}
+

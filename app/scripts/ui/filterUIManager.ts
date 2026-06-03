@@ -70,3 +70,56 @@ function changeItemCheckBox(type: string): void {
             break;
     }
 }
+
+export function resetFilter() {
+    const inputs = [<HTMLInputElement>document.getElementById("id-box-11"), <HTMLInputElement>document.getElementById("id-box-12"), <HTMLInputElement>document.getElementById("id-box-13"), <HTMLInputElement>document.getElementById("id-box-14"), 
+        <HTMLInputElement>document.getElementById("id-box-21"), <HTMLInputElement>document.getElementById("id-box-22"), <HTMLInputElement>document.getElementById("id-box-23"), <HTMLInputElement>document.getElementById("id-box-24"),
+        <HTMLInputElement>document.getElementById("id-box-31"), <HTMLInputElement>document.getElementById("id-box-32"), <HTMLInputElement>document.getElementById("id-box-33"), <HTMLInputElement>document.getElementById("id-box-34"),
+        <HTMLInputElement>document.getElementById("id-box-41"), <HTMLInputElement>document.getElementById("id-box-42"), <HTMLInputElement>document.getElementById("id-box-43"), <HTMLInputElement>document.getElementById("id-box-44"),
+        <HTMLInputElement>document.getElementById("id-range-min-1"), <HTMLInputElement>document.getElementById("id-range-min-2"), <HTMLInputElement>document.getElementById("id-range-min-3"), <HTMLInputElement>document.getElementById("id-range-min-4"),
+        <HTMLInputElement>document.getElementById("id-range-max-1"), <HTMLInputElement>document.getElementById("id-range-max-2"), <HTMLInputElement>document.getElementById("id-range-max-3"), <HTMLInputElement>document.getElementById("id-range-max-4")];
+
+        for (const elem of inputs) {
+            elem.value = "";
+        }
+}
+
+export function allTypeToggle() {
+    const inputs = [<HTMLInputElement>document.getElementById("bow-checkbox"), 
+        <HTMLInputElement>document.getElementById("spear-checkbox"), 
+        <HTMLInputElement>document.getElementById("wand-checkbox"),
+        <HTMLInputElement>document.getElementById("dagger-checkbox"),
+        <HTMLInputElement>document.getElementById("relik-checkbox"),
+        <HTMLInputElement>document.getElementById("helmet-checkbox"),
+        <HTMLInputElement>document.getElementById("chestplate-checkbox"),
+        <HTMLInputElement>document.getElementById("leggings-checkbox"),
+        <HTMLInputElement>document.getElementById("boots-checkbox"),
+        <HTMLInputElement>document.getElementById("ring-checkbox"),
+        <HTMLInputElement>document.getElementById("bracelet-checkbox"),
+        <HTMLInputElement>document.getElementById("necklace-checkbox"),
+        
+        <HTMLInputElement>document.getElementById("armouring-checkbox"),
+        <HTMLInputElement>document.getElementById("tailoring-checkbox"),
+        <HTMLInputElement>document.getElementById("weaponsmithing-checkbox"),
+        <HTMLInputElement>document.getElementById("woodworking-checkbox"),
+        <HTMLInputElement>document.getElementById("jeweling-checkbox"),
+        <HTMLInputElement>document.getElementById("scribing-checkbox"),
+        <HTMLInputElement>document.getElementById("cooking-checkbox"),
+        <HTMLInputElement>document.getElementById("alchemism-checkbox"),
+        
+        <HTMLInputElement>document.getElementById("tome-checkbox"),
+        <HTMLInputElement>document.getElementById("charm-checkbox"),
+        <HTMLInputElement>document.getElementById("tool-checkbox"),
+        <HTMLInputElement>document.getElementById("material-checkbox")];
+
+        let checked = false;
+        for (const input of inputs) {
+            if (input.checked) {
+                checked = true;
+                break;
+            }
+        }
+        for (const input of inputs) {
+            input.checked = !checked;
+        }
+}

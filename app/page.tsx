@@ -3,7 +3,7 @@
 import styles from "./styles.module.css";
 import { useEffect } from 'react';
 import { InitializeData } from "./scripts/DataManager";
-import { changeItemType, changeTomeType, typeEquip, typeIng, typeOthers } from "./scripts/ui/filterUIManager";
+import { changeItemType, changeTomeType, typeEquip, typeIng, typeOthers, resetFilter, allTypeToggle } from "./scripts/ui/filterUIManager";
 import { search } from "./scripts/Search";
 
 export default function Home() {
@@ -15,11 +15,11 @@ export default function Home() {
     <div className={styles.main}>
             <div className="filter-area">
                 <input className={styles.search_input} type="text" id="name-filter-field" placeholder="Name Filter"/>
-                <button className={styles.search_button} id="search-button" onClick={() => {search()}}>Search</button>
+                <button className={styles.search_button} id="search-button" onClick={() => {search();}}>Search</button>
                 
                 <div className={styles.inline_block}>
                     <div>
-                        <select className={styles.item_type} id="item-type-select" onChange={(e) => {changeItemType(e.target.value)}}>
+                        <select className={styles.item_type} id="item-type-select" onChange={(e) => {changeItemType(e.target.value);}}>
                             <option value={typeEquip}>Type: Equipments</option>
                             <option value={typeIng}>Type: Ingredients</option>
                             <option value={typeOthers}>Type: Others</option>
@@ -73,7 +73,7 @@ export default function Home() {
                     </div>
                 </div>
                 <div id="other-cb-parent" style={{display: "none"}}>
-                    <label className={styles.type_label}><input className={styles.type_checkbox} type="checkbox" id="tome-checkbox" onChange={(e) => {changeTomeType(e.target.checked)}} />Tome</label>
+                    <label className={styles.type_label}><input className={styles.type_checkbox} type="checkbox" id="tome-checkbox" onChange={(e) => {changeTomeType(e.target.checked);}} />Tome</label>
                     <label className={styles.type_label}><input className={styles.type_checkbox} type="checkbox" id="charm-checkbox" />Charm</label>
                     <label className={styles.type_label}><input className={styles.type_checkbox} type="checkbox" id="tool-checkbox" />Tool</label>
                     <label className={styles.type_label}><input className={styles.type_checkbox} type="checkbox" id="material-checkbox" />Material</label>
@@ -155,15 +155,17 @@ export default function Home() {
                     +
                     <input id="id-box-44" list="ids" className={styles.ids_box} />
                 </div>
-                <div>
+                <div style={{display: "flex"}}>
                     <input id="id-range-min-4" className={styles.ids_range} />
                     to
                     <input id="id-range-max-4" className={styles.ids_range} style={{ marginLeft: "0px" }} />
+
+                    <div style={{display: "inline-flex", marginLeft: "auto", textAlign: "right"}}>
+                        <button className={styles.reset_filter_button} onClick={() => {resetFilter();}}>Reset Filter</button>
+                        <button className={styles.all_type_onoff_button} onClick={() => {allTypeToggle();}}>All Type On/Off</button>
+                    </div>
                 </div>
 
-                <div>
-
-                </div>
 
                 <datalist id="ids">
                     <option value="Level"></option>
