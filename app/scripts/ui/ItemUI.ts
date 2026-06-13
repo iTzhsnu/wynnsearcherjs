@@ -1,5 +1,5 @@
 import { AItem } from "../data/AItem";
-import { basePos, idPos, ids, rarityId, reqPos } from "../data/Identifications";
+import { basePos, idPos, ids, reqPos } from "../data/Identifications";
 import { max, min, sFast, sSlow, vFast, vSlow } from "../utils/DataKeys";
 import { AItemUI } from "./AItemUI";
 

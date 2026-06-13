@@ -1,4 +1,4 @@
-import { coordsPos, dDummy, dLootrun, dMerchant, dNever, dNormal, dQuest, dRaid, dSpecific, dUnobtainable, dWorldEvent, ingCoordsPos, max, namePos } from "../utils/DataKeys";
+import { dDummy, dLootrun, dMerchant, dNever, dNormal, dQuest, dRaid, dSpecific, dUnobtainable, dWorldEvent, ingCoordsPos, max, namePos } from "../utils/DataKeys";
 import { haveManualDrop, setMerchant, setPosOnlyDropType, setSpecificDrop, setTooltip } from "../utils/DataUtils";
 import { JSONValueEx } from "../utils/JSONValueEx";
 import { AItem } from "./AItem";
