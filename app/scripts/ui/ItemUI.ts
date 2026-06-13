@@ -21,7 +21,7 @@ export class ItemUI extends AItemUI {
 
             if (s === sFast || s === sSlow) {
                 this.applyDisplayData("Attack Speed: " + s.charAt(0).toUpperCase() + s.substring(1, 5) + " " + s.substring(5));
-            } else if (s === vFast || vSlow) {
+            } else if (s === vFast || s === vSlow) {
                 this.applyDisplayData("Attack Speed: " + s.charAt(0).toUpperCase() + s.substring(1, 4) + " " + s.substring(4));
             } else {
                 this.applyDisplayData("Attack Speed: " + s.charAt(0).toUpperCase() + s.substring(1));
