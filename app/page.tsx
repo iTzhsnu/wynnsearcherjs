@@ -160,6 +160,8 @@ export default function Home() {
                     to
                     <input id="id-range-max-4" className={styles.ids_range} style={{ marginLeft: "0px" }} />
 
+                    <div className={styles.displayed_count} id="displayed-count"></div>
+
                     <div className={styles.util_buttons}>
                         <button className={styles.reset_filter_button} onClick={() => {resetFilter();}}>Reset Filter</button>
                         <button className={styles.all_type_onoff_button} onClick={() => {allTypeToggle();}}>All Type On/Off</button>

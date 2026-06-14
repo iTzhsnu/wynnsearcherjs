@@ -33,6 +33,8 @@ export function search(): void {
             break;
     }
 
+    (<HTMLDivElement>document.getElementById("displayed-count")).innerText = "Found Items Count: " + foundItems.length;
+
     setSortedDisplay(itemType);
 }
 

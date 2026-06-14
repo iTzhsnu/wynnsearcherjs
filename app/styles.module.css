@@ -196,8 +196,25 @@
   display: flex;
 }
 
+.displayed_count {
+  display: inline-flex;
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 15px;
+}
+
 @media (width <= 425px) {
   .id_range_and_util {
     display: block;
   }
+
+  .displayed_count {
+    display: flex;
+    position: static;
+    left: 0;
+    transform: none;
+    margin-left: clamp(0px, 10px, 20px);
+  }
+  
 }
