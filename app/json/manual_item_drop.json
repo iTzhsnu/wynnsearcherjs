@@ -1,5 +1,5 @@
 {
-  "last_edit": "2024-09-10",
+  "last_edit": "2026-06-14",
   "unobtainable": [
     "GM's Helmet",
     "GM's Breastplate",
@@ -41,6 +41,7 @@
     "Cracked Oak Bow",
     "Cracked Oak Relik"
   ],
+
   "dungeon": {
     "Tisaun's Valor": {
       "pos": "Forgery Chest Reward"
@@ -55,6 +56,7 @@
       "pos": "Forgery Chest Reward"
     }
   },
+
   "legendary_island": [
     "Bronze Basic Ring",
     "Bronze Basic Bracelet",
@@ -119,6 +121,7 @@
     "Treasured Diamond Mask of Legendary Victory",
     "Outlandish Replica Face Mask of Legendary Victory"
   ],
+
   "merchant": {
     "Oak Wood Spear": {
       "name": "Weapon Merchant",
@@ -170,7 +173,7 @@
       "pos": "Lutho",
       "price": "1x Corrupted Soul Token (Quest Rewards: A Hunter's Calling)"
     },
-    "Ornate Shadow Garb": {
+    "Ornate Shadow Cloak": {
       "name": "Mysterious Merchant",
       "pos": "Lutho",
       "price": "1x Corrupted Soul Token (Quest Rewards: A Hunter's Calling)"
@@ -264,6 +267,26 @@
       "name": "Armour Merchant",
       "pos": "-160, 38, -4069 (Isles of Fiction)",
       "price": "1024x Emeralds (16EB)"
+    },
+    "Hearthkeeper": {
+      "name": "Armour Merchant",
+      "pos": "Isles of Fiction",
+      "price": "89088x Emeralds (21LE 48EB)"
+    },
+    "Firebird": {
+      "name": "Armour Merchant",
+      "pos": "Isles of Fiction",
+      "price": "76800x Emeralds (18LE 48EB)"
+    },
+    "Quilted Carapace": {
+      "name": "Armour Merchant",
+      "pos": "Isles of Fiction",
+      "price": "61440x Emeralds (15LE)"
+    },
+    "Eleventh Hour": {
+      "name": "Armour Merchant",
+      "pos": "Isles of Fiction",
+      "price": "45056x Emeralds (11LE)"
     },
     "Goblin Hood": {
       "name": "Armour Merchant",
@@ -2295,6 +2318,7 @@
       "price": "53248x Emeralds (13LE)"
     }
   },
+
   "the_qira_hive": {
     "Infused Hive Relik": {
       "pos": "Master Voucher"
@@ -2441,6 +2465,7 @@
       "pos": "Thunder Voucher"
     }
   },
+
   "secret_discovery": {
     "Necklace of a Thousand Storms": {
       "pos": "Secret Discovery: Necklace Chamber"
@@ -2476,6 +2501,7 @@
       "pos": "Secret Discovery: Clock Mystery"
     }
   },
+
   "quest": {
     "Elemental Training Spear": {
       "pos": "Elemental Exercise"
@@ -2734,8 +2760,12 @@
     },
     "Hide of Poxper": {
       "pos": "Blazing Retribution"
+    },
+    "Shattershard": {
+      "pos": "Apotheosis"
     }
   },
+
   "specific": {
     "Contamination": [
       {
@@ -4143,8 +4173,25 @@
           "677, -493"
         ]
       }
+    ],
+    "Asterism": [
+      {
+        "name": "Ursa Major",
+        "pos": [
+          "Auburn Forest"
+        ]
+      }
+    ],
+    "Heretic": [
+      {
+        "name": "Hyhet, the Apostate (Deserter's Refuge Boss Altar)",
+        "pos": [
+          "-1728, -948 (1 Noble Ribbon)"
+        ]
+      }
     ]
   },
+
   "dungeonMerchant": {
     "Corrupted Nii Shako": {
       "name": "Corrupted Decrepit Sewers",
@@ -4210,6 +4257,7 @@
       "pos": "-861, 123, -4896"
     }
   },
+
   "discontinued": {
     "Hero's Mask": {
       "pos": "Festival of the Heroes (2023)"
@@ -4362,6 +4410,7 @@
       "pos": "Festival of the Spirits (2023)"
     }
   },
+
   "other": {
     "Bow Of Wisdom": {
       "pos": "This item wrong name."
@@ -4441,76 +4490,113 @@
     "Masterwork Pure": {
       "pos": "Ascend from Pure (Item Upgrader)"
     },
-    "Empyreal Emberplate": {
-      "pos": "Lootrun End Reward (Lutho)"
-    },
-    "Third Wish": {
-      "pos": "Lootrun End Reward (Lutho)"
-    },
-    "Pyrrhic Respite": {
-      "pos": "Lootrun End Reward (Lutho)"
-    },
-    "Ysengrim": {
-      "pos": "Lootrun End Reward (Lutho)"
-    },
-    "Marionette": {
-      "pos": "Lootrun End Reward (Lutho)"
-    },
-    "Cytotoxic Striders": {
-      "pos": "Lootrun End Reward (Lutho)"
-    },
-    "Briars' Embrace": {
-      "pos": "Lootrun End Reward (Lutho)"
-    },
-    "Veritas": {
-      "pos": "Lootrun End Reward (Lutho)"
-    },
-    "Apex": {
-      "pos": "Lootrun End Reward (Corkus)"
-    },
-    "Keeper of Souls": {
-      "pos": "Lootrun End Reward (Corkus?)"
-    },
-    "Anti-Causality": {
-      "pos": "Lootrun End Reward (Corkus)"
-    },
-    "Gnossis": {
-      "pos": "Lootrun End Reward (Corkus)"
-    },
-    "Tachyon": {
-      "pos": "Lootrun End Reward (Corkus)"
-    },
-    "Azeotrope": {
-      "pos": "Lootrun End Reward (Lutho)"
-    },
-    "Gravitron": {
-      "pos": "Lootrun End Reward (Lutho)"
-    },
-    "Resplendence": {
-      "pos": "Lootrun End Reward (Corkus)"
-    },
-    "Valence": {
-      "pos": "Lootrun End Reward (Corkus?)"
-    },
-    "Cinnamon": {
-      "pos": "Lootrun End Reward (Corkus)"
-    },
-    "Payment Day": {
-      "pos": "Lootrun End Reward (Corkus)"
-    },
-    "Fluffwind": {
-      "pos": "Lootrun End Reward (Corkus)"
-    },
-    "Sourscratch": {
-      "pos": "Lootrun End Reward (Corkus)"
-    },
-    "Lazuli": {
-      "pos": "Lootrun End Reward (Corkus)"
-    },
     "Solar Sailers": {
       "pos": "Cave(First Time Only): Sundial Sanctum"
+    },
+    "Forlorn Pursuit": {
+      "pos": "Workbench in the Scavenger's Workshop<br>(Outer Void: 13993, -3800)<br>(4x Metal Swarf, 2x Steel Rod, 2x Elestial Voidstone, 1x Precious Mineral, 1x Relic of the Shattering)"
+    },
+    "The Incomprehensible": {
+      "pos": "Workbench in the Scavenger's Workshop<br>(Outer Void: 13993, -3800)<br>(2x Discarded Scrap, 2x Packaged Brownie, 1x Hobby Horse, 1x Tangible Intangibility)"
+    },
+    "Suspended Soliloquy": {
+      "pos": "Workbench in the Scavenger's Workshop<br>(Outer Void: 13993, -3800)"
+    },
+    "Grand Design": {
+      "pos": "Workbench in the Scavenger's Workshop<br>(Outer Void: 13993, -3800)"
+    },
+    "Song of Solitude": {
+      "pos": "Workbench in the Scavenger's Workshop<br>(Outer Void: 13993, -3800)"
+    },
+    "Afelis's Locket": {
+      "pos": "After speaking to Afelis in succession in Ragni, Detlas, Nemract, Llevigar, Bucie, Gelibord and Kander Forest, and finally by visiting the ceremony at the Memorial north of Gelibord following their death. (Quest to be completed: Elemental Exercise, The Dark Decent, Clearing the Camps and Lazarus Pit)"
     }
   },
+
+  "lootrun": {
+    "Empyreal Emberplate": {
+      "pos": "Lutho"
+    },
+    "Third Wish": {
+      "pos": "Lutho"
+    },
+    "Pyrrhic Respite": {
+      "pos": "Lutho"
+    },
+    "Ysengrim": {
+      "pos": "Lutho"
+    },
+    "Marionette": {
+      "pos": "Lutho"
+    },
+    "Cytotoxic Striders": {
+      "pos": "Lutho"
+    },
+    "Briars' Embrace": {
+      "pos": "Lutho"
+    },
+    "Veritas": {
+      "pos": "Lutho"
+    },
+    "Apex": {
+      "pos": "Corkus"
+    },
+    "Keeper of Souls": {
+      "pos": "Corkus"
+    },
+    "Anti-Causality": {
+      "pos": "Corkus"
+    },
+    "Gnossis": {
+      "pos": "Corkus"
+    },
+    "Tachyon": {
+      "pos": "Corkus"
+    },
+    "Azeotrope": {
+      "pos": "Lutho"
+    },
+    "Gravitron": {
+      "pos": "Lutho"
+    },
+    "Resplendence": {
+      "pos": "Corkus"
+    },
+    "Valence": {
+      "pos": "Corkus"
+    },
+    "Cinnamon": {
+      "pos": "Corkus"
+    },
+    "Payment Day": {
+      "pos": "Corkus"
+    },
+    "Fluffwind": {
+      "pos": "Corkus"
+    },
+    "Sourscratch": {
+      "pos": "Corkus"
+    },
+    "Lazuli": {
+      "pos": "Corkus"
+    },
+    "Latent Disorder": {
+      "pos": "West Fruma Foray"
+    },
+    "Dawn Chaser": {
+      "pos": "East Fruma Foray"
+    },
+    "Firebomb": {
+      "pos": "East Fruma Foray"
+    },
+    "Stygian Spiral": {
+      "pos": "West Fruma Foray"
+    },
+    "Dissenter's Refuge": {
+      "pos": "West Fruma Foray"
+    }
+  },
+
   "world_event": {
     "Labyrinth": {
       "pos": "Prelude to Annihilation"
@@ -4530,22 +4616,22 @@
 
 
     "Guard's Garment": {
-      "pos": "<br>Haywire Defende<br>Approaching Raid<br>Overtaken Farm<br>Archnid Ambush<br>Encroaching Blaze<br>Dark Beacons"
+      "pos": "Haywire Defende<br>Approaching Raid<br>Overtaken Farm<br>Archnid Ambush<br>Encroaching Blaze<br>Dark Beacons"
     },
     "Hydrogen": {
-      "pos": "<br>Haywire Defende<br>Approaching Raid<br>Overtaken Farm<br>Archnid Ambush<br>Encroaching Blaze<br>Dark Beacons"
+      "pos": "Haywire Defende<br>Approaching Raid<br>Overtaken Farm<br>Archnid Ambush<br>Encroaching Blaze<br>Dark Beacons"
     },
     "Nitrogen": {
-      "pos": "<br>Haywire Defende<br>Approaching Raid<br>Overtaken Farm<br>Archnid Ambush<br>Encroaching Blaze<br>Dark Beacons"
+      "pos": "Haywire Defende<br>Approaching Raid<br>Overtaken Farm<br>Archnid Ambush<br>Encroaching Blaze<br>Dark Beacons"
     },
     "Silicon": {
-      "pos": "<br>Haywire Defende<br>Approaching Raid<br>Overtaken Farm<br>Archnid Ambush<br>Encroaching Blaze<br>Dark Beacons"
+      "pos": "Haywire Defende<br>Approaching Raid<br>Overtaken Farm<br>Archnid Ambush<br>Encroaching Blaze<br>Dark Beacons"
     },
     "Radium": {
-      "pos": "<br>Haywire Defende<br>Approaching Raid<br>Overtaken Farm<br>Archnid Ambush<br>Encroaching Blaze<br>Dark Beacons"
+      "pos": "Haywire Defende<br>Approaching Raid<br>Overtaken Farm<br>Archnid Ambush<br>Encroaching Blaze<br>Dark Beacons"
     },
     "Carbon": {
-      "pos": "<br>Haywire Defende<br>Approaching Raid<br>Overtaken Farm<br>Archnid Ambush<br>Encroaching Blaze<br>Dark Beacons"
+      "pos": "Haywire Defende<br>Approaching Raid<br>Overtaken Farm<br>Archnid Ambush<br>Encroaching Blaze<br>Dark Beacons"
     },
     "Silken Slippers": {
       "pos": "Archnid Ambush"
@@ -4560,22 +4646,22 @@
       "pos": "Encroaching Blaze"
     },
     "Boil Lance": {
-      "pos": "<br>Dark Beacons<br>Encroaching Destruction"
+      "pos": "Dark Beacons<br>Encroaching Destruction"
     },
     "Diaconate": {
       "pos": "Dark Beacons"
     },
     "Golem's Arm": {
-      "pos": "<br>Encroaching Destruction<br>Corrupted Spring"
+      "pos": "Encroaching Destruction<br>Corrupted Spring"
     },
     "Glaring Issue": {
-      "pos": "<br>Corrupted Spring<br>Necromantic Site<br>Encroaching Misery"
+      "pos": "Corrupted Spring<br>Necromantic Site<br>Encroaching Misery"
     },
     "Brainy Beanie": {
-      "pos": "<br>Necromantic Site<br>Risen Return<br>Encroaching Misery"
+      "pos": "Necromantic Site<br>Risen Return<br>Encroaching Misery"
     },
     "Backbiter": {
-      "pos": "<br>Necromantic Site<br>Risen Return<br>Encroaching Misery"
+      "pos": "Necromantic Site<br>Risen Return<br>Encroaching Misery"
     },
     "Intestine Lasso": {
       "pos": "Risen Return<br>Encroaching Misery"
@@ -4584,37 +4670,37 @@
       "pos": "Risen Return<br>Encroaching Misery<br>Bowels of the Roots"
     },
     "Bugbite": {
-      "pos": "<br>Bowels of the Roots<br>Encroaching Reanimation<br>Improper Burial Rites"
+      "pos": "Bowels of the Roots<br>Encroaching Reanimation<br>Improper Burial Rites"
     },
     "Bloodied Chaps": {
-      "pos": "<br>Bowels of the Roots<br>Encroaching Reanimation"
+      "pos": "Bowels of the Roots<br>Encroaching Reanimation"
     },
     "Giant's Kneecap": {
-      "pos": "<br>Bowels of the Roots<br>Encroaching Reanimation<br>Improper Burial Rites<br>Blood-Encrusted Mastaba"
+      "pos": "Bowels of the Roots<br>Encroaching Reanimation<br>Improper Burial Rites<br>Blood-Encrusted Mastaba"
     },
     "Sanguine Spaulder": {
-      "pos": "<br>Bowels of the Roots<br>Encroaching Reanimation<br>Improper Burial Rites"
+      "pos": "Bowels of the Roots<br>Encroaching Reanimation<br>Improper Burial Rites"
     },
     "Rusted Cog": {
-      "pos": "<br>Bowels of the Roots<br>Encroaching Reanimation<br>Blood-Encrusted Mastaba"
+      "pos": "Bowels of the Roots<br>Encroaching Reanimation<br>Blood-Encrusted Mastaba"
     },
     "Glass Skin": {
       "pos": "Bowels of the Roots<br>Encroaching Reanimation<br>Blood-Encrusted Mastaba"
     },
     "Zombie Eye Pendant": {
-      "pos": "<br>Encroaching Reanimation<br>Blood-Encrusted Mastaba"
+      "pos": "Encroaching Reanimation<br>Blood-Encrusted Mastaba"
     },
     "Goredrinker": {
       "pos": "Encroaching Reanimation<br>Blood-Encrusted Mastaba"
     },
     "Warsong": {
-      "pos": "<br>Encroaching Reanimation<br>Improper Burial Rites<br>Blood-Encrusted Mastaba"
+      "pos": "Encroaching Reanimation<br>Improper Burial Rites<br>Blood-Encrusted Mastaba"
     },
     "Viscera Burst": {
       "pos": "Encroaching Reanimation<br>Blood-Encrusted Mastaba"
     },
     "Mummy's Talisman": {
-      "pos": "<br>Encroaching Reanimation<br>Improper Burial Rites"
+      "pos": "Encroaching Reanimation<br>Improper Burial Rites"
     },
     "Desert Cyclone": {
       "pos": "Improper Burial Rites<br>Blood-Encrusted Mastaba"
@@ -4623,19 +4709,19 @@
       "pos": "Improper Burial Rites"
     },
     "Ancient Jazerant": {
-      "pos": "<br>Improper Burial Rites<br>Blazing Combustion"
+      "pos": "Improper Burial Rites<br>Blazing Combustion"
     },
     "Tainted Ruby": {
-      "pos": "<br>Improper Burial Rites<br>Blazing Combustion"
+      "pos": "Improper Burial Rites<br>Blazing Combustion"
     },
     "Grisly Gauntlet": {
-      "pos": "<br>Improper Burial Rites<br>Encroaching Conflagration"
+      "pos": "Improper Burial Rites<br>Encroaching Conflagration"
     },
     "Nevermore": {
-      "pos": "<br>Improper Burial Rites<br>Encroaching Conflagration<br>Failed Hunt<br>Blazing Combustion"
+      "pos": "Improper Burial Rites<br>Encroaching Conflagration<br>Failed Hunt<br>Blazing Combustion"
     },
     "Treachery": {
-      "pos": "<br>Improper Burial Rites<br>Encroaching Conflagration<br>Failed Hunt"
+      "pos": "Improper Burial Rites<br>Encroaching Conflagration<br>Failed Hunt"
     },
     "Desert Wretch": {
       "pos": "Improper Burial Rites"
@@ -4647,10 +4733,10 @@
       "pos": "Blood-Encrusted Mastaba"
     },
     "Blazing Bangle": {
-      "pos": "<br>Encroaching Conflagration<br>Failed Hunt<br>Canine Ambush"
+      "pos": "Encroaching Conflagration<br>Failed Hunt<br>Canine Ambush"
     },
     "Mesoskeleton": {
-      "pos": "<br>Encroaching Conflagration<br>Blazing Combustion"
+      "pos": "Encroaching Conflagration<br>Blazing Combustion"
     },
     "Dogfight": {
       "pos": "Encroaching Conflagration"
@@ -4659,7 +4745,7 @@
       "pos": "Tainted Shoreline"
     },
     "Dissever": {
-      "pos": "<br>Failed Hunt<br>Canine Ambush"
+      "pos": "Failed Hunt<br>Canine Ambush"
     },
     "Funambulist": {
       "pos": "Failed Hunt"
@@ -4671,31 +4757,31 @@
       "pos": "Splintered Greathammer"
     },
     "Spinal Estoc": {
-      "pos": "<br>Canine Ambush<br>Encroaching Ablation"
+      "pos": "Canine Ambush<br>Encroaching Ablation"
     },
     "Brainbleed": {
-      "pos": "<br>Canine Ambush<br>Blazing Combustion<br>Encroaching Ablation"
+      "pos": "Canine Ambush<br>Blazing Combustion<br>Encroaching Ablation"
     },
     "The Scavenged": {
       "pos": "Canine Ambush"
     },
     "Bloodbag": {
-      "pos": "<br>Encroaching Ablation<br>Slimy Schism"
+      "pos": "ncroaching Ablation<br>Slimy Schism"
     },
     "Bloodied Wreath": {
       "pos": "Encroaching Ablation"
     },
     "Cremation": {
-      "pos": "<br>Encroaching Ablation<br>Slimy Schism"
+      "pos": "Encroaching Ablation<br>Slimy Schism"
     },
     "Empathy Purge": {
-      "pos": "<br>Encroaching Ablation<br>Slimy Schism"
+      "pos": "Encroaching Ablation<br>Slimy Schism"
     },
     "Hecatomb": {
-      "pos": "<br>Encroaching Ablation<br>Slimy Schism"
+      "pos": "Encroaching Ablation<br>Slimy Schism"
     },
     "Woebegone": {
-      "pos": "<br>Blazing Combustion<br>Canine Ambush<br>Encroaching Ablation"
+      "pos": "Blazing Combustion<br>Canine Ambush<br>Encroaching Ablation"
     },
     "Mutilated Corpse": {
       "pos": "Blazing Combustion"
@@ -4704,10 +4790,10 @@
       "pos": "Blazing Combustion"
     },
     "Arterial Spray": {
-      "pos": "<br>Blazing Combustion<br>Canine Ambush<br>Encroaching Ablation"
+      "pos": "Blazing Combustion<br>Canine Ambush<br>Encroaching Ablation"
     },
     "Inclemency": {
-      "pos": "<br>Blazing Combustion<br>Canine Ambush<br>Encroaching Ablation"
+      "pos": "Blazing Combustion<br>Canine Ambush<br>Encroaching Ablation"
     },
     "Decaybound Spindle": {
       "pos": "Rogue Wyrmling"
@@ -4716,7 +4802,7 @@
       "pos": "Rogue Wyrmling"
     },
     "Earthmover": {
-      "pos": "<br>Rogue Wyrmling<br>Desperate Ambush"
+      "pos": "Rogue Wyrmling<br>Desperate Ambush"
     },
     "Jagged Bone Necklace": {
       "pos": "Slimy Schism"
@@ -4725,7 +4811,7 @@
       "pos": "Slimy Schism"
     },
     "Living Slime": {
-      "pos": "<br>Slimy Schism<br>A Burning Memory"
+      "pos": "Slimy Schism<br>A Burning Memory"
     },
     "Purity Filter": {
       "pos": "Slimy Schism"
@@ -4782,16 +4868,16 @@
       "pos": "A Burning Memory"
     },
     "Terminal Velocity": {
-      "pos": "<br>A Burning Memory<br>Encroaching Extinction"
+      "pos": "A Burning Memory<br>Encroaching Extinction"
     },
     "Carnage Agglomerate": {
-      "pos": "<br>A Burning Memory<br>Encroaching Extinction"
+      "pos": "A Burning Memory<br>Encroaching Extinction"
     },
     "Infernus Aeterna": {
-      "pos": "<br>A Burning Memory<br>Encroaching Extinction"
+      "pos": "A Burning Memory<br>Encroaching Extinction"
     },
     "Blighted Seraph": {
-      "pos": "<br>A Burning Memory<br>Encroaching Extinction"
+      "pos": "A Burning Memory<br>Encroaching Extinction"
     },
     "Helios Lux": {
       "pos": "Light Emissaries"
@@ -4917,7 +5003,7 @@
       "pos": "Ahms Monuments"
     },
     "Animosity": {
-      "pos": "<br>Incomprehensible Cynosure<br>Shapes in the Dark<br>All Eyes on Me<br>Monument to Loss<br>Pestilential Downpour"
+      "pos": "Incomprehensible Cynosure<br>Shapes in the Dark<br>All Eyes on Me<br>Monument to Loss<br>Pestilential Downpour"
     },
     "Mesmerizing Madness": {
       "pos": "Incomprehensible Cynosure"
@@ -4951,6 +5037,120 @@
     },
     "Transplanted Psyche": {
       "pos": "Otherworldly Exhibition"
+    },
+    "Wraith": {
+      "pos": "Royal Alchemists"
+    },
+    "Sedimentary": {
+      "pos": "Royal Alchemists"
+    },
+    "Episode": {
+      "pos": "Royal Alchemists"
+    },
+    "Crucible": {
+      "pos": "Palace Guards"
+    },
+    "Propitious": {
+      "pos": "Royal Alchemists"
+    },
+    "Futulism": {
+      "pos": "Royal Alchemists"
+    },
+    "Biohazard": {
+      "pos": "Biohazardous Bloom"
+    },
+    "Retiarius": {
+      "pos": "Autumn Poachers"
+    },
+    "Blunt Force": {
+      "pos": "Prelude to Annihilation"
+    },
+    "Watchman's Vendetta": {
+      "pos": "Prelude to Annihilation"
+    },
+    "Malevolent Urge": {
+      "pos": "Prelude to Annihilation"
+    },
+    "Syncope": {
+      "pos": "Prelude to Annihilation"
+    },
+    "Mephistophelian": {
+      "pos": "Prelude to Annihilation"
+    },
+    "Shredder Club": {
+      "pos": "Territorial Trolls"
+    },
+    "Sealight Prism": {
+      "pos": "Lonely Islet"
+    },
+    "Catabolysis": {
+      "pos": "Glacial Training"
+    },
+    "Panopticon": {
+      "pos": "Citadel Barracks"
+    },
+    "Last Sun": {
+      "pos": "Fossil Fighters"
+    },
+    "Skyline Bliss": {
+      "pos": "Stackpeak Pinnacle"
+    },
+    "Repurposed Vessels": {
+      "pos": "Ahms Monuments"
+    },
+    "H-215 Plasmatic Exograft": {
+      "pos": "Decommissioned War Machines<br>Despermech Occupation"
+    },
+    "Spring-Coiled Cataphract": {
+      "pos": "Despermech Occupation"
+    },
+    "Jungle Rogue": {
+      "pos": "Encroaching Extinction"
+    },
+    "Buoyant Balmorals": {
+      "pos": "Slimy Schism"
+    },
+    "Lurking Peril": {
+      "pos": "Canine Ambush"
+    },
+    "Phlebotomy": {
+      "pos": "Blood-Encrusted Mastaba"
+    },
+    "Queen Bee's Call": {
+      "pos": "Apiary Hive"
+    },
+    "Skeetwing Jewel": {
+      "pos": "Swampland Squabble"
+    },
+    "Minokawa's Grasp": {
+      "pos": "Shattered Roots"
     }
-  }
+  },
+
+  "raid": {
+    "Insignia": {
+      "pos":"The Canyon Colossus"
+    },
+    "Titanomachia": {
+      "pos": "The Canyon Colossus"
+    },
+    "Excision of Trust": {
+      "pos": "Wartorn Palace"
+    },
+    "Unforeseen Ends": {
+      "pos": "Wartorn Palace"
+    },
+    "Nasins' Nadir": {
+      "pos": "Wartorn Palace"
+    },
+    "Arbiter of Iridescence": {
+      "pos": "Wartorn Palace"
+    },
+    "Renascence": {
+      "pos": "Wartorn Palace"
+    },
+    "Rewritten History": {
+      "pos": "Wartorn Palace"
+    }
+  } 
 }

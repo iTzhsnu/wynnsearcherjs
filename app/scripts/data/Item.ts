@@ -180,7 +180,7 @@ export class Item extends AItem {
                     setPosOnlyDropType(texts, howToObtain, itemName, dRaid, "Raid Rewards: ");
                     setPosOnlyDropType(texts, howToObtain, itemName, dOther, "");
                     setPosOnlyDropType(texts, howToObtain, itemName, dWorldEvent, "World Event: ");
-                    setPosOnlyDropType(texts, howToObtain, itemName, dLootrun, "");
+                    setPosOnlyDropType(texts, howToObtain, itemName, dLootrun, "Lootrun End Rewards: ");
 
                     setSpecificDrop(texts, howToObtain, itemName);
                 }
