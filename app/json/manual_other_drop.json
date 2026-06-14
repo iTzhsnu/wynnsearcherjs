@@ -69,6 +69,18 @@
     },
     "Warlock's Tome of Allegiance": {
       "pos": "Guild Reward"
+    },
+    "Titanium Rod T13": {
+      "pos": "Ascend from Dernic Rod T12 (Item Upgrader)"
+    },
+    "Titanium Pickaxe T13": {
+      "pos": "Ascend from Dernic Pickaxe T12 (Item Upgrader)"
+    },
+    "Titanium Scythe T13": {
+      "pos": "Ascend from Dernic Scythe T12 (Item Upgrader)"
+    },
+    "Titanium Axe T13": {
+      "pos": "Ascend from Dernic Axe T12 (Item Upgrader)"
     }
   }
 }
