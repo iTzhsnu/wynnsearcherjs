@@ -1,27 +1,30 @@
 {
   "last_edit": "2023-08-05",
-  "other": {
+  "lootrun": {
     "Thief's Tome of Lootrun Mastery": {
-      "pos": "Lootrun End Reward"
+      "pos": "All Locations"
     },
     "Spelunker's Tome of Lootrun Mastery": {
-      "pos": "Lootrun End Reward"
+      "pos": "All Locations"
     },
     "Pickpocket's Tome of Lootrun Mastery": {
-      "pos": "Lootrun End Reward"
+      "pos": "All Locations"
     },
     "Manipulator's Tome of Lootrun Mastery": {
-      "pos": "Lootrun End Reward"
+      "pos": "All Locations"
     },
     "Plunderer's Tome of Lootrun Mastery": {
-      "pos": "Lootrun End Reward"
+      "pos": "All Locations"
     },
     "Scoundrel's Tome of Lootrun Mastery": {
-      "pos": "Lootrun End Reward"
+      "pos": "All Locations"
     },
     "Mastermind's Tome of Lootrun Mastery": {
-      "pos": "Lootrun End Reward"
-    },
+      "pos": "All Locations"
+    }
+  },
+
+  "other": {
     "Alchemist's Tome of Allegiance": {
       "pos": "Guild Reward"
     },

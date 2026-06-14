@@ -288,6 +288,71 @@
       "pos": "Isles of Fiction",
       "price": "45056x Emeralds (11LE)"
     },
+    "Verglas Spirit": {
+      "name": "Equipment Merchant",
+      "pos": "Festival of the Blizzard (2025)",
+      "price": "2x Fragments of the Storm"
+    },
+    "Frozen Devotion": {
+      "name": "Equipment Merchant",
+      "pos": "Festival of the Blizzard (2025)",
+      "price": "2x Fragments of the Storm"
+    },
+    "Phantasmal Hostage": {
+      "name": "Armour Merchant",
+      "pos": "Isles of Fiction",
+      "price": "57344x Emeralds (14LE)"
+    },
+    "Pulse Storm": {
+      "name": "Armour Merchant",
+      "pos": "Isles of Fiction",
+      "price": "48000x Emeralds (11LE 46EB)"
+    },
+    "Protector's Parable": {
+      "name": "Armour Merchant",
+      "pos": "Isles of Fiction",
+      "price": "38400x Emeralds (9LE 24EB)"
+    },
+    "Cessation": {
+      "name": "Armour Merchant",
+      "pos": "Isles of Fiction",
+      "price": "33536x Emeralds (8LE 12EB)"
+    },
+    "Bifrost": {
+      "name": "Armour Merchant",
+      "pos": "Isles of Fiction",
+      "price": "33600x Emeralds (8LE 13EB)"
+    },
+    "Babel": {
+      "name": "Armour Merchant",
+      "pos": "Isles of Fiction",
+      "price": "24000x Emeralds (5LE 55EB)"
+    },
+    "Lost Tales": {
+      "name": "Talespun Merchant",
+      "pos": "Isles of Fiction",
+      "price": "48000x Emeralds (11LE 46EB)"
+    },
+    "Circlet of Silver Feathers": {
+      "name": "Blizzard Merchant",
+      "pos": "Isles of Fiction",
+      "price": "14400x Emeralds (3LE 33EB)"
+    },
+    "Winter Solstice": {
+      "name": "Blizzard Merchant",
+      "pos": "Isles of Fiction",
+      "price": "9600x Emeralds (2LE 22EB)"
+    },
+    "Aestival Solstice": {
+      "name": "Bonfire Merchant",
+      "pos": "Isles of Fiction",
+      "price": "7424x Emeralds (1LE 52EB)"
+    },
+    "Scorched Feather": {
+      "name": "Bonfire Merchant",
+      "pos": "Isles of Fiction",
+      "price": "6016x Emeralds (1LE 30EB)"
+    },
     "Goblin Hood": {
       "name": "Armour Merchant",
       "pos": "Goblin Village (Regular Island)",
@@ -2763,6 +2828,18 @@
     },
     "Shattershard": {
       "pos": "Apotheosis"
+    },
+    "Mutiny": {
+      "pos": "Echoes of Change"
+    },
+    "Iron Medallion": {
+      "pos": "The Strong Survive (if the name Cursed was used)"
+    },
+    "Creed Catalyst": {
+      "pos": "Shrouded in Mist"
+    },
+    "Amplifier": {
+      "pos": "Solidarity of Steel"
     }
   },
 
@@ -4189,6 +4266,47 @@
           "-1728, -948 (1 Noble Ribbon)"
         ]
       }
+    ],
+    "Vestige of Persistence": [
+      {
+        "name": "Hyhet, the Apostate (Deserter's Refuge Boss Altar)",
+        "pos": [
+          "-1728, -948 (1 Noble Ribbon)"
+        ]
+      }
+    ],
+    "Radiation": [
+      {
+        "name": "Various Mobs in this cave (Rare Drop)",
+        "pos": [
+          "Azurite Island Cave"
+        ]
+      },
+      {
+        "name": "Cave (first time only): Azure Island"
+      }
+    ],
+    "Lingering Twilight": [
+      {
+        "name": "Various Mobs in this cave (Rare Drop)",
+        "pos": [
+          "Raiders' Hideout Cave"
+        ]
+      },
+      {
+        "name": "Cave (first time only): Raiders' Hideout"
+      }
+    ],
+    "Hex-Master Anchor": [
+      {
+        "name": "Various Mobs in this cave (Rare Drop)",
+        "pos": [
+          "Hex Keep Gateway Cave"
+        ]
+      },
+      {
+        "name": "Cave (first time only): Hex Keep Gateway"
+      }
     ]
   },
 
@@ -4255,6 +4373,11 @@
     "Kindled Orchid": {
       "name": "Corrupted Undergrowth Ruins",
       "pos": "-861, 123, -4896"
+    },
+    "Corrupted Witherhead's Elbow": {
+      "name": "Dungeon Merchant",
+      "pos": "Corrupted Decrepit Sewers",
+      "price": "6x Corrupted Witherhead's Rib"
     }
   },
 
@@ -4491,7 +4614,28 @@
       "pos": "Ascend from Pure (Item Upgrader)"
     },
     "Solar Sailers": {
-      "pos": "Cave(First Time Only): Sundial Sanctum"
+      "pos": "Cave(first time only): Sundial Sanctum"
+    },
+    "Theatre Cane": {
+      "pos": "Cave(first time only): Theatre Royal"
+    },
+    "Arachnid Effigy": {
+      "pos": "Cave(first time only): Saltpetre Mine"
+    },
+    "Entozoon Maw": {
+      "pos": "Cave(first time only): Entozoon Takeover"
+    },
+    "Titanium Rifle": {
+      "pos": "Cave(first time only): Weapons Factory"
+    },
+    "Embrittlement": {
+      "pos": "Cave(first time only): Glacier Tunnels"
+    },
+    "Myopia": {
+      "pos": "Cave(first time only): Eyeball Gauntlet"
+    },
+    "Equinox Blossom": {
+      "pos": "Cave(first time only): Cave of the Seasons"
     },
     "Forlorn Pursuit": {
       "pos": "Workbench in the Scavenger's Workshop<br>(Outer Void: 13993, -3800)<br>(4x Metal Swarf, 2x Steel Rod, 2x Elestial Voidstone, 1x Precious Mineral, 1x Relic of the Shattering)"
@@ -4506,6 +4650,45 @@
       "pos": "Workbench in the Scavenger's Workshop<br>(Outer Void: 13993, -3800)"
     },
     "Song of Solitude": {
+      "pos": "Workbench in the Scavenger's Workshop<br>(Outer Void: 13993, -3800)"
+    },
+    "Etiolation": {
+      "pos": "Workbench in the Scavenger's Workshop<br>(Outer Void: 13993, -3800)"
+    },
+    "Titanium Grievers": {
+      "pos": "Workbench in the Scavenger's Workshop<br>(Outer Void: 13993, -3800)"
+    },
+    "Voidglass Crown": {
+      "pos": "Workbench in the Scavenger's Workshop<br>(Outer Void: 13993, -3800)"
+    },
+    "Doomsday Omen": {
+      "pos": "Workbench in the Scavenger's Workshop<br>(Outer Void: 13993, -3800)"
+    },
+    "Voidglass Cloak": {
+      "pos": "Workbench in the Scavenger's Workshop<br>(Outer Void: 13993, -3800)"
+    },
+    "Ghostly Quasar": {
+      "pos": "Workbench in the Scavenger's Workshop<br>(Outer Void: 13993, -3800)"
+    },
+    "Voidglass Greaves": {
+      "pos": "Workbench in the Scavenger's Workshop<br>(Outer Void: 13993, -3800)"
+    },
+    "Voidglass Striders": {
+      "pos": "Workbench in the Scavenger's Workshop<br>(Outer Void: 13993, -3800)"
+    },
+    "Perch of the Shrouded Sun": {
+      "pos": "Workbench in the Scavenger's Workshop<br>(Outer Void: 13993, -3800)"
+    },
+    "Ephemeris": {
+      "pos": "Workbench in the Scavenger's Workshop<br>(Outer Void: 13993, -3800)"
+    },
+    "The Extinguished": {
+      "pos": "Workbench in the Scavenger's Workshop<br>(Outer Void: 13993, -3800)"
+    },
+    "Span of the Starfield": {
+      "pos": "Workbench in the Scavenger's Workshop<br>(Outer Void: 13993, -3800)"
+    },
+    "Sweet Memories": {
       "pos": "Workbench in the Scavenger's Workshop<br>(Outer Void: 13993, -3800)"
     },
     "Afelis's Locket": {
@@ -4594,6 +4777,9 @@
     },
     "Dissenter's Refuge": {
       "pos": "West Fruma Foray"
+    },
+    "Slaying Moon": {
+      "pos": "East Fruma Foray"
     }
   },
 
@@ -5124,6 +5310,84 @@
     },
     "Minokawa's Grasp": {
       "pos": "Shattered Roots"
+    },
+    "Mistweb Spinner": {
+      "pos": "Apiary Hive"
+    },
+    "Uncanny Mirage": {
+      "pos": "Aeon Origin"
+    },
+    "Regiment": {
+      "pos": "Palace Guards"
+    },
+    "Vapor Fang": {
+      "pos": "Bubbling Terrace"
+    },
+    "Ruinous": {
+      "pos": "Citadel Barracks"
+    },
+    "Hypsophobia": {
+      "pos": "Tree-Top Cradle"
+    },
+    "Gleam": {
+      "pos": "Steel Skirmish"
+    },
+    "Adherence": {
+      "pos": "Prelude to Annihilation"
+    },
+    "Taciturn": {
+      "pos": "Incomprehensible Cynosure<br>Shapes in the Dark<br>All Eyes on Me<br>Monument to Loss<br>Pestilential Downpour<br>Otherwordly Exhibition"
+    },
+    "Cnidarian Hellspawn": {
+      "pos": "Prelude to Annihilation"
+    },
+    "Impossibility Threshold": {
+      "pos": "Incomprehensible Cynosure"
+    },
+    "Timeworn Tassets": {
+      "pos": "Shattered Roots<br>Ahms Monuments"
+    },
+    "Sweeping Majesty": {
+      "pos": "Shattered Roots<br>Ahms Monuments"
+    },
+    "Scorched Antiquity": {
+      "pos": "Infernal Caldera"
+    },
+    "Abiogenesis": {
+      "pos": "Bubbling Terrace"
+    },
+    "Megalophobia": {
+      "pos": "Lonely Islet"
+    },
+    "Nostalgia": {
+      "pos": "Aeon Origin"
+    },
+    "Angel Wing Shroud": {
+      "pos": "Risen Return"
+    },
+    "Eternal Toil": {
+      "pos": "Karoshi Union"
+    },
+    "Vigilance": {
+      "pos": "Stackpeak Pinnacle"
+    },
+    "Death Grasp": {
+      "pos": "Shapes in the Dark"
+    },
+    "Dogun Sautoir": {
+      "pos": "<br>Bubbling Terrace<br>Infernal Caldera<br>Maar Ashpit"
+    },
+    "H-209 Miniature Defibrillator": {
+      "pos": "Decommissioned War Machines"
+    },
+    "Abominator": {
+      "pos": "Territorial Trolls"
+    },
+    "Besieged Sanctum": {
+      "pos": "A Burning Memory"
+    },
+    "": {
+      "pos": ""
     }
   },
 
@@ -5151,6 +5415,21 @@
     },
     "Rewritten History": {
       "pos": "Wartorn Palace"
+    },
+    "Resolution": {
+      "pos": "The Canyon Colossus"
+    },
+    "Windborne": {
+      "pos": "The Canyon Colossus"
+    },
+    "Antebellum": {
+      "pos": "The Canyon Colossus"
+    },
+    "Cannonade": {
+      "pos": "The Canyon Colossus"
+    },
+    "Mazeweaver": {
+      "pos": "The Canyon Colossus"
     }
   } 
 }
