@@ -29,7 +29,7 @@ export abstract class AItem {
                     const j = this.json[fieldPos];
                     if (typeof j[idName] === "object" && j[idName] !== null && !Array.isArray(j[idName])) {
                         const j2 = j[idName];
-                        if (typeof this.json[identified] === "boolean" && this.json[identified]) { // Not have ID range (identified)
+                        if (!(idNum >= 29 && 34 >= idNum) && typeof this.json[identified] === "boolean" && this.json[identified]) { // Not have ID range (identified)
                             if (typeof j2[raw] === "number") {
                                 return j2[raw];
                             } else if (typeof j2[min] === "number" && typeof j2[max] === "number") { // Not have ID range (get from min or max)
