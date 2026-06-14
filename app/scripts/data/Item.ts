@@ -63,6 +63,8 @@ export class Item extends AItem {
                         // Drop Meta
                         if (typeof this.json[idDropMeta] === "object" && this.json[idDropMeta] !== null && !Array.isArray(this.json[idDropMeta]) 
                             && typeof this.json[idDropMeta][typePos] !== "undefined" && this.json[idDropMeta][typePos] !== null) {
+                            if (dropType === dNever) return false; // If Drop Type is Unknown (Never)
+
                             const j = this.json[idDropMeta][typePos];
                             if (Array.isArray(j)) {
                                 for (const je of j) {
