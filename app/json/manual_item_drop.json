@@ -291,12 +291,12 @@
     "Verglas Spirit": {
       "name": "Equipment Merchant",
       "pos": "Festival of the Blizzard (2025)",
-      "price": "2x Fragments of the Storm"
+      "price": "2x Fragment of the Storm"
     },
     "Frozen Devotion": {
       "name": "Equipment Merchant",
       "pos": "Festival of the Blizzard (2025)",
-      "price": "2x Fragments of the Storm"
+      "price": "2x Fragment of the Storm"
     },
     "Phantasmal Hostage": {
       "name": "Armour Merchant",
@@ -352,6 +352,126 @@
       "name": "Bonfire Merchant",
       "pos": "Isles of Fiction",
       "price": "6016x Emeralds (1LE 30EB)"
+    },
+    "Nocturne": {
+      "name": "Equipment Merchant",
+      "pos": "Festival of the Blizzard (2025)",
+      "price": "1x Shard of Mountain"
+    },
+    "Untimely Demise": {
+      "name": "Armour Merchant",
+      "pos": "Isles of Fiction",
+      "price": "12228x Emeralds (3LE)"
+    },
+    "Frigg's Vow": {
+      "name": "Blizzard Merchant",
+      "pos": "Isles of Fiction",
+      "price": "12228x Emeralds (3LE)"
+    },
+    "Sunburnt": {
+      "name": "Bonfire Merchant",
+      "pos": "Isles of Fiction",
+      "price": "12228x Emeralds (3LE)"
+    },
+    "Summer Rays": {
+      "name": "Bonfire Merchant",
+      "pos": "Isles of Fiction",
+      "price": "10752x Emeralds (2LE 40EB)"
+    },
+    "Valse Vaincue": {
+      "name": "Armour Merchant",
+      "pos": "Isles of Fiction",
+      "price": "10752x Emeralds (2LE 40EB)"
+    },
+    "Unsung": {
+      "name": "Talespun Merchant",
+      "pos": "Isles of Fiction",
+      "price": "10752x Emeralds (2LE 40EB)"
+    },
+    "Arctic Vixen's Pelt": {
+      "name": "Blizzard Merchant",
+      "pos": "Isles of Fiction",
+      "price": "9216x Emeralds (2LE 16EB)"
+    },
+    "Wreathbound Boots": {
+      "name": "Blizzard Merchant",
+      "pos": "Isles of Fiction",
+      "price": "4096x Emeralds (1LE)"
+    },
+    "Bitter Cold": {
+      "name": "Blizzard Merchant",
+      "pos": "Isles of Fiction",
+      "price": "6144x Emeralds (1LE 32EB)"
+    },
+    "Antihero": {
+      "name": "Talespun Merchant",
+      "pos": "Isles of Fiction",
+      "price": "4096x Emeralds (1LE)"
+    },
+    "Rime-Webbed Antlers": {
+      "name": "Blizzard Merchant",
+      "pos": "Isles of Fiction",
+      "price": "2688x Emeralds (42EB)"
+    },
+    "Elk's Hoof": {
+      "name": "Blizzard Merchant",
+      "pos": "Isles of Fiction",
+      "price": "2688x Emeralds (42EB)"
+    },
+    "Never-Ending Nightmare": {
+      "name": "Assistant Mask Merchant",
+      "pos": "Detlas (Festival of the Spirits)",
+      "price": "8x Spiritual Shard or 64x Spiritual Essence"
+    },
+    "Doomed Journey": {
+      "name": "Talespun Merchant",
+      "pos": "Isles of Fiction",
+      "price": "1728x Emeralds (27EB)"
+    },
+    "The Swarm": {
+      "name": "Armour Merchant",
+      "pos": "Isles of Fiction",
+      "price": "1152x Emeralds (18EB)"
+    },
+    "Stargazing Lens": {
+      "name": "Equipment Merchant",
+      "pos": "Mountainside (Cinfras)",
+      "price": "1x Fragment of the Storm & 4x Shard of the Mountain"
+    },
+    "Sailor's Charm": {
+      "name": "Bonfire Merchant",
+      "pos": "Isles of Fiction",
+      "price": "14720x Emeralds (3LE 38EB)"
+    },
+    "Pale Sun": {
+      "name": "Blizzard Merchant",
+      "pos": "Isles of Fiction",
+      "price": "10752x Emeralds (2LE 40EB)"
+    },
+    "Hinterlands": {
+      "name": "Blizzard Merchant",
+      "pos": "Isles of Fiction",
+      "price": "10752x Emeralds (2LE 40EB)"
+    },
+    "Blissful Solace": {
+      "name": "Bonfire Merchant",
+      "pos": "Isles of Fiction",
+      "price": "10688x Emeralds (2LE 39EB)"
+    },
+    "Fantasy": {
+      "name": "Talespun Merchant",
+      "pos": "Isles of Fiction",
+      "price": "6144x Emeralds (1LE 32EB)"
+    },
+    "Act Break": {
+      "name": "Talespun Merchant",
+      "pos": "Isles of Fiction",
+      "price": "2880x Emeralds (45EB)"
+    },
+    "Firework": {
+      "name": "Bonfire Merchant",
+      "pos": "Isles of Fiction",
+      "price": "1152x Emeralds (18EB)"
     },
     "Goblin Hood": {
       "name": "Armour Merchant",
@@ -2381,6 +2501,166 @@
       "name": "Armour Merchant",
       "pos": "-188, 37, -3997 (Isles of Fiction)",
       "price": "53248x Emeralds (13LE)"
+    },
+    "Ramshackle Blowtorch": {
+      "name": "Weapon Merchant",
+      "pos": "Aelumina Citadel Safe Zone",
+      "price": "12228x Emeralds (3LE)"
+    },
+    "Grandiosity": {
+      "name": "Weapon Merchant",
+      "pos": "Hyloch",
+      "price": "11456x Emeralds (2LE 51EB)"
+    },
+    "Eminence": {
+      "name": "Weapon Merchant",
+      "pos": "Hyloch",
+      "price": "11456x Emeralds (2LE 51EB)"
+    },
+    "Dissimulation": {
+      "name": "Weapon Merchant",
+      "pos": "Aldwell",
+      "price": "10240x Emeralds (2LE 32EB)"
+    },
+    "Fraudulence": {
+      "name": "Weapon Merchant",
+      "pos": "Aldwell",
+      "price": "10240x Emeralds (2LE 32EB)"
+    },
+    "Duplicity": {
+      "name": "Weapon Merchant",
+      "pos": "Aldwell",
+      "price": "9792x Emeralds (2LE 25EB)"
+    },
+    "Deception": {
+      "name": "Weapon Merchant",
+      "pos": "Aldwell",
+      "price": "9792x Emeralds (2LE 25EB)"
+    },
+    "Mendacious": {
+      "name": "Weapon Merchant",
+      "pos": "Aldwell",
+      "price": "9408x Emeralds (2LE 19EB)"
+    },
+    "Yoreh": {
+      "name": "Weapon Merchant",
+      "pos": "Timasca",
+      "price": "8960x Emeralds (2LE 12EB)"
+    },
+    "Brushfire": {
+      "name": "Weapon Merchant",
+      "pos": "Timasca",
+      "price": "8960x Emeralds (2LE 12EB)"
+    },
+    "Seed Sower": {
+      "name": "Weapon Merchant",
+      "pos": "Timasca",
+      "price": "8576x Emeralds (2LE 6EB)"
+    },
+    "Foundation Roots": {
+      "name": "Weapon Merchant",
+      "pos": "Espren",
+      "price": "7552x Emeralds (1LE 54EB)"
+    },
+    "Antique Windchime": {
+      "name": "Weapon Merchant",
+      "pos": "Espren",
+      "price": "7552x Emeralds (1LE 54EB)"
+    },
+    "Hiraeth": {
+      "name": "Weapon Merchant",
+      "pos": "Fort Torann",
+      "price": "7360x Emeralds (1LE 51EB)"
+    },
+    "Departure": {
+      "name": "Weapon Merchant",
+      "pos": "Fort Torann",
+      "price": "7360x Emeralds (1LE 51EB)"
+    },
+    "Ol' Reliable": {
+      "name": "Weapon Merchant",
+      "pos": "Fort Torann",
+      "price": "7360x Emeralds (1LE 51EB)"
+    },
+    "Voidstone Lersing": {
+      "name": "Void Merchant",
+      "pos": "Void Village",
+      "price": "28x Void Essence"
+    },
+    "Ghorme Ndaizma": {
+      "name": "Tribal Weapon Merchant",
+      "pos": "Entamis Village",
+      "price": "8x Jungle Pearl Shard & 4x Jungle Topaz Shard"
+    },
+    "Regime Busters": {
+      "name": "Armour Merchant",
+      "pos": "Aelumina Citadel Safe Zone",
+      "price": "12228x Emeralds (3LE)"
+    },
+    "Hasty Scheme": {
+      "name": "Armour Merchant",
+      "pos": "Aelumina Citadel Safe Zone",
+      "price": "11456x Emeralds (2LE 51EB)"
+    },
+    "Disconcerting Mist": {
+      "name": "Armour Merchant",
+      "pos": "Aldwell",
+      "price": "10240x Emeralds (2LE 32EB)"
+    },
+    "Lichengrowth": {
+      "name": "Armour Merchant",
+      "pos": "Aldwell",
+      "price": "9792x Emeralds (2LE 25EB)"
+    },
+    "Basal Burl": {
+      "name": "Armour Merchant",
+      "pos": "Aldwell",
+      "price": "9408x Emeralds (2LE 19EB)"
+    },
+    "Irrigation": {
+      "name": "Armour Merchant",
+      "pos": "Timasca",
+      "price": "8960x Emeralds (2LE 12EB)"
+    },
+    "Crash Helmet": {
+      "name": "Armour Merchant",
+      "pos": "Timasca",
+      "price": "8576x Emeralds (2LE 6EB)"
+    },
+    "Conduit": {
+      "name": "Armour Merchant",
+      "pos": "Aldwell",
+      "price": "8192x Emeralds (2LE)"
+    },
+    "False Amends": {
+      "name": "Armour Merchant",
+      "pos": "Fort Torann",
+      "price": "7360x Emeralds (1LE 51EB)"
+    },
+    "Prodigious": {
+      "name": "Armour Merchant",
+      "pos": "Fort Torann",
+      "price": "7360x Emeralds (1LE 51EB)"
+    },
+    "March Onwards": {
+      "name": "Armour Merchant",
+      "pos": "Fort Torann",
+      "price": "7360x Emeralds (1LE 51EB)"
+    },
+    "Tea Diviner's Iris": {
+      "name": "Accessory Merchant",
+      "pos": "Espren",
+      "price": "17x Liff Leave & 3x Pristine Liff Leave"
+    },
+    "Tea Peddler's Wristwatch": {
+      "name": "Accessory Merchant",
+      "pos": "Espren",
+      "price": "2x Ripe Aureate Fruit & 3x Pristine Liff Leave"
+    },
+    "Tea Cultivator's Focale": {
+      "name": "Accessory Merchant",
+      "pos": "Espren",
+      "price": "6x Water Dropwort & 3x Pristine Liff Leave"
     }
   },
 
@@ -2840,6 +3120,27 @@
     },
     "Amplifier": {
       "pos": "Solidarity of Steel"
+    },
+    "Dimachaerus": {
+      "pos": "Ensemble of Hope"
+    },
+    "Conviction": {
+      "pos": "True Colours"
+    },
+    "Sureshot": {
+      "pos": "Revelations in Fall"
+    },
+    "Diverted Loyalty": {
+      "pos": "The Cursed One"
+    },
+    "Meliorism": {
+      "pos": "A New Beginning"
+    },
+    "Concord Protocol": {
+      "pos": "Overtune to Despair"
+    },
+    "Espionage": {
+      "pos": "The Price of Ingenuity"
     }
   },
 
@@ -4275,9 +4576,17 @@
         ]
       }
     ],
+    "Longinus": [
+      {
+        "name": "Hyhet, the Apostate (Deserter's Refuge Boss Altar)",
+        "pos": [
+          "-1728, -948 (1 Noble Ribbon)"
+        ]
+      }
+    ],
     "Radiation": [
       {
-        "name": "Various Mobs in this cave (Rare Drop)",
+        "name": "Various Mobs within this cave (Rare Drop)",
         "pos": [
           "Azurite Island Cave"
         ]
@@ -4288,7 +4597,7 @@
     ],
     "Lingering Twilight": [
       {
-        "name": "Various Mobs in this cave (Rare Drop)",
+        "name": "Various Mobs within this cave (Rare Drop)",
         "pos": [
           "Raiders' Hideout Cave"
         ]
@@ -4299,13 +4608,134 @@
     ],
     "Hex-Master Anchor": [
       {
-        "name": "Various Mobs in this cave (Rare Drop)",
+        "name": "Various Mobs within this cave (Rare Drop)",
         "pos": [
           "Hex Keep Gateway Cave"
         ]
       },
       {
         "name": "Cave (first time only): Hex Keep Gateway"
+      }
+    ],
+    "Serpentine": [
+      {
+        "name": "Various Mobs within this cave (Rare Drop)",
+        "pos": [
+          "Naga Dugout Cave"
+        ]
+      },
+      {
+        "name": "Cave (first time only): Naga Dugout"
+      }
+    ],
+    "Claws of Atypical Expanse": [
+      {
+        "name": "Various Mobs within this cave (Rare Drop)",
+        "pos": [
+          "Fire Swamp Cave"
+        ]
+      },
+      {
+        "name": "Cave (first time only): Fire Swamp"
+      }
+    ],
+    "Sewer Slugger": [
+      {
+        "name": "Various Mobs within this cave (Rare Drop)",
+        "pos": [
+          "Sewer Herps Cave"
+        ]
+      },
+      {
+        "name": "Cave (first time only): Sewer Herps"
+      }
+    ],
+    "Coal Cadaver": [
+      {
+        "name": "Various Mobs within this cave (Rare Drop)",
+        "pos": [
+          "Sink Hole Cave"
+        ]
+      },
+      {
+        "name": "Cave (first time only): Sink Hole"
+      }
+    ],
+    "Water Lily": [
+      {
+        "name": "Various Mobs within this cave (Rare Drop)",
+        "pos": [
+          "Lily Pad Parkour Cave"
+        ]
+      },
+      {
+        "name": "Cave (first time only): Lily Pad Parkour"
+      }
+    ],
+    "Hydrothermal": [
+      {
+        "name": "Various Mobs within this cave (Rare Drop)",
+        "pos": [
+          "Steamworks Cave"
+        ]
+      },
+      {
+        "name": "Cave (first time only): Steamworks"
+      }
+    ],
+    "Alpenglow": [
+      {
+        "name": "Various Mobs within this cave (Rare Drop)",
+        "pos": [
+          "Ovine Spire Cave"
+        ]
+      },
+      {
+        "name": "Cave (first time only): Ovine Spire"
+      }
+    ],
+    "Geode Fluxplate": [
+      {
+        "name": "Various Mobs within this cave (Rare Drop)",
+        "pos": [
+          "Geodesic Cave"
+        ]
+      },
+      {
+        "name": "Cave (first time only): Geodesic"
+      }
+    ],
+    "Clockwork Manifold": [
+      {
+        "name": "Various Mobs within this cave (Rare Drop)",
+        "pos": [
+          "Junk Pit Cave"
+        ]
+      },
+      {
+        "name": "Cave (first time only): Junk Pit"
+      }
+    ],
+    "Paracausal": [
+      {
+        "name": "Various Mobs within this cave (Rare Drop)",
+        "pos": [
+          "Weirding Ring Cave"
+        ]
+      },
+      {
+        "name": "Cave (first time only): Weirding Ring"
+      }
+    ],
+    "Coeur Brise": [
+      {
+        "name": "Various Mobs within this cave (Rare Drop)",
+        "pos": [
+          "Lovers' Cavern Cave"
+        ]
+      },
+      {
+        "name": "Cave (first time only): Lovers' Cavern"
       }
     ]
   },
@@ -4637,6 +5067,24 @@
     "Equinox Blossom": {
       "pos": "Cave(first time only): Cave of the Seasons"
     },
+    "Studhorn": {
+      "pos": "Cave(first time only): Northern Outpost"
+    },
+    "Marble Core": {
+      "pos": "Cave(first time only): Estalis Gallery"
+    },
+    "Amberwalkers": {
+      "pos": "Cave(first time only): Ancient Arthropods"
+    },
+    "Freight Trainer": {
+      "pos": "Cave(first time only): Freight Interchange"
+    },
+    "Buzzsaw Bracer": {
+      "pos": "Cave(first time only): Auburn Lumbermill"
+    },
+    "Stormleader": {
+      "pos": "Cave(first time only): Electrifying Outpost"
+    },
     "Forlorn Pursuit": {
       "pos": "Workbench in the Scavenger's Workshop<br>(Outer Void: 13993, -3800)<br>(4x Metal Swarf, 2x Steel Rod, 2x Elestial Voidstone, 1x Precious Mineral, 1x Relic of the Shattering)"
     },
@@ -4691,8 +5139,44 @@
     "Sweet Memories": {
       "pos": "Workbench in the Scavenger's Workshop<br>(Outer Void: 13993, -3800)"
     },
+    "Tessera-laden Moccasins": {
+      "pos": "Workbench in the Scavenger's Workshop<br>(Outer Void: 13993, -3800)"
+    },
+    "Voidstone Capelet": {
+      "pos": "Workbench in the Scavenger's Workshop<br>(Outer Void: 13993, -3800)"
+    },
+    "Ascendant Starwalkers": {
+      "pos": "Workbench in the Scavenger's Workshop<br>(Outer Void: 13993, -3800)"
+    },
+    "Arrester Pot": {
+      "pos": "Workbench in the Scavenger's Workshop<br>(Outer Void: 13993, -3800)"
+    },
+    "Slimy Shako": {
+      "pos": "Workbench in the Scavenger's Workshop<br>(Outer Void: 13993, -3800)"
+    },
+    "Adhered Plate": {
+      "pos": "Workbench in the Scavenger's Workshop<br>(Outer Void: 13993, -3800)"
+    },
+    "Voidwarped Wrappings": {
+      "pos": "Workbench in the Scavenger's Workshop<br>(Outer Void: 13993, -3800)"
+    },
+    "Dwindled Knowledge": {
+      "pos": "Workbench in the Scavenger's Workshop<br>(Outer Void: 13993, -3800)"
+    },
+    "Void Scavenger's Brace": {
+      "pos": "Workbench in the Scavenger's Workshop<br>(Outer Void: 13993, -3800)"
+    },
+    "Void-Drenched Bauble": {
+      "pos": "Workbench in the Scavenger's Workshop<br>(Outer Void: 13993, -3800)"
+    },
+    "Scrap Amalgam": {
+      "pos": "Workbench in the Scavenger's Workshop<br>(Outer Void: 13993, -3800)"
+    },
     "Afelis's Locket": {
       "pos": "After speaking to Afelis in succession in Ragni, Detlas, Nemract, Llevigar, Bucie, Gelibord and Kander Forest, and finally by visiting the ceremony at the Memorial north of Gelibord following their death. (Quest to be completed: Elemental Exercise, The Dark Decent, Clearing the Camps and Lazarus Pit)"
+    },
+    "Waterwheel Bearing": {
+      "pos": "Completing a puzzle at the gatehouse in the southwestern corner of the Industrial District."
     }
   },
 
@@ -5386,8 +5870,62 @@
     "Besieged Sanctum": {
       "pos": "A Burning Memory"
     },
-    "": {
-      "pos": ""
+    "Falcon": {
+      "pos": "Stackpeak Pinnacle"
+    },
+    "Agglomerate Apex": {
+      "pos": "Otherworldly Exhibition"
+    },
+    "Sclera Swathe": {
+      "pos": "All Eyes on Me"
+    },
+    "Inscrutable Illusion": {
+      "pos": "Incomprehensible Cynosure"
+    },
+    "Malicious Maw": {
+      "pos": "Pestilential Downpour"
+    },
+    "Tendril Talon": {
+      "pos": "Monument to Loss"
+    },
+    "Tentacle Whip": {
+      "pos": "Lonely Islet"
+    },
+    "Hive Mind": {
+      "pos": "Apiary Hive"
+    },
+    "Ravenous Hunger": {
+      "pos": "Biohazardous Bloom"
+    },
+    "Poachers' Greed": {
+      "pos": "Autumn Poachers"
+    },
+    "Greatbird Eyrie": {
+      "pos": "Shattered Roots"
+    },
+    "Troll Toes": {
+      "pos": "Territorial Trolls"
+    },
+    "Gadgeteer": {
+      "pos": "Despermech Occupation<br>Decommissioned War Machines"
+    },
+    "Substratum": {
+      "pos": "Colossi Ingrain<br>Enraged Eagle<br>Ruff & Tumble"
+    },
+    "Price of Life": {
+      "pos": "Visit from Beyond"
+    },
+    "Squid's Heart": {
+      "pos": "Lonely Islet"
+    },
+    "Cannon Coin": {
+      "pos": "Palace Guards"
+    },
+    "Ballistics Satchel": {
+      "pos": "Citadel Barracks"
+    },
+    "Lumino Blossom": {
+      "pos": "Patrolling Soldiers"
     }
   },
 
