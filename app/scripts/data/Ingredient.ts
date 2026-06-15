@@ -1,4 +1,4 @@
-import { dDummy, dLootrun, dMerchant, dNever, dNormal, dQuest, dRaid, dSpecific, dUnobtainable, dWorldEvent, ingCoordsPos, max, namePos } from "../utils/DataKeys";
+import { dDummy, dLootrun, dMerchant, dNever, dNormal, dOther, dQuest, dRaid, dSpecific, dUnobtainable, dWorldEvent, ingCoordsPos, max, namePos } from "../utils/DataKeys";
 import { haveManualDrop, setMerchant, setPosOnlyDropType, setSpecificDrop, setTooltip } from "../utils/DataUtils";
 import { JSONValueEx } from "../utils/JSONValueEx";
 import { AItem } from "./AItem";
@@ -133,6 +133,7 @@ export class Ingredient extends AItem {
                 if (setPosOnlyDropType(texts, howToObtain, itemName, dRaid, "Raid Rewards: ")) texts.push("");
                 if (setPosOnlyDropType(texts, howToObtain, itemName, dWorldEvent, "World Event: ")) texts.push("");
                 if (setPosOnlyDropType(texts, howToObtain, itemName, dLootrun, "")) texts.push("");
+                if (setPosOnlyDropType(texts, howToObtain, itemName, dOther, "")) texts.push("");
             }
 
             // Dropped by
