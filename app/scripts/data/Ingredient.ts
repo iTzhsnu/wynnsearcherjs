@@ -75,6 +75,7 @@ export class Ingredient extends AItem {
                                     case dRaid:
                                     case dWorldEvent:
                                     case dLootrun:
+                                    case dOther:
                                         return typeof howToObtain[dropType] === "object" && howToObtain[dropType] !== null && !Array.isArray(howToObtain[dropType]) && typeof howToObtain[dropType][itemName] !== "undefined" && howToObtain[dropType][itemName] !== null;
                                 }
                             }

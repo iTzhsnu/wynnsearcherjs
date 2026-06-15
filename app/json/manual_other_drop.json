@@ -1,5 +1,63 @@
 {
-  "last_edit": "2023-08-05",
+  "last_edit": "2026-06-15",
+  "raid": {
+    "Charm of the Void": {
+      "pos": "The Nameless Anomaly"
+    },
+    "Charm of the Stone": {
+      "pos": "The Canyon Colossus"
+    },
+    "Charm of the Light": {
+      "pos": "Orphion's Nexus of Light"
+    },
+    "Charm of the Worm": {
+      "pos": "Nest of the Grootslangs"
+    },
+
+    "Fleetfooted Tome of the Marathon III": {
+      "pos": "Nest of the Grootslangs<br>The Canyon Colossus<br>The Wartorn Palace"
+    },
+    "Surefooted Tome of the Marathon III": {
+      "pos": "Nest of the Grootslangs<br>The Canyon Colossus<br>The Wartorn Palace"
+    },
+    "Oceanic Tome of Defensive Mastery III": {
+      "pos": "Nest of the Grootslangs<br>The Canyon Colossus<br>The Wartorn Palace"
+    },
+    "Clouded Tome of Defensive Mastery III": {
+      "pos": "Nest of the Grootslangs<br>The Canyon Colossus<br>The Wartorn Palace"
+    },
+    "Pulsing Tome of Defensive Mastery III": {
+      "pos": "Nest of the Grootslangs<br>The Canyon Colossus<br>The Wartorn Palace"
+    },
+    "Blooming Tome of Defensive Mastery III": {
+      "pos": "Nest of the Grootslangs<br>The Canyon Colossus<br>The Wartorn Palace"
+    },
+    "Everlasting Tome of Defensive Mastery III": {
+      "pos": "Nest of the Grootslangs<br>The Canyon Colossus<br>The Wartorn Palace"
+    },
+    "Courageous Tome of Defensive Mastery III": {
+      "pos": "Nest of the Grootslangs<br>The Canyon Colossus<br>The Wartorn Palace"
+    },
+    "Golem's Tome of Mysticism III": {
+      "pos": "Nest of the Grootslangs<br>The Canyon Colossus<br>The Wartorn Palace"
+    },
+    "Ephemeral Tome of Mysticism III": {
+      "pos": "Nest of the Grootslangs<br>The Canyon Colossus<br>The Wartorn Palace"
+    },
+    "Dragon's Tome of Mysticism III": {
+      "pos": "Nest of the Grootslangs<br>The Canyon Colossus<br>The Wartorn Palace"
+    },
+    "Faerie's Tome of Mysticism III": {
+      "pos": "Nest of the Grootslangs<br>The Canyon Colossus<br>The Wartorn Palace"
+    },
+    "Harvester's Tome of Mysticism III": {
+      "pos": "Nest of the Grootslangs<br>The Canyon Colossus<br>The Wartorn Palace"
+    },
+    "Pegasus' Tome of Mysticism III": {
+      "pos": "Nest of the Grootslangs<br>The Canyon Colossus<br>The Wartorn Palace"
+    }
+  },
+
   "lootrun": {
     "Thief's Tome of Lootrun Mastery": {
       "pos": "All Locations"
@@ -84,6 +142,218 @@
     },
     "Titanium Axe T13": {
       "pos": "Ascend from Dernic Axe T12 (Item Upgrader)"
+    }
+  },
+
+  "dungeonMerchant": {
+    "Dernic Pickaxe T12": {
+      "name": "Dungeon Merchant / Item Upgrader (Ascend)",
+      "pos": "The Forgery, Eldritch Outlook / Some Cities, Towns"
+    },
+    "Void Pickaxe T11": {
+      "name": "Dungeon Merchant / Item Upgrader (Ascend)",
+      "pos": "The Forgery / Some Cities, Towns"
+    },
+    "Molten Pickaxe T10": {
+      "name": "Dungeon Merchant / Item Upgrader (Ascend)",
+      "pos": "The Forgery / Some Cities, Towns"
+    },
+    "Diamond Pickaxe T9": {
+      "name": "Dungeon Merchant / Item Upgrader (Ascend)",
+      "pos": "The Forgery / Some Cities, Towns"
+    },
+    "Cobalt Pickaxe T8": {
+      "name": "Dungeon Merchant / Item Upgrader (Ascend)",
+      "pos": "The Forgery, Galleon Graveyard / Some Cities, Towns"
+    },
+    "Steel Pickaxe T7": {
+      "name": "Dungeon Merchant / Item Upgrader (Ascend)",
+      "pos": "Undergrowth Ruins / Some Cities, Towns"
+    },
+    "Iron Pickaxe T6": {
+      "name": "Dungeon Merchant / Item Upgrader (Ascend)",
+      "pos": "Ice Barrows / Some Cities, Towns"
+    },
+    "Golden Pickaxe T5": {
+      "name": "Dungeon Merchant / Item Upgrader (Ascend)",
+      "pos": "Sand-Swept Tomb / Some Cities, Towns"
+    },
+    "Bronze Pickaxe T4": {
+      "name": "Dungeon Merchant / Item Upgrader (Ascend)",
+      "pos": "Underworld Crypt, Timelost Sanctum / Some Cities, Towns"
+    },
+    "Copper Pickaxe T3": {
+      "name": "Dungeon Merchant / Item Upgrader (Ascend)",
+      "pos": "Decrepit Sewers, Infested Pit / Some Cities, Towns"
+    },
+
+    "Dernic Axe T12": {
+      "name": "Dungeon Merchant / Item Upgrader (Ascend)",
+      "pos": "The Forgery, Eldritch Outlook / Some Cities, Towns"
+    },
+    "Void Axe T11": {
+      "name": "Dungeon Merchant / Item Upgrader (Ascend)",
+      "pos": "The Forgery / Some Cities, Towns"
+    },
+    "Molten Axe T10": {
+      "name": "Dungeon Merchant / Item Upgrader (Ascend)",
+      "pos": "The Forgery / Some Cities, Towns"
+    },
+    "Diamond Axe T9": {
+      "name": "Dungeon Merchant / Item Upgrader (Ascend)",
+      "pos": "The Forgery / Some Cities, Towns"
+    },
+    "Cobalt Axe T8": {
+      "name": "Dungeon Merchant / Item Upgrader (Ascend)",
+      "pos": "The Forgery, Galleon Graveyard / Some Cities, Towns"
+    },
+    "Steel Axe T7": {
+      "name": "Dungeon Merchant / Item Upgrader (Ascend)",
+      "pos": "Undergrowth Ruins / Some Cities, Towns"
+    },
+    "Iron Axe T6": {
+      "name": "Dungeon Merchant / Item Upgrader (Ascend)",
+      "pos": "Ice Barrows / Some Cities, Towns"
+    },
+    "Golden Axe T5": {
+      "name": "Dungeon Merchant / Item Upgrader (Ascend)",
+      "pos": "Sand-Swept Tomb / Some Cities, Towns"
+    },
+    "Bronze Axe T4": {
+      "name": "Dungeon Merchant / Item Upgrader (Ascend)",
+      "pos": "Underworld Crypt, Timelost Sanctum / Some Cities, Towns"
+    },
+    "Copper Axe T3": {
+      "name": "Dungeon Merchant / Item Upgrader (Ascend)",
+      "pos": "Decrepit Sewers, Infested Pit / Some Cities, Towns"
+    },
+
+    "Dernic Scythe T12": {
+      "name": "Dungeon Merchant / Item Upgrader (Ascend)",
+      "pos": "The Forgery, Eldritch Outlook / Some Cities, Towns"
+    },
+    "Void Scythe T11": {
+      "name": "Dungeon Merchant / Item Upgrader (Ascend)",
+      "pos": "The Forgery / Some Cities, Towns"
+    },
+    "Molten Scythe T10": {
+      "name": "Dungeon Merchant / Item Upgrader (Ascend)",
+      "pos": "The Forgery / Some Cities, Towns"
+    },
+    "Diamond Scythe T9": {
+      "name": "Dungeon Merchant / Item Upgrader (Ascend)",
+      "pos": "The Forgery / Some Cities, Towns"
+    },
+    "Cobalt Scythe T8": {
+      "name": "Dungeon Merchant / Item Upgrader (Ascend)",
+      "pos": "The Forgery, Galleon Graveyard / Some Cities, Towns"
+    },
+    "Steel Scythe T7": {
+      "name": "Dungeon Merchant / Item Upgrader (Ascend)",
+      "pos": "Undergrowth Ruins / Some Cities, Towns"
+    },
+    "Iron Scythe T6": {
+      "name": "Dungeon Merchant / Item Upgrader (Ascend)",
+      "pos": "Ice Barrows / Some Cities, Towns"
+    },
+    "Golden Scythe T5": {
+      "name": "Dungeon Merchant / Item Upgrader (Ascend)",
+      "pos": "Sand-Swept Tomb / Some Cities, Towns"
+    },
+    "Bronze Scythe T4": {
+      "name": "Dungeon Merchant / Item Upgrader (Ascend)",
+      "pos": "Underworld Crypt, Timelost Sanctum / Some Cities, Towns"
+    },
+    "Copper Scythe T3": {
+      "name": "Dungeon Merchant / Item Upgrader (Ascend)",
+      "pos": "Decrepit Sewers, Infested Pit / Some Cities, Towns"
+    },
+
+    "Dernic Rod T12": {
+      "name": "Dungeon Merchant / Item Upgrader (Ascend)",
+      "pos": "The Forgery, Eldritch Outlook / Some Cities, Towns"
+    },
+    "Void Rod T11": {
+      "name": "Dungeon Merchant / Item Upgrader (Ascend)",
+      "pos": "The Forgery / Some Cities, Towns"
+    },
+    "Molten Rod T10": {
+      "name": "Dungeon Merchant / Item Upgrader (Ascend)",
+      "pos": "The Forgery / Some Cities, Towns"
+    },
+    "Diamond Rod T9": {
+      "name": "Dungeon Merchant / Item Upgrader (Ascend)",
+      "pos": "The Forgery / Some Cities, Towns"
+    },
+    "Cobalt Rod T8": {
+      "name": "Dungeon Merchant / Item Upgrader (Ascend)",
+      "pos": "The Forgery, Galleon Graveyard / Some Cities, Towns"
+    },
+    "Steel Rod T7": {
+      "name": "Dungeon Merchant / Item Upgrader (Ascend)",
+      "pos": "Undergrowth Ruins / Some Cities, Towns"
+    },
+    "Iron Rod T6": {
+      "name": "Dungeon Merchant / Item Upgrader (Ascend)",
+      "pos": "Ice Barrows / Some Cities, Towns"
+    },
+    "Golden Rod T5": {
+      "name": "Dungeon Merchant / Item Upgrader (Ascend)",
+      "pos": "Sand-Swept Tomb / Some Cities, Towns"
+    },
+    "Bronze Rod T4": {
+      "name": "Dungeon Merchant / Item Upgrader (Ascend)",
+      "pos": "Underworld Crypt, Timelost Sanctum / Some Cities, Towns"
+    },
+    "Copper Rod T3": {
+      "name": "Dungeon Merchant / Item Upgrader (Ascend)",
+      "pos": "Decrepit Sewers, Infested Pit / Some Cities, Towns"
+    }
+  },
+
+  "merchant": {
+    "Stone Pickaxe T2": {
+      "name": "Tool Merchant / Item Upgrader (Ascend)",
+      "pos": "Some Locations",
+      "price": "12x Emeralds / -"
+    },
+    "Wooden Pickaxe T1": {
+      "name": "Tool Merchant",
+      "pos": "Some Locations",
+      "price": "4x Emeralds"
+    },
+
+    "Stone Axe T2": {
+      "name": "Tool Merchant / Item Upgrader (Ascend)",
+      "pos": "Some Locations",
+      "price": "12x Emeralds / -"
+    },
+    "Wooden Axe T1": {
+      "name": "Tool Merchant",
+      "pos": "Some Locations",
+      "price": "4x Emeralds"
+    },
+
+    "Stone Scythe T2": {
+      "name": "Tool Merchant / Item Upgrader (Ascend)",
+      "pos": "Some Locations",
+      "price": "12x Emeralds / -"
+    },
+    "Wooden Scythe T1": {
+      "name": "Tool Merchant",
+      "pos": "Some Locations",
+      "price": "4x Emeralds"
+    },
+
+    "Stone Rod T2": {
+      "name": "Tool Merchant / Item Upgrader (Ascend)",
+      "pos": "Some Locations",
+      "price": "12x Emeralds / -"
+    },
+    "Wooden Rod T1": {
+      "name": "Tool Merchant",
+      "pos": "Some Locations",
+      "price": "4x Emeralds"
     }
   }
 }
