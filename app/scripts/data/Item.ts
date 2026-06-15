@@ -1,4 +1,4 @@
-import { coordsPos, dAltar, dChallenge, dDungeon, dDungeonMerchant, dEvent, dLegendaryIsland, dLootChest, dLootrun, dMerchant, dMiniboss, dNever, dNormal, dOther, dQuest, dRaid, dSecretDiscovery, dTheQiraHive, dWorldEvent, max, namePos, typePos } from "../utils/DataKeys";
+import { coordsPos, dAltar, dChallenge, dDiscontinued, dDungeon, dDungeonMerchant, dEvent, dLegendaryIsland, dLootChest, dLootrun, dMerchant, dMiniboss, dNever, dNormal, dOther, dQuest, dRaid, dSecretDiscovery, dTheQiraHive, dWorldEvent, max, namePos, typePos } from "../utils/DataKeys";
 import { haveManualDrop, setMerchant, setPosOnlyDropType, setSpecificDrop, setTooltip } from "../utils/DataUtils";
 import { JSONValueEx } from "../utils/JSONValueEx";
 import { AItem } from "./AItem";
@@ -154,12 +154,8 @@ export class Item extends AItem {
                     return;
                 } else if (p === 13) {
                     // Discontinued
-                    setTooltip(tooltip, tooltipText, ["This item is Discontinued."]);
-                    parent.appendChild(tooltip);
-                    tooltip.appendChild(tooltipText);
-                    tooltip.appendChild(document.createTextNode("How to obtain (not perfect)"));
-                    parent.appendChild(document.createElement("br"));
-                    return;
+                    texts[0] = "This item is Discontinued.";
+                    setPosOnlyDropType(texts, howToObtain, itemName, dDiscontinued, "");
                 } else {
                     // Normal (Hostile Mob and Any Loot)
                     if (Array.isArray(howToObtain[dNormal])) {
