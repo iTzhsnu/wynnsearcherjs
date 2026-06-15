@@ -147,10 +147,18 @@ export class Item extends AItem {
                 if (p === 1) {
                     // Unobtainable
                     setTooltip(tooltip, tooltipText, ["This item can't be obtained."]);
+                    parent.appendChild(tooltip);
+                    tooltip.appendChild(tooltipText);
+                    tooltip.appendChild(document.createTextNode("How to obtain (not perfect)"));
+                    parent.appendChild(document.createElement("br"));
                     return;
                 } else if (p === 13) {
                     // Discontinued
                     setTooltip(tooltip, tooltipText, ["This item is Discontinued."]);
+                    parent.appendChild(tooltip);
+                    tooltip.appendChild(tooltipText);
+                    tooltip.appendChild(document.createTextNode("How to obtain (not perfect)"));
+                    parent.appendChild(document.createElement("br"));
                     return;
                 } else {
                     // Normal (Hostile Mob and Any Loot)
