@@ -1,5 +1,5 @@
 {
-  "last_edit": "2026-06-14",
+  "last_edit": "2026-06-15",
   "unobtainable": [
     "GM's Helmet",
     "GM's Breastplate",
@@ -2661,6 +2661,231 @@
       "name": "Accessory Merchant",
       "pos": "Espren",
       "price": "6x Water Dropwort & 3x Pristine Liff Leave"
+    },
+    "Guerrilla": {
+      "name": "Weapon Merchant",
+      "pos": "Aelumina Citadel Safe Zone",
+      "price": "4608x Emeralds (1LE 8EB)"
+    },
+    "Breath of Freedom": {
+      "name": "Weapon Merchant",
+      "pos": "Aelumina Citadel Safe Zone",
+      "price": "4480x Emeralds (1LE 6EB)"
+    },
+    "Thunder of Revolt": {
+      "name": "Weapon Merchant",
+      "pos": "Aelumina Citadel Safe Zone",
+      "price": "4480x Emeralds (1LE 6EB)"
+    },
+    "Martyr's Deathrattle": {
+      "name": "Weapon Merchant",
+      "pos": "Aelumina Citadel Safe Zone",
+      "price": "4288x Emeralds (1LE 3EB)"
+    },
+    "Hijacked Plans": {
+      "name": "Weapon Merchant",
+      "pos": "Aelumina Citadel Safe Zone",
+      "price": "4160x Emeralds (1LE 1EB)"
+    },
+    "Multiplicity": {
+      "name": "Weapon Merchant",
+      "pos": "Hyloch",
+      "price": "3994x Emeralds (62EB 26E)"
+    },
+    "Decadence": {
+      "name": "Weapon Merchant",
+      "pos": "Hyloch",
+      "price": "4288x Emeralds (1LE 3EB)"
+    },
+    "Splendor": {
+      "name": "Weapon Merchant",
+      "pos": "Hyloch",
+      "price": "4288x Emeralds (1LE 3EB)"
+    },
+    "Monarch": {
+      "name": "Weapon Merchant",
+      "pos": "Aldwell",
+      "price": "3840x Emeralds (60EB)"
+    },
+    "Ruckstaff": {
+      "name": "Weapon Merchant",
+      "pos": "Aldwell",
+      "price": "3840x Emeralds (60EB)"
+    },
+    "Apiary Stinger": {
+      "name": "Weapon Merchant",
+      "pos": "Aldwell",
+      "price": "3712x Emeralds (58EB)"
+    },
+    "Chanterelle": {
+      "name": "Weapon Merchant",
+      "pos": "Aldwell",
+      "price": "3712x Emeralds (58EB)"
+    },
+    "Banshee Javelin": {
+      "name": "Weapon Merchant",
+      "pos": "Aldwell",
+      "price": "3520x Emeralds (55EB)"
+    },
+    "Overcast": {
+      "name": "Weapon Merchant",
+      "pos": "Timasca",
+      "price": "3072x Emeralds (48EB)"
+    },
+    "Broken Pipe": {
+      "name": "Weapon Merchant",
+      "pos": "Timasca",
+      "price": "3072x Emeralds (48EB)"
+    },
+    "Burden": {
+      "name": "Weapon Merchant",
+      "pos": "Timasca",
+      "price": "2992x Emeralds (46EB 48E)"
+    },
+    "Nature's Eye": {
+      "name": "Weapon Merchant",
+      "pos": "Espren",
+      "price": "2765x Emeralds (43EB 13E)"
+    },
+    "Spirit Spark": {
+      "name": "Weapon Merchant",
+      "pos": "Espren",
+      "price": "2701x Emeralds (42EB 13E)"
+    },
+    "Amber Thorn": {
+      "name": "Weapon Merchant",
+      "pos": "Espren",
+      "price": "2765x Emeralds (43EB 13E)"
+    },
+    "Homesick": {
+      "name": "Weapon Merchant",
+      "pos": "Fort Torann",
+      "price": "2688x Emeralds (42EB)"
+    },
+    "Familiar Stranger": {
+      "name": "Weapon Merchant",
+      "pos": "Fort Torann",
+      "price": "2688x Emeralds (42EB)"
+    },
+    "Pilfered Crown": {
+      "name": "Armour Merchant",
+      "pos": "Aelumina Citadel Safe Zone",
+      "price": "4608x Emeralds (1LE 8EB)"
+    },
+    "Camouflage Cloak": {
+      "name": "Armour Merchant",
+      "pos": "Aelumina Citadel Safe Zone",
+      "price": "4480x Emeralds (1LE 6EB)"
+    },
+    "Rebel Tactics": {
+      "name": "Armour Merchant",
+      "pos": "Aelumina Citadel Safe Zone",
+      "price": "4288x Emeralds (1LE 3EB)"
+    },
+    "Flexibility": {
+      "name": "Armour Merchant",
+      "pos": "Aelumina Citadel Safe Zone",
+      "price": "4288x Emeralds (1LE 3EB)"
+    },
+    "Confinement": {
+      "name": "Armour Merchant",
+      "pos": "Hyloch",
+      "price": "4147x Emeralds (1LE 51E)"
+    },
+    "Landscour": {
+      "name": "Armour Merchant",
+      "pos": "Hyloch",
+      "price": "4147x Emeralds (1LE 51E)"
+    },
+    "Mist Unit Trousers": {
+      "name": "Armour Merchant",
+      "pos": "Aelumina Citadel Safe Zone",
+      "price": "4160x Emeralds (1LE 1EB)"
+    },
+    "Counterbias": {
+      "name": "Armour Merchant",
+      "pos": "Hyloch",
+      "price": "3993x Emeralds (62EB 25E)"
+    },
+    "Sickle Claw": {
+      "name": "Armour Merchant",
+      "pos": "Aldwell",
+      "price": "3840x Emeralds (60EB)"
+    },
+    "Triceratops": {
+      "name": "Armour Merchant",
+      "pos": "Aldwell",
+      "price": "3712x Emeralds (58EB)"
+    },
+    "Titan-Skin Vest": {
+      "name": "Armour Merchant",
+      "pos": "Aldwell",
+      "price": "3520x Emeralds (55EB)"
+    },
+    "Calefaction": {
+      "name": "Armour Merchant",
+      "pos": "Timasca",
+      "price": "3072x Emeralds (48EB)"
+    },
+    "Dust Goggles": {
+      "name": "Armour Merchant",
+      "pos": "Timasca",
+      "price": "2992x Emeralds (46EB 48E)"
+    },
+    "Radiator": {
+      "name": "Armour Merchant",
+      "pos": "Timasca",
+      "price": "2992x Emeralds (46EB 48E)"
+    },
+    "Liffmail Coif": {
+      "name": "Armour Merchant",
+      "pos": "Espren",
+      "price": "2765x Emeralds (43EB 13E)"
+    },
+    "Liffmail Hauberk": {
+      "name": "Armour Merchant",
+      "pos": "Espren",
+      "price": "2765x Emeralds (43EB 13E)"
+    },
+    "Liffmail Chausses": {
+      "name": "Armour Merchant",
+      "pos": "Espren",
+      "price": "2765x Emeralds (43EB 13E)"
+    },
+    "Liffmail Sollerets": {
+      "name": "Armour Merchant",
+      "pos": "Espren",
+      "price": "2765x Emeralds (43EB 13E)"
+    },
+    "Cannon Fodder": {
+      "name": "Armour Merchant",
+      "pos": "Fort Torann",
+      "price": "2688x Emeralds (42EB)"
+    },
+    "Corpsman": {
+      "name": "Armour Merchant",
+      "pos": "Fort Torann",
+      "price": "2688x Emeralds (42EB)"
+    },
+    "Melaleuca": {
+      "name": "Accessory Merchant",
+      "pos": "Espren",
+      "price": "20x Liff Leave & 1x Water Dropwort"
+    },
+    "Chaparral": {
+      "name": "Accessory Merchant",
+      "pos": "Espren",
+      "price": "3x Water Dropwort & 2x Cherished Heirloom"
+    },
+    "Ephedra": {
+      "name": "Accessory Merchant",
+      "pos": "Espren",
+      "price": "11x Liff Leave & 7x Water Dropwort"
+    },
+    "Illicium": {
+      "name": "Accessory Merchant",
+      "pos": "Espren",
+      "price": "8x Liff Leave & 2x Exquisite Marsh Scale"
     }
   },
 
