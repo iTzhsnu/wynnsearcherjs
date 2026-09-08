@@ -2,7 +2,7 @@ import { getItemFromName, setPowderOnNonCraft, setTooltip } from "../utils/DataU
 import { JSONValueEx } from "../utils/JSONValueEx";
 import { Identifications, ids, rarityId, typeInt, typeSum } from "./Identifications";
 import { sumIds } from "./SumIds";
-import { raw, min, max, identified, sFast, vFast, fast, aNormal, slow, vSlow, sSlow, namePos, typePos, subTypePos, sBonuses, sSets, sMinor } from "../utils/DataKeys";
+import { raw, min, max, identified, sFast, vFast, fast, aNormal, slow, vSlow, sSlow, namePos, typePos, subTypePos, sBonuses, sSets, sMinor, sMajor } from "../utils/DataKeys";
 import setsData from "../../json/sets.json"
 import styles from "../../styles.module.css";
 
@@ -445,21 +445,32 @@ export abstract class AItem {
                     const bonuses = setData[sBonuses];
                     for (let i = 0; 10 > i; ++i) {
                         const n = String(i);
-                        if (typeof bonuses[n] === "object" && bonuses[n] !== null && !Array.isArray(bonuses[n]) && typeof bonuses[n][sMinor] === "object" && bonuses[n][sMinor] !== null && !Array.isArray(bonuses[n][sMinor])) {
-                            texts.push(n + ":");
-                            const bonus = bonuses[n][sMinor];
-                            for (let j = 9; 118 >= j; ++j) {
-                                if (j === 65 || j === 64 || j === 43 
-                                    || (35 >= j && j >= 29) 
-                                    || (22 >= j && j >= 18)) continue;
+                        if (typeof bonuses[n] === "object" && bonuses[n] !== null && !Array.isArray(bonuses[n])) {
+                            // Minor Ids
+                            if (typeof bonuses[n][sMinor] === "object" && bonuses[n][sMinor] !== null && !Array.isArray(bonuses[n][sMinor])) {
+                                texts.push(n + ":");
+                                const bonus = bonuses[n][sMinor];
+                                for (let j = 9; 118 >= j; ++j) {
+                                    if (j === 65 || j === 64 || j === 43 
+                                        || (35 >= j && j >= 29) 
+                                        || (22 >= j && j >= 18)) continue;
 
-                                const id = ids[j];
-                                const idName = id.itemName;
-                                if (typeof bonus[idName] === "number" && bonus[idName] !== null) {
-                                    texts.push(id.displayName + " " + bonus[idName] + id.displaySp);
+                                    const id = ids[j];
+                                    const idName = id.itemName;
+                                    if (typeof bonus[idName] === "number" && bonus[idName] !== null) {
+                                        texts.push(id.displayName + " " + bonus[idName] + id.displaySp);
+                                    }
                                 }
+                                texts.push("");
                             }
-                            texts.push("");
+
+                            // Major Ids (may be add description)
+                            if (Array.isArray(bonuses[n][sMajor])) {
+                                for (const major of bonuses[n][sMajor]) {
+                                    if (typeof major === "string" && major !== null && !Array.isArray(major)) texts.push(major);
+                                }
+                                texts.push("");
+                            }
                         }
                     }
                 }
